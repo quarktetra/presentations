@@ -1,0 +1,17 @@
+Column name,description
+CTQ,"y-axis for plots.  If you put a * as the first character, that row will be ignored."
+xaxis,"x- axis for the plot. Single continuous item, or multiple categorical items like EXPCODE, LOT."
+plot_type,"var or biv.   var for variability plot, biv for bivariate."
+by,split the plots into groups. Script will loop through all level of the by column.
+outlier,outlier cleaning. For example sigma(-3:3) will remove points that are further than 3 sigma from mean.
+Frame Size,"plot frame size (width, height)"
+Std Dev Chart,"0 or 1,  show or hide Std Dev Chart"
+Points Jittered,"0 or 1,  Points Jittered or not"
+Show Box Plots,"0 or 1,  Show Box Plots or not"
+Mean Diamonds,"0 or 1,  show or hide SMean Diamonds"
+slide_title,The title that will appear in PPT
+plot_title,Label that will appear on top of the image
+slide_number,slide that particular image will be placed in
+x_coord,x coord for the image in  PPT
+y_coord,y coord for the image in PPT
+image_size,size of the image in PPT

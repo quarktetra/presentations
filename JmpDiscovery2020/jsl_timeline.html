@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css?v3" rel="stylesheet" type="text/css">
+<link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
+
+
+
+<style>
+        .container { margin: 0px auto; padding:5px;border-style: solid;border-width: 1px;border-radius: 10px;  box-shadow: 10px 5px 5px gray; }
+        .toppara{
+
+font-size:25px;
+line-height: 130% !important;
+
+font-family: Times, serif, Georgia;
+}
+
+        .toppara::first-letter {
+    float:left;
+	color: hsl(350, 50%, 50%);
+    font-size:105px;
+    line-height:45px;
+    padding-top:25px; 
+    padding-right:6px;
+    padding-bottom:6px;
+    font-family: Times, serif, Georgia;
+}
+
+.tl-caption{font-size:16px !important; line-height: 110% !important;}
+.tl-media-item{  border-style: solid;border-width: 1px;
+   border-radius: 10px;
+  box-shadow: 10px 5px 5px gray;}
+</style>
+
+
+<script>
+    let jsl_json={
+            "title": {
+                "media": {
+                  "url": "https://res.cloudinary.com/teepublic/image/private/s--qYKcmZRG--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1491366440/production/designs/1389648_1.jpg",
+                  "caption": "",
+                  "credit": "<a href='https://cloudinary.com/'> cloudinary.com </a>"
+                },
+                "text": {
+                  
+                  "headline": "",
+                  "text": "<div class='toppara'>This is a timeline of how we integrated  JSL scripts with  <span   title='Git is a free and open source distributed version control system.' style='text-decoration:underline'>GIT</span>, <span   title='Visual Basic for Applications (VBA) is used to automate PPT creation.' style='text-decoration:underline'>VBA</span> and  <span   title='An issue tracking and project management software from Atlassian.' style='text-decoration:underline'>JIRA   </span>   to create an environment for high quality data analysis tools.  It shows the evolution from sharing scripts as email attachments to professionally managing them as real software.           </div>"
+                }   
+            },
+            "events": [
+            {
+                "id":"self",
+                "media": {
+                  "url": "mrbean_rev.jpg",                  "caption": " JMP User community is a fantastic resource for JSL!",
+                  "credit": "Modified from <a href='https://www.reddit.com/r/ProgrammerHumor/comments/9s0qq2/stackoverflow_for_developers/'> Reddit</a>"
+                   },
+                   "start_date": {
+                  "month": "01",
+                  "day": "01",
+                  "year": "2011"
+                },
+                "end_date": {
+                  "month": "05",
+                  "day": "30",
+                  "year": "2011"
+                },
+                "text": { "headline": "Developing for self",
+                  "text": "<div class='toppara'>JSL has zero barrier to getting started. Do your analysis manually once (the code is literally prepared for you in the background), and grab the code of what you have done.    Or, there is always <a href='https://community.jmp.com/' target='_blank'>JMP User Community.</a> </div>"}
+              },
+              {
+                "id":"email",
+                "media": {
+                  "url": "attachment.png",                  "caption": "A very common practice of version tracking with date and incremental numbers. To be avoided at all costs!",
+                  "credit": ""
+                   },
+                   "start_date": {
+                  "month": "06",
+                  "day": "1",
+                  "year": "2011"
+                },
+                "end_date": {
+                  "month": "12",
+                  "day": "31",
+                  "year": "2013"
+                },
+                "text": { "headline": "Attachments",
+                  "text": "<div class='toppara'>The simplest and possibly the worst thing a developer can do is to attach and email scripts, which completely eliminates any trace-ability. Posting scripts to a page is not ideal either since users won't necessarily update to the latest version of the script. </div>"}
+              },
+              {
+                "id":"sharedd",
+                "media": {
+                  "url": "network-drive-icon-67.png",                  "caption": "Developers save the latest version to shared folders.",
+                  "credit": "<a href='http://getdrawings.com/network-drive-icon'> getdrawings.com</a>"
+                   },
+                   "start_date": {
+                  "month": "01",
+                  "day": "01",
+                  "year": "2014"
+                },
+                "end_date": {
+                  "month": "12",
+                  "day": "31",
+                  "year": "2016"
+                },
+                "text": { "headline": "Shared Drive",
+                                    "text": "<div class='toppara'>Developers can save the latest version of their scripts into a shared folder. Users can load and run scripts from this folder to ensure they are running the latest version. This is much better than attachments, however, the developer has no visibility to usage or crashes. This method still lacks source control and developer collaboration. </div>"}
+              },
+              {
+                "id":"git",
+                "media": {
+                  "url": "https://miro.medium.com/max/600/1*_K2Gd-s0uprqY7VWnjZteg.jpeg",                  "caption": "Various code management options, some of which are open-source and free.",
+                  "credit": "<a href='https://medium.com/@shabibi/git-gitlab-github-how-to-make-a-branch-commit-push-83d01a77829c'> Medium </a>"
+                   },
+                   "start_date": {
+                  "month": "01",
+                  "day": "01",
+                  "year": "2017"
+                },
+                "end_date": {
+                  "month": "12",
+                  "day": "31",
+                  "year": "2019"
+                },
+                "text": { "headline": "Git",
+                  "text": "<div class='toppara'>Git provides a central repository and enables tracing of every code change. Developers can easily collaborate on scripts and share codes with each other or with users. JMP can load JSL scripts directly from GIT repositories eliminating the need for shared drives. It is also possible to track the usage and collect metadata including script crash logs. </div>"}
+              }
+              ,    {
+                "id":"summit2018",
+                "media": {
+                  "url": 'JM.png ',
+                  "caption": " <a href='https://community.jmp.com/t5/Discovery-Summit-2018/Tutorial-Using-JSL-to-Develop-Efficient-Robust-Non-Trivial/ta-p/81274'>Tutorial - Using JSL to Develop Efficient, Robust, Non-Trivial Applications, 2018 JMP summit</a>",
+                  "credit": " <a href='https://community.jmp.com/t5/Discovery-Summit-2018/Tutorial-Using-JSL-to-Develop-Efficient-Robust-Non-Trivial/ta-p/81274'>JMP</a>"
+
+                   },
+                   "start_date": {
+                  "month": "10",
+                  "day": "15",
+                  "year": "2018"
+                },
+                "end_date": {
+                  "month": "10",
+                  "day": "18",
+                  "year": "2018"
+                },
+                "text": { "headline": "JMP Discovery Summit,Cary, NC 2018 ",
+                  "text":  "<div class='toppara'>Discovery Summit Tutorial sessions are great for learning about JSL. JSL is very powerful particularly when the strength of expression handling is leveraged. <b> <blockquote cite='https://community.jmp.com/t5/Discovery-Summit-2018/Tutorial-Using-JSL-to-Develop-Efficient-Robust-Non-Trivial/ta-p/81274'>   <p>I am on a mission to end the monstrosity of eval(parse(\'string\')) </p>     <footer>—Joseph Morgan </footer> </blockquote>  <i> </i></div>"}
+              },
+              {
+                "id":"summit2019",
+                "media": {
+                  "url": '<iframe src="http://players.brightcove.net/1872491364001/default_default/index.html?videoId=6095953137001" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" class="video floatRight" mozallowfullscreen="mozallowfullscreen" width="300" height="150"></iframe>'
+,                  "caption": "<a href='https://community.jmp.com/t5/Discovery-Summit-Tucson-2019/Automate-the-Testing-of-JSL-Using-Hamcrest-2019-US-30MP-239/ta-p/223345#'>Automate the Testing of JSL Using Hamcrest, 2019 JMP Discovery Summit</a>",
+                  "credit": " <a href='https://community.jmp.com/t5/Discovery-Summit-Tucson-2019/Automate-the-Testing-of-JSL-Using-Hamcrest-2019-US-30MP-239/ta-p/223345#'>JMP</a>"
+
+                   },
+                   "start_date": {
+                  "month": "10",
+                  "day": "15",
+                  "year": "2019"
+                },
+                "end_date": {
+                  "month": "10",
+                  "day": "18",
+                  "year": "2019"
+                },
+                "text": { "headline": "JMP Discovery Summit, Tucson, AZ, 2019  ",
+                  "text":  "<div class='toppara'> <b> <blockquote cite='https://community.jmp.com/t5/Discovery-Summit-Tucson-2019/Automate-the-Testing-of-JSL-Using-Hamcrest-2019-US-30MP-239/ta-p/223345'>     <div class='toppara'> Have you written some JSL and gotten tired of manually testing after every change? Have you inadvertently broken some piece of your application, or has the fear of doing so prevented you from making the changes you want to make? With automated testing, you can be more confident in your changes. Now available is a set of tools for automating the testing of JSL.</div>     <footer>—Justin Chilton and Evan McCorkle. </footer> </blockquote>  <i> </i></div>"}
+              },
+              
+             
+              {
+                "id":"log",
+                "media": {
+                  "url": "crash.png", "caption": "A typical JSL crash log. The error log can be captured and retrieved by the developer for debugging purposes. ",
+                  "credit": ""
+
+                   }
+                   ,
+                   "start_date": {
+                  "month": "05",
+                  "day": "01",
+                  "year": "2020"
+                },
+                   "end_date": {
+                  "month": "03",
+                  "day": "01",
+                  "year": "2020"
+                },
+                "text": { "headline": "Log collection",
+                  "text":  "<div class='toppara'> If a script fails, a crash log is reported in the log viewer. The error can be contained, and the log can be collected: <br>  <b> <i> try(logreturned=log capture(somefunction()); </b> </i><br> This log can be submitted automatically to the developer for debugging purposes.</div>"}  
+              },
+             
+              {
+                "id":"unit",
+                "media": {
+                  "url": "drawer.jpg",                  "caption": "2 Unit tests, 0 Integration tests.",
+                  "credit": " <a href='https://twitter.com/thepracticaldev/status/687672086152753152'>@ThePracticalDev</a>"
+
+                   },
+                   "start_date": {
+                  "month": "01",
+                  "day": "01",
+                  "year": "2020"
+                },
+                "end_date": {
+                  "month": "03",
+                  "day": "31",
+                  "year": "2020"
+                },
+                "text": { "headline": "Unit and Integration Tests",
+                  "text": "<div class='toppara'> Testing of JSL codes is an essential part of the development to reduce bugs in the field. Unit tests and integration test need to be run to validate the robustness of the script before release. JSL Unit test framework is available in  <a href='https://github.com/sassoftware/jsl-hamcrest/releases/tag/v1.1.0'>GITHUB</a>. Tester development and the actual script development is circular.    </div>"}
+              },
+             
+             {
+               "id":"unit",
+               "media": {
+                 "url": "jira.png",                  "caption": "Atlasian's project management system: JIRA",
+                 "credit": ""
+
+                  },
+                  "start_date": {
+                 "month": "06",
+                 "day": "01",
+                 "year": "2020"
+               },
+               "end_date": {
+                 "month": "06",
+                 "day": "01",
+                 "year": "2020"
+               },
+               "text": { "headline": "Automated Bug reporting",
+                 "text": "<div class='toppara'>  Containing script crashes and capturing the logs enables the ability to report the crash to the developer using various  issue tracking sofwares, such a JIRA of Atlassian. This can be done via JMP's REST features or in the back-end in the server where logs are stored. This closes the  loop: <ol>  <li>The user knows the script crashed (DUH!).</li>  <li>The developer knows the script crashed.</li>  <li>The user knows that the developer knows. </li><li>The user can 'watch' the issue being worked on and resolved.</li></ol> </div>"}
+             }
+            ],  
+            "eras": [
+            {
+                "text": {
+                  "headline": "Dark Ages",
+                },
+                "start_date": {
+                  "month": "01",
+                  "day": "01",
+                  "year": "2011"
+                },
+                "end_date": {
+                  "month": "12",
+                  "day": "31",
+                  "year": "2016"
+                }
+              },
+              {
+                "text": {
+                  "headline": "Rise of GIT",
+                },
+                "start_date": {
+                  "month": "01",
+                  "day": "01",
+                  "year": "2017"
+                },
+                "end_date": {
+                  "month": "12",
+                  "day": "31",
+                  "year": "2019"
+                }
+              },
+              {
+                "text": {
+                  "headline": "Closed Loop Development",
+                },
+                "start_date": {
+                  "month": "01",
+                  "day": "01",
+                  "year": "2020"
+                },
+                "end_date": {
+                  "month": "12",
+                  "day": "31",
+                  "year": "2020"
+                }
+              }
+            ]
+        }
+</script>
+
+
+
+</head>
+
+<body>
+
+  <div class="container">
+        
+    <div id='timeline-embed' style="width:100%; height: 550px"></div>
+</div>
+
+
+
+
+<script>
+
+  $(document).ready(function() {
+      var embed = document.getElementById('timeline-embed');
+      embed.style.height = getComputedStyle(document.body).height;
+      window.timeline = new TL.Timeline('timeline-embed', jsl_json, {
+          hash_bookmark: false
+      });
+      window.addEventListener('resize', function() {
+          var embed = document.getElementById('timeline-embed');
+          embed.style.height = getComputedStyle(document.body).height;
+          timeline.updateDisplay();
+      })
+  });   
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Exporting Images From JMP to PPT},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+
+\title{Exporting Images From JMP to PPT}
+\author{}
+\date{\vspace{-2.5em}2020-08-10}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{TOC}{}
+
+This tools enables users to export images to PPT slides automatically. Images might be stored locally, or the path to their location might be listed in a table. It supports custom PPT layouts. The source code of the project is \href{https://github.com/quarktetra/JMP_Discovery_2020_git_demo/blob/master/IMAGETABLE_TO_PPT.jsl}{here}.
+\emph{Acknowledgments:} Heidi Hardner.
+
+\hypertarget{instructions-to-get-started}{%
+\section{Instructions to get started}\label{instructions-to-get-started}}
+
+In order to enable the macro, you will need to follow the steps below:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  You need a file with proper image paths. Find a sample data set here: \href{https://github.com/quarktetra/JMP_Discovery_2020_git_demo/raw/master/MET_OBJECTS_WITH_PATHS_simplified.jmp}{example table with images.jmp}, and open the file.
+\item
+  Run the JSL script. It will prompt the following UI:
+\end{enumerate}
+
+\hypertarget{column-selection}{%
+\subsection{Column Selection}\label{column-selection}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Image Path(s):} {[}Required{]} Select the columns with the image paths. If there are multiple columns, the script will stack them.
+\item
+  \textbf{Image Labels(s):} {[}Optional{]} There will be a table on top of each image. Select at most 3 columns to appear in the table
+\item
+  \textbf{Slide Label(s):} {[}Optional{]} Serves two purposes: i) Creates a slide title ii) Creates a new slide when title changes.
+\end{itemize}
+
+\hypertarget{export-options}{%
+\subsection{Export options}\label{export-options}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Selected Rows only}: If there are selected rows in your data, the script assumes you just want these rows in PPT. You can disable that by unchecking the box.
+\item
+  \textbf{PPT Layout}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{grid}: Creates a grid of images where number of columns and rows are selected by the dropboxes. Image sizes are computed automatically.
+  \item
+    \textbf{custom}: If user has a custom layout, it can be selected here. More on this in the \protect\hyperlink{customizing}{Customizing the tool section}.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{customizing-the-tool}{%
+\section{Customizing the tool }\label{customizing-the-tool}}
+
+The tool is 100\% data agnostic and highly customizable. Once installed, the Add-in will create a directory \textbf{C:\textbackslash IMAGETABLE\_TO\_PPT}. Locate that folder and find the following
+1. \textbf{export\_images\_options.jmp}: This file is all yours to change. UI will load the options from this file.
+
+\begin{table}
+
+\caption{\label{tab:unnamed-chunk-1}JMP  options}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+title & options(default)\\
+\hline
+Images Per Row & \{"4", "1", "2", "3", "5", "6", "7", "8"\}\\
+\hline
+Number of Rows & \{"2", "1"\}\\
+\hline
+Possible Image Label Columns & \{IMAGE\_TAG, Geography, Type, ERA\}\\
+\hline
+Possible Path Columns & \{IMAGE\_URL\_1, URL, IMAGE\_PATH\}\\
+\hline
+Possible Slide Label Columns & \{Medium\}\\
+\hline
+ppt layout & \{"grid","one\_big\_three\_small.jsl","one\_big\_two\_small"\}\\
+\hline
+Title Options & \{"Title Page(1);Lay out(1,3);Name; Date; Table Name"\}\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Images Per Row}: Sets the dropdown contents. Order is preserved, i.e., first item will be the selected one. Try to keep this smaller that 4 or so.
+\item
+  \emph{Number of Rows}: Sets the dropdown contents. Order is preserved. allowed values are : 1 and 2.
+\item
+  \emph{Possible Image Label Columns}: Best guesses for image label column. If they are found in the table, boxes will be populated automatically.
+\item
+  \emph{Possible Path Columns}: Best guesses for image path columns. If they are found in the table, boxes will be populated automatically.
+\item
+  \emph{Possible Slide Label Columns}: Best guesses for slide label columns. If they are found in the table, boxes will be populated automatically.
+\item
+  \emph{ppt layout}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    ``grid'' is defined by the Images Per Row and Number of Rows selections.
+  \item
+    You can add your custom layout into the list such as \textbf{one\_big\_three\_small.jsl}. This script needs to be saved under the folder \textbf{``\textbackslash ppt layout scripts''}. You can create your own template script or ask the developer to build one for you.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{what-could-go-wrong-with-ppt}{%
+\section{What could go wrong with PPT}\label{what-could-go-wrong-with-ppt}}
+
+You will probably need to make few changes in the PPT settings:
+
+\hypertarget{enable-vba-macros}{%
+\subsection{Enable VBA macros:}\label{enable-vba-macros}}
+
+File \textgreater\textgreater Options\textgreater\textgreater Trust Center\textgreater\textgreater Trust Center Settings\textgreater\textgreater Macro Settings\textgreater\textgreater Enable all macros
+
+\hypertarget{missing-library-error}{%
+\subsection{Missing Library Error:}\label{missing-library-error}}
+
+You may encounter this error related to missing libraries:
+
+Close the error window, and the VBA window (if open). In PPT View\textgreater\textgreater Macros, select the macro, and hit Edit to launch the VBA editor.
+
+In the VBA editor Tools \textgreater\textgreater{} References
+
+Look for a checked ``MISSING: Microsoft Excel XX Object Library'', and uncheck it. Close VBA and try again.
+
+\hypertarget{missing-object-error}{%
+\subsection{Missing object Error:}\label{missing-object-error}}
+
+You may encounter this error: Object required:
+
+This is most probably because the Excel Object Library is not checked. Close the error window, and the VBA window (if open). In PPT View\textgreater\textgreater Macros, select the macro, and hit Edit to launch the VBA editor.
+
+In the VBA editor Tools \textgreater\textgreater{} References
+
+Look for ``Microsoft Excel XX Object'', and check it. Close VBA and try again.
+
+\end{document}

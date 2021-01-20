@@ -1,0 +1,497 @@
+/* sets the slide with with respect the screen Width*/
+.slides{
+  width:90%!important;
+}
+
+
+.reveal section p {
+    /*font-weight: bold !important;*/
+    font-size: 20px !important;
+}
+
+.reveal section pre code {
+    font-size: 0.5em !important;
+}
+.reveal h1 { font-size: 1.0em;font-weight: bold; color: blue}
+.reveal h2 { font-size: 0.8em;font-weight: bold; color: blue}
+
+
+.reveal .slides>section {
+    top: 0 !important;
+  margin-top: 0 !important;
+}
+.reveal .slides>section>section {
+      top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.math.inline { font-size: 0.9em;}
+
+.reveal li
+{
+margin: 0.2em 0;
+}
+.box {
+  display: flex;
+  align-items: stretch;
+}
+
+
+.imgcont {
+    height:10.8%;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-left:2px;
+    margin-right:2px;
+    border-style: none;
+  }
+
+.imgcont::after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.imgcont:hover {
+  -webkit-transform: scale(1.4, 1.4);
+  transform: scale(1.4, 1.4);
+}
+.introbg div.slide-background.present {
+      opacity: 0.3;
+       filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.regularbg div.slide-background.present {
+      opacity: 0.3;
+       filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.venntooltip {
+  position: absolute;
+  text-align: center;
+  width: 128px;
+  height: 16px;
+  background: #333;
+  color: #ddd;
+  padding: 2px;
+  border: 0px;
+  border-radius: 8px;
+  opacity: 0;
+}
+.img {
+   border-style: none!important;
+}
+
+#dividerpage1{margin-top:250px!important;}
+#dividerpage2{margin-top:250px!important;}
+#dividerpage3{margin-top:250px!important;}
+#dividerpage4{margin-top:250px!important;}
+#dividerpage5{margin-top:250px!important;}
+.legend{height:200px!important;}
+
+.reveal .pbox{
+  border-style: solid;border-width: 3px;border-color:gray;
+  margin-top:5px;
+  text-align:left;padding-left:50px;padding-right:20px;padding-top:10px;padding-bottom:10px;
+  border-radius: 10px;
+  box-shadow: 10px 5px 5px gray;
+  width:96%;
+  margin-left:2%;
+  }
+  
+ caption{width:600px!important;font-size:14px!important} 
+
+.figure caption{margin-top:-30px!important;; background-color:red;}
+  
+.reveal .pbox li, p {
+  
+  font-size: 22px !important;
+  
+  }
+  
+  .reveal .pboxtp{
+  border-style: solid;border-width: 1px;
+  margin-top:5px;margin-bottom:15px;
+  text-align:center;padding-left:50px;padding-right:50px;padding-top:10px;padding-bottom:10px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px gray;
+  width:98.1% !important;
+
+  }
+
+  .reveal h1, h2{
+  border-style: solid;border-width: 1px;
+  margin-top:5px;margin-bottom:15px;
+  text-align:center;padding-left:50px;padding-right:50px;padding-top:10px;padding-bottom:10px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px gray;
+ ;margin-left:0.5%!important;margin-right:0.5%!important;
+  color:green ;
+  font-weight:bolder!important;
+  width:98.1%!important;
+  }
+  
+video{
+  border-style: solid;border-width: 3px;border-color:gray;
+  margin-top:20px!important;
+  text-align:left;padding-left:50px;padding-right:20px;padding-top:10px;padding-bottom:10px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px gray;
+  width:96%;
+  margin-left:2%;
+  }
+  
+    .reveal h6{
+  text-align:left;font-size:20px;
+  }
+ 
+.show {
+      -o-transition: opacity 3s;
+      -moz-transition: opacity 3s;
+      -webkit-transition: opacity 3s;
+      transition: opacity 3s;
+      opacity:1;
+      font-size:16px !important;
+      color:green;
+  }
+.hide {
+      opacity:0 ;
+  }
+.toggle-slider {
+	height: 50px;
+}
+.toggle-slider .off .noUi-handle {
+	border-color: red;
+}
+
+.btn--page {
+position: fixed;
+bottom: 24px;
+right: 4px;
+}
+
+.skills {
+/*text-align:center;*/
+}
+.skills__heading {
+/*text-align:left;*/
+}
+.skills__item {
+display: inline-block;
+padding: 12px;
+/* height:44px; */
+width: 46%;
+vertical-align: top;
+background: #444444;
+box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+color: #FFFFFF;
+margin-bottom: 24px;
+margin-right: 3%;
+border-radius: 2px;
+cursor: pointer;
+border-left: 4px solid #444444;
+transition: all 250ms ease-in-out;
+}
+.skills__item:hover {
+border-left: 4px solid #1FC1AD;
+transition: all 250ms ease-in-out;
+}
+@media screen and (min-width: 470px) {
+.skills__item {
+  width: 29%;
+}
+}
+@media screen and (min-width: 600px) {
+.skills__item {
+  width: 29%;
+}
+}
+.skills__info {
+position: fixed;
+background: #FFF;
+/*border:12px solid #1FC1AD;*/
+top: 0px;
+right: 0;
+bottom: 0;
+left: 0;
+padding: 32px 24px;
+font-size: 16px;
+line-height: 1.5;
+transform: scale(0);
+transition: all 250ms ease-in-out;
+}
+@media screen and (min-width: 600px) {
+.skills__info {
+  padding: 48px 96px;
+  font-size: 20px;
+  line-height: 1.75;
+}
+}
+
+.skills__info.is--visible {
+transform: scale(1);
+transition: all 250ms ease-in-out;
+z-index: 100;
+}
+
+.skills__dd {
+display: inline;
+width: 0;
+margin: 0;
+}
+
+.skills__dd.is--visible {
+width: auto;
+}
+
+.education ul, .experience ul {
+line-height: 2;
+list-style-type: initial;
+padding-left: 18px;
+}
+@media screen and (max-width: 600px) {
+.education ul, .experience ul {
+  line-height: 1.4;
+}
+}
+
+.experience__more {
+background: #ffffff;
+padding: 0px;
+position: relative;
+/*line-height: 1.5*/;
+/* border-left: 4px solid #FFF;*/
+max-height: 34px;
+min-height: 34px;
+overflow: hidden!important;
+transition: all 200ms ease-in-out;
+margin-top: 12px;
+margin-bottom: -2px !important;
+
+}
+.experience__more h4, .experience__more p {
+transform: scale(0);
+transition: all 200ms ease-in-out;
+}
+.experience__more h4 {
+display: inline-block;
+max-width: 70%;
+}
+
+.experience__more.is--expanded {
+background: #f1f1f1;
+/* border-left: 4px solid #1FC1AD;*/
+max-height: 550px!important;
+overflow-y:auto!important;
+transition: all 200ms ease-in-out;
+}
+.experience__more.is--expanded h4, .experience__more.is--expanded p {
+transform: scale(1);
+transition: all 200ms ease-in-out;
+}
+
+.heading--section {
+background: #f1f1f1;
+border-left: 6px solid #1FC1AD;
+padding: 6px;
+}
+
+.btn--more.is--visible {
+transform: scale(1);
+transition: all 250ms ease-in-out;
+}
+
+.btn--more {
+transform: scale(0);
+width:100%;
+display: block;
+position: absolute;
+top: 12px;
+outline: none;
+border: 1px solid #1FC1AD;
+background: #FFF; ;
+color: black;
+border-radius: 1px;
+padding: 6px 12px;
+font-size: 12px;
+transition: all 100ms ease-in-out;
+margin-bottom: 12px;
+
+}
+.btn--more:hover {
+background: #1FC1AD;
+color: black;
+transition: all 200ms ease-in-out;
+}
+.btn--close {
+position: fixed;
+top: 24px;
+background: none;
+border: none;
+right: 24px;
+font-size: 32px;
+}
+
+.location::before {
+color: #1FC1AD;
+}
+
+.cn {
+width: 88px;
+position: absolute;
+bottom: -100%;
+left: 84px;
+transition: all 250ms ease-in-out;
+}
+
+.cn.is--visible {
+bottom: 0%;
+transition: all 250ms ease-in-out;
+}
+
+.color-change {
+background: #444;
+transition: all 250ms ease-in-out;
+}
+
+.sourceCode{
+  font-size:12px important;
+line-height: 120% !important;
+max-height:10000px!important;
+  overflow-y:hidden !important;
+  overflow-x:hidden!important;
+}
+
+
+.codecontainer{
+  overflow-y:hidden !important;
+  overflow-x:hidden!important;
+}
+
+.grViz {  height: 100%;
+width:800px!important;
+margin: 0 auto!important;
+}
+
+
+iframe {
+    display: block;       /* iframes are inline by default */
+    background: white;
+    border: none;         /* Reset default border */
+    height: 700px;        /* Viewport-relative units */
+    width: 100vw;
+    margin-left:2% !important;
+}
+
+#refs{
+  font-size: 30px !important;
+  margin-left:10px!important;
+  padding-left:10px!important;
+  border-style: solid;border-width: 3px;border-color:gray;
+  margin-top:5px;
+  text-align:left;padding-left:50px;padding-right:20px;padding-top:10px;padding-bottom:10px;
+  border-radius: 10px;
+  box-shadow: 10px 5px 5px gray;
+  width:95.5%;
+}
+
+#searchinput{
+  width:100px;height:20px;font-size:12px!important;
+}
+
+.clipperbutton{
+  font-size:12px!important;
+}
+
+.my_vspacer { width:100%; height:20px; }
+.my_vspacerb { width:100%; height:60px; }
+table{font-size:12px!important;}
+
+#dividerpage1{margin-top:250px!important;}
+
+.fbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.reveal .slide-menu-items{margin-left:5px!important;}
+.reveal .slide-menu-panel ul li:first-child { ;font-weight:bolder!important;}
+
+.reveal .slide-menu-item{
+  font-size:14px !important; 
+  margin-left:20px!important;
+}
+.reveal .slide-menu-item-vertical{
+  font-size:14px !important; 
+   margin-left:30px!important;
+}
+
+.reveal .slide-menu-item:hover{
+background-color:#ffd17a!important;
+}
+.reveal .slide-menu-item-vertical:hover{
+background-color:#ffd17a!important;
+
+}
+
+
+.reveal .slide-menu-panel{padding-right:10px!important;margin-right:10px!important;;margin-left:-12px!important;}
+
+.reveal .slide-menu-toolbar-label{
+  font-size:16px !important;   
+}
+
+.reveal .progress{height:15px!important;background-color:gray!important}
+.reveal .progress span{background-color:green!important}
+.slide-number{font-size:18px!important;margin-bottom:41px!important;margin-right:39px!important;width:38px!important;text-align:center!important;height:38px!important; padding-top:10px!important;}

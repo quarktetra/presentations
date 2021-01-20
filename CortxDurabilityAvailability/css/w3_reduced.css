@@ -1,0 +1,22 @@
+.w3-container{
+  border-bottom-right-radius: 8px; 
+  background-color:#F0F0F0;
+ border-color:rgb(255, 255, 255)!important;
+padding:0.01em ;
+border-bottom-left-radius: 8px;
+box-shadow: -48px 48px 48px 0px rgba(0, 0, 0, 0.1);
+}
+
+.w3-button{border:none;display:inline-block;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.w3-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}   
+
+
+.w3-button:hover{background-color:#F0F0F0!important;}
+
+.w3-button.w3-green:hover{background-color:#4CAF50!important}
+
+
+.w3-green{color:black!important;background-color:#4CAF50!important;}
+
+
+

@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>jsl_ecosystem.utf8</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="jsl_ecosystem_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="jsl_ecosystem_files/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="style.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <link href="jsl_ecosystem_files/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="jsl_ecosystem_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+    <script src="jsl_ecosystem_files/kePrint-0.0.1/kePrint.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+
+<section class="slide level2">
+
+<script src="jsfiles/jquery-1.11.3/jquery.min.js"></script>
+<script src="jsfiles/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.js"></script>
+<p><link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.css" rel="stylesheet" type="text/css" /></p>
+<section id="titlepage" data-background="sg_full.jpg" data-state="introbg" class="pboxtp">
+<div style="margin-top:100px">
+<h5>
+<b> <font color="Blue">Building a JSL Ecosystem </font> </b>
+</h5>
+<h5>
+<b> <font color="Blue"> GIT, Distribution, VBA, crash log collection, Unit-test, and more. . . </font> </b>
+</h5>
+<br>
+<h5>
+<b> <font color="#0000A0"> Serkay Ölmez &amp; Fred Zellinger <br> Seagate Technology </font> </b>
+</h5>
+<h5>
+<b> <font color="green"> JMP Discovery Summit, Nov, 2020</font> </b>
+</h5>
+</div>
+<p><link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"> <link href="jsfiles/component-custom-switch.min.css" rel="stylesheet"></p>
+<div id="infotext" style=";margin-top:20px;margin-bottom:-0px; font-size: 20px;">
+<p><span style="color:orange"><b>Firefox</b> </span> is suggested for best experience.</span> <br><br />
+Press <span style="color:orange"><b>F11</b> </span> to enter/exit full screen <br> Ctrl +/- to fit the content into the browser <br> Use arrow keys or click the buttons on the right bottom to navigate the slides <br> Note the table of contents button on the left bottom<br></p>
+</div>
+</section>
+<script id="rendered-js">
+//JS for buttons to show/hide content-mostly for codes
+$(document).ready(function () {
+        $(".js--btn-more").click(function () {
+        $(this).parent().toggleClass("is--expanded");
+        $(this).toggleClass("is--visible");
+        $(this).next().toggleClass("is--visible");
+    
+        });
+        
+        $(".js--btn-less").click(function () {
+        $(this).parent().toggleClass("is--expanded");
+        $(this).toggleClass("is--visible");
+        //console.log(this.innerText)
+        //console.log(this.previousElementSibling.innerText)
+        
+        this.previousElementSibling.classList.add("is--visible");
+        });
+    });
+
+</script>
+<script>
+  
+  function myFunction(inputid) {
+    const copyText = document.getElementById(inputid).textContent;
+    const textArea = document.createElement('textarea');
+    textArea.textContent = copyText;
+    document.body.append(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.getElementsByTagName("textarea")[0].remove();
+    
+    var div2 = document.getElementById(inputid.concat("copied"));
+    div2.className = "show";div2.style = "block";
+
+    setTimeout(function () {div2.className = 'hide';div2.style = "none"}, 1000);
+    
+    
+  }
+</script>
+</section>
+<section id="outline" class="title-slide slide level1" data-background="sg_bg.png" data-state="regularbg"><h1>Outline</h1><script src="https://unpkg.com/mathjs@6.2.2/dist/math.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<div class="pbox fragment">
+<ul>
+<li>
+Introduction
+<ul>
+<font color="gray">
+<li>
+A brief history of our JSL experience
+</li>
+</font>
+</ul>
+</li>
+<li class="fragment">
+Managing JSL and auxiliary scripts<br />
+
+<ul>
+<font color="gray">
+<li>
+GIT: source code control and distribution
+</li>
+</font>
+</ul>
+</li>
+<li class="fragment">
+Closed loop development
+<ul>
+<font color="gray">
+<li>
+Develop, test, deploy and monitor
+</li>
+</font> <font color="gray">
+<li>
+Automated crash log collection and bug tickets
+</li>
+</font>
+</ul>
+</li>
+<li class="fragment">
+Closing Notes
+<ul>
+<font color="gray">
+<li>
+Lessons learned and best practices
+</li>
+</font>
+</ul>
+</li>
+<li class="fragment">
+Appendix
+<ul>
+<font color="gray">
+<li>
+Nuts and Bolts
+</li>
+</font>
+</ul>
+</li>
+</ul>
+</div></section>
+<section id="timelineslide" class="title-slide slide level1" data-background="sg_bg.png" data-state="regularbg"><h1>A brief history of our JSL experience</h1><!--  Inserting iframe here directly causes rendering issues. The page needs to load first. JavaScript will do a surgical placement here. Very cool huh! --></section>
+<section id="gitslide" class="title-slide slide level1" data-background="sg_bg.png" data-state="regularbg" data-state="regularbg"><h1>Enabling Git</h1><div class="pbox fragment">
+<ul>
+<li>
+Git is a distributed version-control system for tracking changes in source code during software development <span class="citation" data-cites="wikiGit">[1]</span>.
+</li>
+<li class="fragment">
+There are various options to create GIT environment on company internal servers.
+</li>
+<li class="fragment">
+For distributing JSL scripts, we use <span title="GitLab is a web-based DevOps lifecycle tool that provides a Git-repository manager providing wiki, issue-tracking and continuous integration/continuous deployment pipeline features, using an open-source license, developed by GitLab Inc." style="text-decoration:underline"> GITLAB </span> <span class="citation" data-cites="gitlab">[2]</span>.
+</li>
+</ul>
+<div class="experience__more fragment" style=";;margin-bottom:20px;">
+<button type="button" class="btn--more js--btn-more is--visible" style="margin-top:-10px;margin-bottom:10px">
+Show useful links for getting started
+</button>
+<button type="button" class="btn--more js--btn-less" style="margin-top:-10px;margin-bottom:50px">
+Hide
+</button>
+<div id="git" style="margin-top:35px;;">
+<p>
+<p><a href="https://git-scm.com/doc">Git Fundamentals: </a> References on GIT. <br> <a href="https://about.gitlab.com/install/">Install self-managed GitLab: </a> Multiple options to choose from, including free ones. <br> <a href="https://tortoisegit.org/">TortoiseGit: </a> A Git revision control client with GUI, implemented as a Windows shell extension.<br> <a href="https://desktop.github.com/">GitHub Desktop: </a> Another Git revision control client with GUI for Windows.</p>
+</p>
+</div>
+</div>
+</div>
+<div class="pbox fragment">
+
+<div id="gitflowdiv">
+
+</div>
+<ul>
+<li class="fragment">
+Developers have copies of JSLs scripts in their local machine.
+<ul>
+<li>
+<font color="gray"> Developer pushes updates to the remote repo via SSH/HTTPS. </font>
+</li>
+</ul>
+</li>
+<li class="fragment">
+Remote Repo takes in codes from developers. This also serves as a back up system.
+<ul>
+<li>
+<font color="gray"> It also passes the codes to an HTTP server. </font>
+</li>
+</ul>
+</li>
+<li class="fragment">
+Files in the repo are served to users via HTTP server, like Apache HTTPd.
+<ul>
+<li>
+<font color="gray"> Passing the communication through the server enables lots of features such as log collection. </font>
+</li>
+</ul>
+</li>
+<li class="fragment">
+Users load JSLs via include/load commands.
+<ul>
+<li>
+<font color="gray"> As an addin launches, it retrieves the code from the repository via HTTP. </font>
+</li>
+</ul>
+</li>
+</ul>
+</div></section>
+<section id="gitdemoslide" class="title-slide slide level1" data-background="sg_bg.png" data-state="regularbg" data-state="regularbg"><h1>Enabling Git: Hello World</h1><div class="pbox fragment">
+<p style=";margin-top:-5px;margin-bottom:-5px">
+This is the simplest example of loading scripts from a GITHUB <span class="citation" data-cites="githello gitcallhello">[3], [4]</span>.
+</p>
+<div class="fragment">
+<div class="experience__more" style="margin-bottom:20px;margin-top:5px">
+<button type="button" class="btn--more js--btn-more is--visible" style="margin-top:-10px;margin-bottom:10px">
+Show the code in the repo (Maintained by developer)
+</button>
+<button type="button" class="btn--more js--btn-less" style="margin-top:-10px;margin-bottom:10px">
+Hide
+</button>
+<div style="margin-top:0px;">
+<div class="clippercontainer" style=";margin-top:15px;margin-left:42px;margin-bottom:-55px;">
+<div style="display: inline-block; margin-left:45%">
+<div class="clipperbutton">
+<button  onclick="myFunction('d_jslcode_hello')">Copy to clipboard</button>
+</div>
+</div>
+<div style="display: inline-block;">
+<div id="d_jslcode_hellocopied" class="clippernotification" style="display:none">
+Copied
+</div>
+</div>
+</div>
+<div id="d_jslcode_hello" style="margin-bottom:-45px;width:100%">
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">/</span><span class="er">/</span>JMP Discovery Summit, <span class="fl">2020.</span> A script that lives <span class="cf">in</span> GITHUB.</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span>This script is maintained by the developer. Changes are pushed into the repo.</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a> </span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">dialog</span>(<span class="st">&quot;Hello World&quot;</span>);</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="experience__more" style=";margin-bottom:20px;margin-top:0px">
+<button type="button" class="btn--more js--btn-more is--visible" style="margin-top:-10px;margin-bottom:10px">
+Show the User Code (Static)
+</button>
+<button type="button" class="btn--more js--btn-less" style="margin-top:-10px;margin-bottom:-55px">
+Hide
+</button>
+<div style="margin-top:0px">
+<div class="clippercontainer" style=";margin-top:15px;margin-left:42px;margin-bottom:-55px;">
+<div style="display: inline-block; margin-left:45%">
+<div class="clipperbutton">
+<button  onclick="myFunction('s_jslcode_hello')">Copy to clipboard</button>
+</div>
+</div>
+<div style="display: inline-block;">
+<div id="s_jslcode_hellocopied" class="clippernotification" style="display:none">
+Copied
+</div>
+</div>
+</div>
+<div id="s_jslcode_hello" style="margin-bottom:-5px;width:100%">
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="op">/</span><span class="er">/</span>JMP Discovery Summit, <span class="fl">2020.</span> Calling a script that lives <span class="cf">in</span> GITHUB.</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span>This is a static script distributed to <span class="kw">users</span> (possibly with addins.)</span>
+<span id="cb2-3"><a href="#cb2-3"></a>url=<span class="st">&quot;https://raw.githubusercontent.com/quarktetra/JMP_Discovery_2020_git_demo/master/hello.jsl&quot;</span><span class="op">||</span><span class="st">&quot;?q=&quot;</span><span class="op">||</span><span class="kw">hex</span>(<span class="kw">Floor</span>(<span class="kw">RandomUniform</span>(<span class="dv">2</span><span class="op">^</span><span class="dv">64</span>)));</span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="kw">Eval</span>(<span class="kw">Parse</span>(<span class="kw">LoadTextFile</span>(url)));</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="op">/</span><span class="er">/</span>The random number attached to the link enforces reload everytime rather than using cache</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span>With GitHub public, this can take up to few mins.</span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span><span class="cf">if</span> refresh fails, restrating JMP will enforce the refresh.</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<video class="fragment" width="98%" height="450" controls>
+<source src="hello_git.mp4" type="video/mp4">
+<p>Your browser does not support the video tag. </video></p></section>
+<section><section id="pptslide" class="title-slide slide level1" data-background="sg_bg.png" data-state="regularbg"><h1>Integration with PowerPoint</h1><div class="pbox fragment">
+<p style=";margin-top:-5px;margin-bottom:-5px">
+Many people rely on PPT reports which requires to couple JSL with PPT. JSL can launch PPT macros.
+</p>
+<div id="pptflowdiv" style="margin-top:-5px;width:50%;margin-left:25%; height: 80px;">
+
+</div>
+<div class="experience__more" style=";;margin-bottom:20px;margin-top:5px">
+<button type="button" class="btn--more js--btn-more is--visible" style="margin-top:-10px;margin-bottom:10px">
+Show JSL code to launch PPT
+</button>
+<button type="button" class="btn--more js--btn-less" style="margin-top:-10px;margin-bottom:50px">
+Hide
+</button>
+<div style="margin-top:0px;">
+<div class="clippercontainer" style=";margin-top:15px;margin-left:42px;margin-bottom:-55px;">
+<div style="display: inline-block; margin-left:45%">
+<div class="clipperbutton">
+<button  onclick="myFunction('launchppt')">Copy to clipboard</button>
+</div>
+</div>
+<div style="display: inline-block;">
+<div id="launchpptcopied" class="clippernotification" style="display:none">
+Copied to clipboard
+</div>
+</div>
+</div>
+<div id="launchppt" style="margin-bottom:-45px;width:100%">
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>launchPPT =<span class="st"> </span><span class="kw">Function</span>( {addin_path_,ppt_file_, macro_},<span class="op">/</span><span class="er">/</span><span class="st"> </span>trigger the PPT with the macro</span>
+<span id="cb3-2"><a href="#cb3-2"></a>    <span class="dt">pptexefound=</span><span class="dv">0</span>;</span>
+<span id="cb3-3"><a href="#cb3-3"></a>    <span class="cf">for</span>(<span class="dt">temi=</span><span class="dv">11</span>,temi<span class="op">&lt;=</span><span class="dv">25</span>,temi<span class="op">++</span>, <span class="op">/</span><span class="er">/</span><span class="st"> </span>search <span class="cf">for</span> POWERPNT.EXE</span>
+<span id="cb3-4"><a href="#cb3-4"></a>        <span class="dt">temppath=</span><span class="st">&quot;C:\Program Files (x86)\Microsoft Office\Office&quot;</span><span class="op">||</span><span class="kw">char</span>(temi)<span class="op">||</span><span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">;</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="st">        templist={};templist = Files In Directory( temppath);</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="st">        if(contains(templist,&quot;</span>POWERPNT.EXE<span class="st">&quot;)&gt;0,temi=100;pptexefound=1   );</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="st">    );</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="st">    if(pptexefound==0,  //some people may have PPT under  C:\Program Files not &quot;</span>C<span class="op">:</span>\Program <span class="kw">Files</span> (x86)</span>
+<span id="cb3-9"><a href="#cb3-9"></a>        <span class="cf">for</span>(<span class="dt">temi=</span><span class="dv">11</span>,temi<span class="op">&lt;=</span><span class="dv">25</span>,temi<span class="op">++</span>,</span>
+<span id="cb3-10"><a href="#cb3-10"></a>            <span class="dt">temppath=</span><span class="st">&quot;C:\Program Files\Microsoft Office\Office&quot;</span><span class="op">||</span><span class="kw">char</span>(temi)<span class="op">||</span><span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">;</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="st">            templist={};templist = Files In Directory( temppath);   </span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="st">            if(contains(templist,&quot;</span>POWERPNT.EXE<span class="st">&quot;)&gt;0,temi=100;pptexefound=1   );</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="st">        );          </span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="st">    );</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="st">    if(pptexefound==0,// cannot find POWERPNT.EXE ? Notify the user. It can be run manually</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="st">      dialog(line up(1,&quot;</span>Could not locate POWERPNT.EXE, You will need to run PPT macro manually<span class="st">&quot;,&quot;</span>PPT is <span class="op">@</span><span class="st">&quot;||pathin, &quot;</span>Go to View<span class="op">-</span>-&gt;Macros<span class="op">-</span>-&gt;import_images<span class="op">-</span>-&gt;Run<span class="st">&quot;     ))</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="st">    );</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="st">    if(pptexefound==1,// if POWERPNT.EXE is located, create a bat file and run it.</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="st">        Save Text File( main_dir|| &quot;</span>launchPPT.bat<span class="st">&quot;,&quot;</span>\<span class="op">!</span><span class="st">&quot;&quot;</span><span class="op">||</span>temppath<span class="op">||</span><span class="st">&quot;POWERPNT.exe\!&quot;</span> <span class="op">/</span>M \<span class="op">!</span><span class="st">&quot;&quot;</span><span class="op">||</span>addin_path_<span class="op">||</span>ppt_file_<span class="op">||</span><span class="st">&quot;\!&quot;</span> \<span class="op">!</span><span class="st">&quot;&quot;</span><span class="op">||</span>macro_<span class="op">||</span><span class="st">&quot;\!&quot;</span>  \<span class="op">!</span>nexit<span class="st">&quot; );</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="st">        Open( main_dir || &quot;</span>launchPPT.bat<span class="st">&quot; );</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="st">    );</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="st">);</span></span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pbox fragment">
+<p>
+VBA codes also require source control. Store the full PPT in repo and download it automatically up on change via JMP HTTP Request. The creation date of the local PPT file can be used to check if there is a new PPT in repo.
+</p>
+<div id="downloadpptflowdiv" style="margin-top:0px;width:100%; height: 80px;">
+
+</div>
+<div class="experience__more" style=";margin-bottom:20px;margin-top:15px">
+<button type="button" class="btn--more js--btn-more is--visible" style="margin-top:-10px;margin-bottom:10px">
+Show the JSL code to download PPT files
+</button>
+<button type="button" class="btn--more js--btn-less" style="margin-top:-10px;margin-bottom:-55px">
+Hide
+</button>
+<div id="check_for_ppt" style="margin-top:0px;margin-bottom:-45px">
+<div class="clippercontainer" style=";margin-top:15px;margin-left:42px;margin-bottom:-55px;">
+<div style="display: inline-block; margin-left:45%""><div class="clipperbutton">  <button  onclick="myFunction('check_for_pptcode')">Copy to clipboard</button> </div> </div>
+<div style="display: inline-block;">
+<div id="check_for_pptcodecopied" class="clippernotification" style="display:none">
+Copied to clipboard
+</div>
+</div>
+</div>
+<div id="check_for_pptcode" style="margin-bottom:-5px;width:100%">
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>check_for_ppt =<span class="st"> </span><span class="kw">Function</span>( {saved_ppt_path_,source_ppt_local_path_,newest_ppt_date_}, <span class="op">/</span><span class="er">/</span>using the creation date to check <span class="cf">if</span> the PPT needs to be updated.</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="cf">if</span>(<span class="op">!</span>File <span class="kw">Exists</span>(saved_ppt_path_),<span class="dt">request =</span> New HTTP <span class="kw">Request</span>(<span class="kw">URL</span>(source_ppt_local_path_), <span class="kw">Method</span>( <span class="st">&quot;Get&quot;</span> ));request<span class="op">&lt;</span><span class="er">&lt;</span><span class="kw">download</span>(saved_ppt_path_);,</span>
+<span id="cb4-3"><a href="#cb4-3"></a>        <span class="kw">try</span>(<span class="dt">timestamp =</span> Creation <span class="kw">Date</span>(saved_ppt_path_);;</span>
+<span id="cb4-4"><a href="#cb4-4"></a>            <span class="dt">delta=</span>newest_ppt_date_<span class="op">-</span>timestamp;</span>
+<span id="cb4-5"><a href="#cb4-5"></a>            <span class="cf">if</span>(delta<span class="op">&gt;</span><span class="dv">0</span>, <span class="kw">try</span>(Delete <span class="kw">File</span>(saved_ppt_path_);</span>
+<span id="cb4-6"><a href="#cb4-6"></a>            <span class="dt">request =</span> New HTTP <span class="kw">Request</span>(<span class="kw">URL</span>(source_ppt_local_path_), <span class="kw">Method</span>( <span class="st">&quot;Get&quot;</span> ));</span>
+<span id="cb4-7"><a href="#cb4-7"></a>            request<span class="op">&lt;</span><span class="er">&lt;</span><span class="kw">download</span>(saved_ppt_path_)));</span>
+<span id="cb4-8"><a href="#cb4-8"></a>        )</span>
+<span id="cb4-9"><a href="#cb4-9"></a>    )</span>
+<span id="cb4-10"><a href="#cb4-10"></a>);</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pbox fragment">
+<p>
+<b> Key JSL commands: </b> <br> <i> Creation Date(saved_ppt_path_); </i> <i> request = New HTTP Request(URL(pathtorepoppt), Method( “Get” )); request&lt;&lt;download(pathtodestination);</i> <br>
+<p>
+<b> <font color="green"> ∴ JSL can be seamlessly coupled to PowerPoint while preserving source control requirements. </font> </b>
+</p>
+</p>
+</div></section><section id="pptdemoslide" class="slide level2" data-background="sg_bg.png" data-state="regularbg">
+<h2>PPT demo</h2>
+<div class="pbox fragment">
+<p style=";margin-top:-5px;margin-bottom:-5px">
+This is a complete example of coupling JSL to PPT <span class="citation" data-cites="demoGITHUB">[5]</span>: Create PPT from image paths listed in a JMP table <span class="citation" data-cites="imagetools">[6]</span>.
+</p>
+<div class="fragment">
+<div class="experience__more" style=";margin-bottom:20px;margin-top:5px">
+<button type="button" class="btn--more js--btn-more is--visible" style="margin-top:-10px;margin-bottom:10px">
+Show the code in the repo (Maintained by developer)
+</button>
+<button type="button" class="btn--more js--btn-less" style="margin-top:-10px;margin-bottom:10px">
+Hide
+</button>
+<div style="margin-top:0px;">
+<div class="clippercontainer" style=";margin-top:15px;margin-left:42px;margin-bottom:-55px;">
+<div style="display: inline-block; margin-left:45%">
+<div class="clipperbutton">
+<button  onclick="myFunction('d_jslcode_vba')">Copy to clipboard</button>
+</div>
+</div>
+<div style="display: inline-block;">
+<div id="d_jslcode_vbacopied" class="clippernotification" style="display:none">
+Copied
+</div>
+</div>
+</div>
+<div id="d_jslcode_vba" style="margin-bottom:-45px;width:100%">
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span>A script to export images to PPT. To be coupled with a PPT VBA macro. </span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span>Prepared <span class="cf">for</span> JMP Discovery Summit</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span>some of the functions require proper GIT set up, see the presentation from Serkay and Fred <span class="cf">in</span> the Discovery summit</span>
+<span id="cb5-4"><a href="#cb5-4"></a>names default to <span class="kw">here</span>(<span class="dv">1</span>);</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="op">/</span><span class="er">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>get_user_id =<span class="st"> </span><span class="kw">Function</span>( {},     <span class="op">/</span><span class="er">/</span><span class="st"> </span>get user id from the environment</span>
+<span id="cb5-7"><a href="#cb5-7"></a>    <span class="dt">dll =</span> Load <span class="kw">DLL</span>( <span class="st">&quot;mpr.dll&quot;</span> );</span>
+<span id="cb5-8"><a href="#cb5-8"></a>    dll <span class="op">&lt;</span><span class="er">&lt;</span><span class="st"> </span><span class="kw">DeclareFunction</span>(<span class="st">&quot;WNetGetUserA&quot;</span>,</span>
+<span id="cb5-9"><a href="#cb5-9"></a>    <span class="kw">Convention</span>( STDCALL ), <span class="kw">Alias</span> ( <span class="st">&quot;GetUserName&quot;</span> ), <span class="kw">Arg</span>( UInt8, <span class="st">&quot;format&quot;</span>, input ), <span class="kw">Arg</span>( AnsiString, <span class="st">&quot;username&quot;</span>, output ),</span>
+<span id="cb5-10"><a href="#cb5-10"></a>    <span class="kw">Arg</span>( UInt64, <span class="st">&quot;length&quot;</span>, update ),<span class="kw">Returns</span>( UInt32 ));</span>
+<span id="cb5-11"><a href="#cb5-11"></a>    <span class="dt">username =</span> <span class="st">&quot;                                                  &quot;</span>;;<span class="dt">unlen =</span> <span class="kw">length</span>(username);<span class="dt">result =</span> dll <span class="op">&lt;</span><span class="er">&lt;</span><span class="st"> </span><span class="kw">GetUserName</span>(<span class="dv">0</span>, username, unlen);dll <span class="op">&lt;</span><span class="er">&lt;</span><span class="st"> </span><span class="kw">UnloadDLL</span>();</span>
+<span id="cb5-12"><a href="#cb5-12"></a>    username;</span>
+<span id="cb5-13"><a href="#cb5-13"></a>);</span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="op">/</span><span class="er">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a>check_for_file =<span class="st"> </span><span class="kw">Function</span>( {saved_file_path_,source_ppt_local_path_,newest_ppt_date_}, <span class="op">/</span><span class="er">/</span>using the creation date to check <span class="cf">if</span> the PPT needs to be updated.</span>
+<span id="cb5-16"><a href="#cb5-16"></a>    <span class="cf">if</span>(<span class="op">!</span>File <span class="kw">Exists</span>(saved_file_path_),<span class="dt">request =</span> New HTTP <span class="kw">Request</span>(<span class="kw">URL</span>(source_ppt_local_path_), <span class="kw">Method</span>( <span class="st">&quot;Get&quot;</span> ));request<span class="op">&lt;</span><span class="er">&lt;</span><span class="kw">download</span>(saved_file_path_);,</span>
+<span id="cb5-17"><a href="#cb5-17"></a>        <span class="kw">try</span>(<span class="dt">timestamp =</span> Creation <span class="kw">Date</span>(saved_file_path_);;</span>
+<span id="cb5-18"><a href="#cb5-18"></a>            <span class="dt">delta=</span>newest_ppt_date_<span class="op">-</span>timestamp;</span>
+<span id="cb5-19"><a href="#cb5-19"></a>            <span class="cf">if</span>(delta<span class="op">&gt;</span><span class="dv">0</span>, <span class="kw">try</span>(Delete <span class="kw">File</span>(saved_file_path_);<span class="dt">request =</span> New HTTP <span class="kw">Request</span>(<span class="kw">URL</span>(source_ppt_local_path_), <span class="kw">Method</span>( <span class="st">&quot;Get&quot;</span> ));request<span class="op">&lt;</span><span class="er">&lt;</span><span class="kw">download</span>(saved_file_path_)));</span>
+<span id="cb5-20"><a href="#cb5-20"></a>            )</span>
+<span id="cb5-21"><a href="#cb5-21"></a>    )</span>
+<span id="cb5-22"><a href="#cb5-22"></a>);</span>
+<span id="cb5-23"><a href="#cb5-23"></a><span class="op">/</span><span class="er">/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span></span>
+<span id="cb5-24"><a href="#cb5-24"></a>get_image_options=<span class="cf">function</span>({default_setup,tablename,path}, <span class="op">/</span><span class="er">/</span><span class="st"> </span><span class="cf">if</span> image settings file does not exist, create one with default info <span class="dt">path=</span>addin_path</span>
+<span id="cb5-25"><a href="#cb5-25"></a>    <span class="dt">add_this=</span><span class="cf">function</span>({title_,opt_},dto<span class="op">&lt;</span><span class="er">&lt;</span>add <span class="kw">rows</span>(<span class="dv">1</span>);<span class="kw">column</span>(<span class="st">&quot;title&quot;</span>)[<span class="kw">nrow</span>(dto)]=<span class="kw">char</span>(title_);<span class="kw">column</span>(<span class="st">&quot;options(default)&quot;</span>)[<span class="kw">nrow</span>(dto)]=<span class="kw">char</span>(opt_));</span>
+<span id="cb5-26"><a href="#cb5-26"></a>    <span class="dt">default_setup_keys=</span>default_setup<span class="op">&lt;</span><span class="er">&lt;</span>Get Keys;</span>
+<span id="cb5-27"><a href="#cb5-27"></a></span>
+<span id="cb5-28"><a href="#cb5-28"></a>    <span class="kw">try</span>(<span class="dt">dto=</span><span class="kw">open</span>(addin_path<span class="op">||</span>tablename);</span>
+<span id="cb5-29"><a href="#cb5-29"></a>        <span class="dt">wopt=</span>Associative <span class="kw">Array</span>();<span class="cf">for</span>(<span class="dt">wo=</span><span class="dv">1</span>,wo<span class="op">&lt;=</span><span class="kw">nrow</span>(dto),wo<span class="op">++</span>,wopt[<span class="kw">column</span>(<span class="st">&quot;title&quot;</span>)[wo]]=<span class="st"> </span><span class="kw">column</span>(<span class="st">&quot;options(default)&quot;</span>)[wo]);</span>
+<span id="cb5-30"><a href="#cb5-30"></a>        <span class="dt">wopt_keys=</span>wopt<span class="op">&lt;</span><span class="er">&lt;</span>get keys;<span class="dt">missing=</span><span class="kw">associativearray</span>(default_setup_keys);<span class="dt">current=</span><span class="kw">associativearray</span>(wopt_keys);missing<span class="op">&lt;</span><span class="er">&lt;</span><span class="kw">remove</span>(current);<span class="dt">missing_keys=</span>missing<span class="op">&lt;</span><span class="er">&lt;</span>Get Keys;</span>
+<span id="cb5-31"><a href="#cb5-31"></a>        <span class="cf">for</span>(<span class="dt">mm=</span><span class="dv">1</span>,mm<span class="op">&lt;=</span><span class="kw">length</span>(missing_keys),mm<span class="op">++</span>,<span class="kw">add_this</span>(missing_keys[mm],default_setup[missing_keys[mm]]));dto<span class="op">&lt;</span><span class="er">&lt;</span><span class="kw">save</span>(path<span class="op">||</span>tablename);</span>
+<span id="cb5-32"><a href="#cb5-32"></a>        ,</span>
+<span id="cb5-33"><a href="#cb5-33"></a></span>
+<span id="cb5-34"><a href="#cb5-34"></a>        <span class="dt">dto=</span>new <span class="kw">table</span>(tablename);dto<span class="op">&lt;</span><span class="er">&lt;</span>new <span class="kw">column</span>(<span class="st">&quot;title&quot;</span>);dto<span class="op">&lt;</span><span class="er">&lt;</span>new <span class="kw">column</span>(<span class="st">&quot;options(default)&quot;</span>);</span>
+<span id="cb5-35"><a href="#cb5-35"></a>        <span class="cf">for</span>(<span class="dt">mm=</span><span class="dv">1</span>,mm<span class="op">&lt;=</span><span class="kw">length</span>(default_setup_keys),mm<span class="op">++</span>,<span class="kw">add_this</span>(default_setup_keys[mm],default_setup[default_setup_keys[mm]]));dto<span class="op">&lt;</span><span class="er">&lt;</span><span class="kw">save</span>(path<span class="op">||</span>tablename);</span>
+<span id="cb5-36"><a href="#cb5-36"></a>    );</span>
+<span id="cb5-37"><a href="#cb5-37"></a></span>
+<span id="cb5-38"><a href="#cb5-38"></a>    <span class="dt">wopt=</span>Associative <span class="kw">Array</span>();<span class="cf">for</span>(<span class="dt">wo=</span><span class="dv">1</span>,wo<span class="op">&lt;=</span><span class="kw">nrow</span>(dto),wo<span class="op">++</span>,wopt[<span class="kw">column</span>(<span class="st">&quot;title&quot;</span>)[wo]]=<span class="st"> </span><span class="kw">column</span>(<span class="st">&quot;options(default)&quot;</span>)[wo]); dto<span class="op">&lt;</span><span class="er">&lt;</span>close <span class="kw">window</span>();</span>
+<span id="cb5-39"><a href="#cb5-39"></a>    wopt;</span>
+<span id="cb5-40"><a href="#cb5-40"></a>);</span>
+<span id="cb5-41"><a href="#cb5-41"></a><span class="op">/</span><span class="er">////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span></span>
+<span id="cb5-42"><a href="#cb5-42"></a>launchPPT =<span class="st"> </span><span class="kw">Function</span>( {addin_path_,ppt_file_, macro_},<span class="op">/</span><span class="er">/</span><span class="st"> </span>trigger the PPT with the macro</span>
+<span id="cb5-43"><a href="#cb5-43"></a>    <span class="dt">pptexefound=</span><span class="dv">0</span>;</span>
+<span id="cb5-44"><a href="#cb5-44"></a>    <span class="cf">for</span>(<span class="dt">temi=</span><span class="dv">11</span>,temi<span class="op">&lt;=</span><span class="dv">25</span>,temi<span class="op">++</span>, <span class="op">/</span><span class="er">/</span><span class="st"> </span>searh <span class="cf">for</span> POWERPNT.EXE</span>
+<span id="cb5-45"><a href="#cb5-45"></a>        <span class="dt">temppath=</span><span class="st">&quot;C:\Program Files (x86)\Microsoft Office\Office&quot;</span><span class="op">||</span><span class="kw">char</span>(temi)<span class="op">||</span><span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">;</span></span>
+<span id="cb5-46"><a href="#cb5-46"></a><span class="st">        templist={};templist = Files In Directory( temppath);</span></span>
+<span id="cb5-47"><a href="#cb5-47"></a><span class="st">        if(contains(templist,&quot;</span>POWERPNT.EXE<span class="st">&quot;)&gt;0,temi=100;pptexefound=1   );</span></span>
+<span id="cb5-48"><a href="#cb5-48"></a><span class="st">    );</span></span>
+<span id="cb5-49"><a href="#cb5-49"></a><span class="st">    //some people may have PPT under  C:\Program Files not &quot;</span>C<span class="op">:</span>\Program <span class="kw">Files</span> (x86)</span>
+<span id="cb5-50"><a href="#cb5-50"></a>    <span class="cf">if</span>(pptexefound<span class="op">==</span><span class="dv">0</span>,</span>
+<span id="cb5-51"><a href="#cb5-51"></a>        <span class="cf">for</span>(<span class="dt">temi=</span><span class="dv">11</span>,temi<span class="op">&lt;=</span><span class="dv">25</span>,temi<span class="op">++</span>,</span>
+<span id="cb5-52"><a href="#cb5-52"></a>        <span class="dt">temppath=</span><span class="st">&quot;C:\Program Files\Microsoft Office\Office&quot;</span><span class="op">||</span><span class="kw">char</span>(temi)<span class="op">||</span><span class="st">&quot;</span><span class="ch">\&quot;</span><span class="st">;</span></span>
+<span id="cb5-53"><a href="#cb5-53"></a><span class="st">        templist={};templist = Files In Directory( temppath);</span></span>
+<span id="cb5-54"><a href="#cb5-54"></a><span class="st">        </span></span>
+<span id="cb5-55"><a href="#cb5-55"></a><span class="st">        if(contains(templist,&quot;</span>POWERPNT.EXE<span class="st">&quot;)&gt;0,temi=100;pptexefound=1   );</span></span>
+<span id="cb5-56"><a href="#cb5-56"></a><span class="st">        );          </span></span>
+<span id="cb5-57"><a href="#cb5-57"></a><span class="st">    );</span></span>
+<span id="cb5-58"><a href="#cb5-58"></a><span class="st">    if(pptexefound==0,// cannot find POWERPNT.EXE ? Notify the user. It can be run manually</span></span>
+<span id="cb5-59"><a href="#cb5-59"></a><span class="st">      dialog(line up(1,&quot;</span>Could not locate POWERPNT.EXE, You will need to run PPT macro manualy<span class="st">&quot;,&quot;</span>PPT is <span class="op">@</span><span class="st">&quot;||pathin, &quot;</span>Go to View<span class="op">-</span>-&gt;Macros<span class="op">-</span>-&gt;import_images<span class="op">-</span>-&gt;Run<span class="st">&quot;  ))</span></span>
+<span id="cb5-60"><a href="#cb5-60"></a><span class="st">    );</span></span>
+<span id="cb5-61"><a href="#cb5-61"></a><span class="st">    if(pptexefound==1,// if POWERPNT.EXE is located, create a bat file and run it.</span></span>
+<span id="cb5-62"><a href="#cb5-62"></a><span class="st">        Save Text File( ppt_temp_folder|| &quot;</span>launchPPT.bat<span class="st">&quot;,&quot;</span>\<span class="op">!</span><span class="st">&quot;&quot;</span><span class="op">||</span>temppath<span class="op">||</span><span class="st">&quot;POWERPNT.exe\!&quot;</span> <span class="op">/</span>M \<span class="op">!</span><span class="st">&quot;&quot;</span><span class="op">||</span>addin_path_<span class="op">||</span>ppt_file_<span class="op">||</span><span class="st">&quot;\!&quot;</span> \<span class="op">!</span><span class="st">&quot;&quot;</span><span class="op">||</span>macro_<span class="op">||</span><span class="st">&quot;\!&quot;</span>  \<span class="op">!</span>nexit<span class="st">&quot; );</span></span>
+<span id="cb5-63"><a href="#cb5-63"></a><span class="st">        Open( ppt_temp_folder || &quot;</span>launchPPT.bat<span class="st">&quot; );</span></span>
+<span id="cb5-64"><a href="#cb5-64"></a><span class="st">    );</span></span>
+<span id="cb5-65"><a href="#cb5-65"></a><span class="st">);</span></span>
+<span id="cb5-66"><a href="#cb5-66"></a><span class="st">//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span></span>
+<span id="cb5-67"><a href="#cb5-67"></a><span class="st">column_predict=function({flavor,dt_desc_names_lc_,trial_list_},// tries various typical names to identify columns in the data</span></span>
+<span id="cb5-68"><a href="#cb5-68"></a><span class="st">    found_col=&quot;&quot;;                                              // &quot;</span>single<span class="st">&quot; stops the search after first-found.                                  </span></span>
+<span id="cb5-69"><a href="#cb5-69"></a><span class="st">    for(aa=1,aa&lt;=nitems(trial_list_),aa++,</span></span>
+<span id="cb5-70"><a href="#cb5-70"></a><span class="st">        foundat=contains(dt_desc_names_lc_,lower case(char(trial_list_[aa])));</span></span>
+<span id="cb5-71"><a href="#cb5-71"></a><span class="st">        if(foundat&gt;0,if(found_col==&quot;&quot;,found_col=&quot;</span><span class="op">:</span><span class="st">&quot;||dt_desc_names[foundat],found_col=found_col||&quot;</span>,<span class="op">:</span><span class="st">&quot;||dt_desc_names[foundat] );</span></span>
+<span id="cb5-72"><a href="#cb5-72"></a><span class="st">        if(flavor==&quot;</span>single<span class="st">&quot;,aa=nitems(trial_list_)+1)   </span></span>
+<span id="cb5-73"><a href="#cb5-73"></a><span class="st">        )</span></span>
+<span id="cb5-74"><a href="#cb5-74"></a><span class="st">    );</span></span>
+<span id="cb5-75"><a href="#cb5-75"></a><span class="st">    found_col;</span></span>
+<span id="cb5-76"><a href="#cb5-76"></a><span class="st">);</span></span>
+<span id="cb5-77"><a href="#cb5-77"></a><span class="st">//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span></span>
+<span id="cb5-78"><a href="#cb5-78"></a></span>
+<span id="cb5-79"><a href="#cb5-79"></a><span class="st">create_dialog_panel=function({nc,dt_desc,image_opt},    // this builds up the dialog box, populates columns with best predictions, lots of dynamics behind the buttons to show the contents of the selected method </span></span>
+<span id="cb5-80"><a href="#cb5-80"></a><span class="st">    try(dt_desc_names=dt_desc&lt;&lt;get column names(&quot;</span>string<span class="st">&quot;),dt_desc_names={});</span></span>
+<span id="cb5-81"><a href="#cb5-81"></a><span class="st">    dt_desc_names_lc={};for(kk=1,kk&lt;=nitems(dt_desc_names),kk++,dt_desc_names_lc[kk]=lower case(dt_desc_names[kk])); </span></span>
+<span id="cb5-82"><a href="#cb5-82"></a></span>
+<span id="cb5-83"><a href="#cb5-83"></a><span class="st">    ret_found_col=column_predict(&quot;</span>multiple<span class="st">&quot;,dt_desc_names_lc,parse(image_opt[&quot;</span>Possible Path Columns<span class="st">&quot;]));</span></span>
+<span id="cb5-84"><a href="#cb5-84"></a><span class="st">    ipathadd=&quot;</span>colList_ipath  <span class="op">&lt;</span><span class="er">&lt;</span><span class="st"> </span><span class="kw">append</span>(  {<span class="st">&quot;||ret_found_col||&quot;</span>})<span class="st">&quot;;</span></span>
+<span id="cb5-85"><a href="#cb5-85"></a><span class="st">      </span></span>
+<span id="cb5-86"><a href="#cb5-86"></a><span class="st">    ret_found_col=column_predict(&quot;</span>multiple<span class="st">&quot;,dt_desc_names_lc,parse(image_opt[&quot;</span>Possible Image Label Columns<span class="st">&quot;]));</span></span>
+<span id="cb5-87"><a href="#cb5-87"></a><span class="st">    tcoladd=&quot;</span>colList_ilabel  <span class="op">&lt;</span><span class="er">&lt;</span><span class="st"> </span><span class="kw">append</span>(  {<span class="st">&quot;||ret_found_col||&quot;</span>})<span class="st">&quot;;</span></span>
+<span id="cb5-88"><a href="#cb5-88"></a><span class="st">    </span></span>
+<span id="cb5-89"><a href="#cb5-89"></a><span class="st">    ret_found_col=column_predict(&quot;</span>single<span class="st">&quot;,dt_desc_names_lc,parse(image_opt[&quot;</span>Possible Slide Label Columns<span class="st">&quot;]));</span></span>
+<span id="cb5-90"><a href="#cb5-90"></a><span class="st">    tcoladd_slide=&quot;</span>colList_slabel  <span class="op">&lt;</span><span class="er">&lt;</span><span class="st"> </span><span class="kw">append</span>(  {<span class="st">&quot;||ret_found_col||&quot;</span>})<span class="st">&quot;;</span></span>
+<span id="cb5-91"><a href="#cb5-91"></a><span class="st">    user_ppt_layout_list=image_opt[&quot;</span>ppt layout<span class="st">&quot;];</span></span>
+<span id="cb5-92"><a href="#cb5-92"></a></span>
+<span id="cb5-93"><a href="#cb5-93"></a><span class="st">    try(defaulttext=input_,defaulttext=&quot;&quot;);</span></span>
+<span id="cb5-94"><a href="#cb5-94"></a><span class="st">    if(nc==0,columnpanel=&quot;&quot;,columnpanel=expr(PanelBox(&quot;</span>Columns<span class="st">&quot;, colListData=ColListBox(All,width(165),nLines(11)))));</span></span>
+<span id="cb5-95"><a href="#cb5-95"></a><span class="st">    </span></span>
+<span id="cb5-96"><a href="#cb5-96"></a><span class="st">    if(nc==0,selecterpanel=expr(),</span></span>
+<span id="cb5-97"><a href="#cb5-97"></a><span class="st">            selecterpanel=expr(</span></span>
+<span id="cb5-98"><a href="#cb5-98"></a><span class="st">                          PanelBox(&quot;</span>Confirm<span class="op">/</span>Modify column selections<span class="st">&quot;,</span></span>
+<span id="cb5-99"><a href="#cb5-99"></a><span class="st">                                    LineupBox(NCol(2),Spacing(3),</span></span>
+<span id="cb5-100"><a href="#cb5-100"></a><span class="st">                                        ipath_button= ButtonBox(&quot;</span>Image <span class="kw">Path</span>(s)<span class="st">&quot;,   colList_ipath&lt;&lt;Append(colListData&lt;&lt;GetSelected);),</span></span>
+<span id="cb5-101"><a href="#cb5-101"></a><span class="st">                                                                    colList_ipath = ColListBox(nLines(4)),ipathadd_,</span></span>
+<span id="cb5-102"><a href="#cb5-102"></a><span class="st">                                        ilabel_button=ButtonBox(&quot;</span>Image <span class="kw">Label</span>(s)<span class="st">&quot;, colList_ilabel&lt;&lt;Append(colListData&lt;&lt;GetSelected);),</span></span>
+<span id="cb5-103"><a href="#cb5-103"></a><span class="st">                                                                    colList_ilabel= ColListBox(nLines(4)),tcoladd_,</span></span>
+<span id="cb5-104"><a href="#cb5-104"></a><span class="st">                                        slabel_button=ButtonBox(&quot;</span>Slide <span class="kw">Label</span>(s)<span class="st">&quot;,colList_slabel&lt;&lt;Append(colListData&lt;&lt;GetSelected);),</span></span>
+<span id="cb5-105"><a href="#cb5-105"></a><span class="st">                                                                    colList_slabel= ColListBox(nLines(1)),tcoladd_slide_    </span></span>
+<span id="cb5-106"><a href="#cb5-106"></a><span class="st">                                        </span></span>
+<span id="cb5-107"><a href="#cb5-107"></a><span class="st">                                        </span></span>
+<span id="cb5-108"><a href="#cb5-108"></a><span class="st">                                        ),</span></span>
+<span id="cb5-109"><a href="#cb5-109"></a><span class="st">                                    SpacerBox(Size(1, 12))</span></span>
+<span id="cb5-110"><a href="#cb5-110"></a><span class="st">                                )</span></span>
+<span id="cb5-111"><a href="#cb5-111"></a><span class="st">            );</span></span>
+<span id="cb5-112"><a href="#cb5-112"></a><span class="st">            selecterpanel=Substitute(name Expr(selecterpanel),expr(ipathadd_),parse(ipathadd),expr(tcoladd_),parse(tcoladd)</span></span>
+<span id="cb5-113"><a href="#cb5-113"></a><span class="st">                ,expr(tcoladd_slide_),parse(tcoladd_slide)</span></span>
+<span id="cb5-114"><a href="#cb5-114"></a><span class="st">             );</span></span>
+<span id="cb5-115"><a href="#cb5-115"></a></span>
+<span id="cb5-116"><a href="#cb5-116"></a><span class="st">    );</span></span>
+<span id="cb5-117"><a href="#cb5-117"></a></span>
+<span id="cb5-118"><a href="#cb5-118"></a><span class="st">    </span></span>
+<span id="cb5-119"><a href="#cb5-119"></a><span class="st">    checkboxpanel=expr(panel box(&quot;</span>Export Options<span class="st">&quot;,</span></span>
+<span id="cb5-120"><a href="#cb5-120"></a><span class="st">                                        V List Box( </span></span>
+<span id="cb5-121"><a href="#cb5-121"></a><span class="st">                                            if(nrow(sel_rows)&gt;0, sel_only=checkbox(&quot;</span>Selected rows only<span class="st">&quot;)), if(nrow(sel_rows)&gt;0,sel_only&lt;&lt;set(1)),</span></span>
+<span id="cb5-122"><a href="#cb5-122"></a><span class="st">                                            SpacerBox(Size(1, 10)),</span></span>
+<span id="cb5-123"><a href="#cb5-123"></a><span class="st">                                            if(nitems(user_ppt_layout_list)&gt;1,</span></span>
+<span id="cb5-124"><a href="#cb5-124"></a><span class="st">                                                        V list box( panel box(&quot;</span>PPT Layout<span class="st">&quot;, </span></span>
+<span id="cb5-125"><a href="#cb5-125"></a><span class="st">                                                            custom_layouts_cb = ComboBox(user_ppt_layout_list,&lt;&lt;SetFunction(Function( {this},</span></span>
+<span id="cb5-126"><a href="#cb5-126"></a><span class="st">                                                                                                                    selection = this &lt;&lt; Get Selected();   </span></span>
+<span id="cb5-127"><a href="#cb5-127"></a><span class="st">                                                                                                                     if(selection!=&quot;</span>grid<span class="st">&quot;,gsetbox&lt;&lt;Visibility(Collapse),</span></span>
+<span id="cb5-128"><a href="#cb5-128"></a><span class="st">                                                                                                                     gsetbox&lt;&lt;Visibility(Visible))        )  )                 </span></span>
+<span id="cb5-129"><a href="#cb5-129"></a><span class="st">                                                                                        )</span></span>
+<span id="cb5-130"><a href="#cb5-130"></a><span class="st">                                                                                    )</span></span>
+<span id="cb5-131"><a href="#cb5-131"></a><span class="st">                                                                )</span></span>
+<span id="cb5-132"><a href="#cb5-132"></a><span class="st">                                                ),</span></span>
+<span id="cb5-133"><a href="#cb5-133"></a><span class="st">                                            SpacerBox(Size(1, 10)),</span></span>
+<span id="cb5-134"><a href="#cb5-134"></a><span class="st">                                            gsetbox=panel box(&quot;</span>Grid Settings<span class="st">&quot;,(</span></span>
+<span id="cb5-135"><a href="#cb5-135"></a><span class="st">                                                        H list box(</span></span>
+<span id="cb5-136"><a href="#cb5-136"></a><span class="st">                                                            V list box( Text Box(&quot;</span>Columns              <span class="st">&quot;), img_per_row = ComboBox(img_per_row_List)),</span></span>
+<span id="cb5-137"><a href="#cb5-137"></a><span class="st">                                                            V list box( Text Box(&quot;</span>Rows         <span class="st">&quot;), img_num_row = ComboBox(img_num_rows_List))</span></span>
+<span id="cb5-138"><a href="#cb5-138"></a><span class="st">                                                            )</span></span>
+<span id="cb5-139"><a href="#cb5-139"></a><span class="st">                                                        ),if(user_ppt_layout_list[1]!=&quot;</span>grid<span class="st">&quot;,&lt;&lt;Visibility(Collapse))</span></span>
+<span id="cb5-140"><a href="#cb5-140"></a><span class="st">                                            ),</span></span>
+<span id="cb5-141"><a href="#cb5-141"></a><span class="st">                                            </span></span>
+<span id="cb5-142"><a href="#cb5-142"></a><span class="st">                                            SpacerBox(Size(1, 10)),</span></span>
+<span id="cb5-143"><a href="#cb5-143"></a><span class="st">                                            H list box(</span></span>
+<span id="cb5-144"><a href="#cb5-144"></a><span class="st">                                                        button_Start_Querying=Button Box(&quot;</span>Start Export<span class="st">&quot;,</span></span>
+<span id="cb5-145"><a href="#cb5-145"></a><span class="st">                                                                    selected_tcol=(colList_ilabel&lt;&lt;Get Items);</span></span>
+<span id="cb5-146"><a href="#cb5-146"></a><span class="st">                                                                    selected_ipath=(colList_ipath&lt;&lt;Get Items);</span></span>
+<span id="cb5-147"><a href="#cb5-147"></a><span class="st">                                                                    selected_slide=(colList_slabel&lt;&lt;Get Items);</span></span>
+<span id="cb5-148"><a href="#cb5-148"></a></span>
+<span id="cb5-149"><a href="#cb5-149"></a><span class="st">                                                                    if(nrow(sel_rows)&gt;0,sel_only_value=sel_only&lt;&lt;get selected);</span></span>
+<span id="cb5-150"><a href="#cb5-150"></a><span class="st">                                                                    </span></span>
+<span id="cb5-151"><a href="#cb5-151"></a><span class="st">                                                                    img_per_row_value=img_per_row&lt;&lt;get selected;</span></span>
+<span id="cb5-152"><a href="#cb5-152"></a><span class="st">                                                                    img_num_row_value=img_num_row&lt;&lt;get selected;</span></span>
+<span id="cb5-153"><a href="#cb5-153"></a><span class="st">                                                                    if(nitems(user_ppt_layout_list)&gt;1,custom_layouts_selected=custom_layouts_cb&lt;&lt;get selected);</span></span>
+<span id="cb5-154"><a href="#cb5-154"></a><span class="st">                                                                    </span></span>
+<span id="cb5-155"><a href="#cb5-155"></a><span class="st">                                                                    if(nitems(selected_ipath)&gt;0,canceled=0;button_Start_Querying&lt;&lt;close window)</span></span>
+<span id="cb5-156"><a href="#cb5-156"></a><span class="st">                                                            ), </span></span>
+<span id="cb5-157"><a href="#cb5-157"></a><span class="st">                                                        Button Box( &quot;</span>Cancel<span class="st">&quot;, canceled=1;)</span></span>
+<span id="cb5-158"><a href="#cb5-158"></a><span class="st">                                                )   </span></span>
+<span id="cb5-159"><a href="#cb5-159"></a><span class="st">                                        )</span></span>
+<span id="cb5-160"><a href="#cb5-160"></a><span class="st">                                );</span></span>
+<span id="cb5-161"><a href="#cb5-161"></a><span class="st">                );</span></span>
+<span id="cb5-162"><a href="#cb5-162"></a><span class="st">    allpanels =Vlist box(SpacerBox(Size(1, 5)),HListBox(columnpanel,selecterpanel),checkboxpanel,SpacerBox(Size(1, 5)),SpacerBox(Size(1, 5)));</span></span>
+<span id="cb5-163"><a href="#cb5-163"></a><span class="st">    allpanels;</span></span>
+<span id="cb5-164"><a href="#cb5-164"></a><span class="st">);</span></span>
+<span id="cb5-165"><a href="#cb5-165"></a></span>
+<span id="cb5-166"><a href="#cb5-166"></a></span>
+<span id="cb5-167"><a href="#cb5-167"></a><span class="st">///////////////////////////////////////////////////////////////////////////////////</span></span>
+<span id="cb5-168"><a href="#cb5-168"></a><span class="st">logreporter=function({addin_name,username,addin_path_,logtext_,bugloc_},// pop up window to show the error</span></span>
+<span id="cb5-169"><a href="#cb5-169"></a><span class="st">    try(dtlog=open(addin_path_||&quot;</span>crashlog.jmp<span class="st">&quot;),</span></span>
+<span id="cb5-170"><a href="#cb5-170"></a><span class="st">        dtlog=new table(&quot;</span>crashlog<span class="st">&quot;);</span></span>
+<span id="cb5-171"><a href="#cb5-171"></a><span class="st">        dtlog&lt;&lt;new column(&quot;</span>GID<span class="st">&quot;,character);dtlog&lt;&lt;new column(&quot;</span>script_name<span class="st">&quot;,character);  dtlog&lt;&lt;new column(&quot;</span>crash_log<span class="st">&quot;,character);dtlog&lt;&lt;new column(&quot;</span>Date<span class="st">&quot;,Numeric,Format( &quot;</span>y<span class="op">/</span>m<span class="op">/</span>d h<span class="op">:</span>m<span class="op">:</span>s<span class="st">&quot; ));</span></span>
+<span id="cb5-172"><a href="#cb5-172"></a><span class="st">    );</span></span>
+<span id="cb5-173"><a href="#cb5-173"></a><span class="st">    index=nrow(dtlog)+1;</span></span>
+<span id="cb5-174"><a href="#cb5-174"></a></span>
+<span id="cb5-175"><a href="#cb5-175"></a><span class="st">    crash_logs=:crash_log&lt;&lt;get values(); dates=:Date&lt;&lt;get values();</span></span>
+<span id="cb5-176"><a href="#cb5-176"></a><span class="st">    thislogentry=logtext_||&quot;</span>__<span class="op">@</span>__<span class="st">&quot;||bugloc_;</span></span>
+<span id="cb5-177"><a href="#cb5-177"></a></span>
+<span id="cb5-178"><a href="#cb5-178"></a><span class="st">    thislogentry=substr(thislogentry,3,length(thislogentry));// removing new line</span></span>
+<span id="cb5-179"><a href="#cb5-179"></a></span>
+<span id="cb5-180"><a href="#cb5-180"></a></span>
+<span id="cb5-181"><a href="#cb5-181"></a><span class="st">    logexists=loc(crash_logs,thislogentry);</span></span>
+<span id="cb5-182"><a href="#cb5-182"></a><span class="st">    if(nrow(logexists)==0,</span></span>
+<span id="cb5-183"><a href="#cb5-183"></a><span class="st">        try(GTXJSN_AppendLog(username,&quot;</span>JMP_crash_log<span class="st">&quot;,&quot;</span>crash<span class="st">&quot;,&quot;</span>image_exporter.jsl<span class="st">&quot;,0,thislogentry));</span></span>
+<span id="cb5-184"><a href="#cb5-184"></a><span class="st">        dtlog&lt;&lt;add rows(1);:GID[index]=username;:script_name[index]=addin_name;:crash_log[index]=thislogentry; :Date[index]=Today()</span></span>
+<span id="cb5-185"><a href="#cb5-185"></a><span class="st">    );</span></span>
+<span id="cb5-186"><a href="#cb5-186"></a><span class="st">    dtlog&lt;&lt;save(addin_path_||&quot;</span>crashlog.jmp<span class="st">&quot;); dtlog&lt;&lt;close window();</span></span>
+<span id="cb5-187"><a href="#cb5-187"></a><span class="st">    if(nrow(logexists)==0,</span></span>
+<span id="cb5-188"><a href="#cb5-188"></a><span class="st">        nw = New Window( &quot;</span>Something Went Wrong<span class="op">!</span><span class="st">&quot;, &lt;&lt;modal, V List Box(</span></span>
+<span id="cb5-189"><a href="#cb5-189"></a><span class="st">                        panel box(&quot;&quot;,Text Box(&quot;</span>Script Failed with the following log<span class="op">:</span><span class="st">&quot;||logtext_))),</span></span>
+<span id="cb5-190"><a href="#cb5-190"></a><span class="st">                        panel box(&quot;&quot;,Text Box (&quot;</span>A crash report has been created. We will be working on it<span class="st">&quot;) ) </span></span>
+<span id="cb5-191"><a href="#cb5-191"></a><span class="st">        )</span></span>
+<span id="cb5-192"><a href="#cb5-192"></a><span class="st">    ,</span></span>
+<span id="cb5-193"><a href="#cb5-193"></a><span class="st">    existingdate=as date(dates[logexists[nrow(logexists)]]);</span></span>
+<span id="cb5-194"><a href="#cb5-194"></a><span class="st">        nw = New Window( &quot;</span>Something Went Wrong, AGAIN<span class="op">!</span><span class="st">&quot;, &lt;&lt;modal, V List Box(</span></span>
+<span id="cb5-195"><a href="#cb5-195"></a><span class="st">                        panel box(&quot;&quot;,Text Box(&quot;</span>Script Failed with the following log<span class="op">:</span><span class="st">&quot;||logtext_))),</span></span>
+<span id="cb5-196"><a href="#cb5-196"></a><span class="st">                        panel box(&quot;&quot;,Text Box (&quot;</span>A crash report had been created on <span class="st">&quot;||char(existingdate)||&quot;</span>.\<span class="op">!</span>n We are working on it<span class="op">!</span><span class="st">&quot;) ) </span></span>
+<span id="cb5-197"><a href="#cb5-197"></a><span class="st">        )</span></span>
+<span id="cb5-198"><a href="#cb5-198"></a><span class="st">    );</span></span>
+<span id="cb5-199"><a href="#cb5-199"></a><span class="st">    print(&quot;</span> aborting with a report <span class="op">@</span><span class="st"> &quot;||bugloc_||&quot;</span> with this error<span class="op">:</span><span class="st"> &quot;||logtext_);   throw();</span></span>
+<span id="cb5-200"><a href="#cb5-200"></a><span class="st">);</span></span>
+<span id="cb5-201"><a href="#cb5-201"></a><span class="st">//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span></span>
+<span id="cb5-202"><a href="#cb5-202"></a><span class="st">grid_layout=function({},</span></span>
+<span id="cb5-203"><a href="#cb5-203"></a><span class="st">    img_per_row_value=num(img_per_row_value);img_num_row_value=num(img_num_row_value); // convert to numerical</span></span>
+<span id="cb5-204"><a href="#cb5-204"></a><span class="st">    image_s=800/img_per_row_value;</span></span>
+<span id="cb5-205"><a href="#cb5-205"></a><span class="st">    if(img_per_row_value==3,image_s=600/img_per_row_value;);</span></span>
+<span id="cb5-206"><a href="#cb5-206"></a><span class="st">    if(image_s&gt;200 &amp;img_num_row_value&gt;1&amp;img_per_row_value&lt;3,image_s=200);  // making sure images will fit nicely. Requires a bit trial and error to set the image size</span></span>
+<span id="cb5-207"><a href="#cb5-207"></a><span class="st">    // Compute the image and slide ids. These will be passed to PPT in a CSV</span></span>
+<span id="cb5-208"><a href="#cb5-208"></a><span class="st">    if(nitems(selected_slide)==0,// if no slide splitting column is selected, a new slide is added only when image index exceeds img_per_row_value*img_num_row_value</span></span>
+<span id="cb5-209"><a href="#cb5-209"></a><span class="st">        dtimages&lt;&lt;new column(&quot;</span>slide_title<span class="st">&quot;,formula(&quot;</span>TBD slide title<span class="st">&quot;));</span></span>
+<span id="cb5-210"><a href="#cb5-210"></a><span class="st">        dtimages&lt;&lt;new column(&quot;</span>slide_number<span class="st">&quot;,formula(1+floor(((row()-1)/(img_per_row_value*img_num_row_value)))));</span></span>
+<span id="cb5-211"><a href="#cb5-211"></a><span class="st">        dtimages&lt;&lt;new column(&quot;</span>image_index<span class="st">&quot;,formula(row()))</span></span>
+<span id="cb5-212"><a href="#cb5-212"></a><span class="st">    , /// if a slide splitting column is selected, a new slide is added when the column content changes or when image index exceeds img_per_row_value*img_num_row_value</span></span>
+<span id="cb5-213"><a href="#cb5-213"></a><span class="st">        eval(substitute(expr(dtimages&lt;&lt;new column(&quot;</span>slide_number<span class="st">&quot;,</span></span>
+<span id="cb5-214"><a href="#cb5-214"></a><span class="st">              formula(if(row()==1,1,if( as column(_scol)[row()-1]==as column(_scol)[row()],:slide_number[row()-1],:slide_number[row()-1]+1))))),</span></span>
+<span id="cb5-215"><a href="#cb5-215"></a><span class="st">              expr(_scol),selected_slide[1]));</span></span>
+<span id="cb5-216"><a href="#cb5-216"></a><span class="st">        eval(substitute(expr(dtimages&lt;&lt;new column(&quot;</span>image_index<span class="st">&quot;,</span></span>
+<span id="cb5-217"><a href="#cb5-217"></a><span class="st">             formula(if(row()==1,1,if( as column(_scol)[row()-1]!=as column(_scol)[row()],1,:image_index[row()-1],:image_index[row()-1]+1))))),</span></span>
+<span id="cb5-218"><a href="#cb5-218"></a><span class="st">             expr(_scol),selected_slide[1]));</span></span>
+<span id="cb5-219"><a href="#cb5-219"></a><span class="st">        eval(substitute(expr(dtimages&lt;&lt;new column(&quot;</span>slide_title<span class="st">&quot;, </span></span>
+<span id="cb5-220"><a href="#cb5-220"></a><span class="st">            formula( selected_slide[1]||&quot;</span><span class="op">:</span><span class="st"> &quot;||char(as column(_scol))))),</span></span>
+<span id="cb5-221"><a href="#cb5-221"></a><span class="st">             expr(_scol),selected_slide[1]));</span></span>
+<span id="cb5-222"><a href="#cb5-222"></a><span class="st">    );</span></span>
+<span id="cb5-223"><a href="#cb5-223"></a></span>
+<span id="cb5-224"><a href="#cb5-224"></a></span>
+<span id="cb5-225"><a href="#cb5-225"></a><span class="st">    dtimages&lt;&lt;new column(&quot;</span>x_coord<span class="st">&quot;,formula(30+(image_s+20)*(mod(:image_index-1,(img_per_row_value)))));</span></span>
+<span id="cb5-226"><a href="#cb5-226"></a><span class="st">    dtimages&lt;&lt;new column(&quot;</span>y_coord<span class="st">&quot;,formula(if(Mod( :image_index - 1, img_per_row_value * img_num_row_value ) &gt; img_per_row_value - 1,330,80))); </span></span>
+<span id="cb5-227"><a href="#cb5-227"></a><span class="st">    :x_coord&lt;&lt; delete formula();:y_coord&lt;&lt; delete formula();dtimages&lt;&lt;delete column(&quot;</span>image_index<span class="st">&quot;);if(nitems(selected_ipath)==1,dtimages&lt;&lt;delete column(&quot;</span>image_type<span class="st">&quot;));</span></span>
+<span id="cb5-228"><a href="#cb5-228"></a><span class="st">    dtimages&lt;&lt;new column(&quot;</span>image_size<span class="st">&quot;,formula(image_s));</span></span>
+<span id="cb5-229"><a href="#cb5-229"></a><span class="st">    dtimages&lt;&lt;new column(&quot;</span>plot_title<span class="st">&quot;,formula(&quot;</span>TBD plot title<span class="st">&quot;)) ; // can add a title to each image. Not implemented for now. Instead a table/image will show</span></span>
+<span id="cb5-230"><a href="#cb5-230"></a><span class="st">);</span></span>
+<span id="cb5-231"><a href="#cb5-231"></a><span class="st">//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span></span>
+<span id="cb5-232"><a href="#cb5-232"></a><span class="st">//TOP of the Script</span></span>
+<span id="cb5-233"><a href="#cb5-233"></a><span class="st">try(testmode,testmode=0); print(testmode);// an external tester script will drive this parameter. If this is run stand alone, disable it.</span></span>
+<span id="cb5-234"><a href="#cb5-234"></a><span class="st">newest_ppt_local_date=13Aug2020:23:09:00; // this is the date the PPT in git was updated. If local PPT file is older, it will be updated</span></span>
+<span id="cb5-235"><a href="#cb5-235"></a><span class="st">addin_name=&quot;</span>IMAGETABLE_TO_PPT<span class="st">&quot;;// this script will be installed as an addin. This is the name for it.</span></span>
+<span id="cb5-236"><a href="#cb5-236"></a><span class="st">addin_path=&quot;</span>C<span class="op">:</span>\IMAGETABLE_TO_PPT\<span class="st">&quot;;//set the path to the addin folder.</span></span>
+<span id="cb5-237"><a href="#cb5-237"></a><span class="st">tablename=&quot;</span>export_images_options.jmp<span class="st">&quot;; // there will be a JMP table which users can modify to customize the script easily.</span></span>
+<span id="cb5-238"><a href="#cb5-238"></a><span class="st">pptlayoutdir=&quot;</span>ppt layout scripts\<span class="st">&quot;; //this directory has the custom layouts</span></span>
+<span id="cb5-239"><a href="#cb5-239"></a><span class="st">ppt_local_path=&quot;</span>https<span class="op">:</span><span class="er">//</span>github.com<span class="op">/</span>quarktetra<span class="op">/</span>JMP_Discovery_<span class="dv">2020</span>_git_demo<span class="op">/</span>blob<span class="op">/</span>master<span class="op">/</span>image_importer_local.pptm?<span class="dt">raw=</span>true<span class="st">&quot;;// path to PPT</span></span>
+<span id="cb5-240"><a href="#cb5-240"></a><span class="st">av_templates=associative array();</span></span>
+<span id="cb5-241"><a href="#cb5-241"></a><span class="st">av_templates[&quot;</span>one_big_two_small.jsl<span class="st">&quot;]= &quot;</span>https<span class="op">:</span><span class="er">//</span>raw.githubusercontent.com<span class="op">/</span>quarktetra<span class="op">/</span>JMP_Discovery_<span class="dv">2020</span>_git_demo<span class="op">/</span>master<span class="op">/</span>one_big_three_small.jsl<span class="st">&quot;; // path to template scripts</span></span>
+<span id="cb5-242"><a href="#cb5-242"></a><span class="st">av_templates[&quot;</span>one_big_three_small.jsl<span class="st">&quot;]=&quot;</span>https<span class="op">:</span><span class="er">//</span>raw.githubusercontent.com<span class="op">/</span>quarktetra<span class="op">/</span>JMP_Discovery_<span class="dv">2020</span>_git_demo<span class="op">/</span>master<span class="op">/</span>one_big_two_small.jsl<span class="st">&quot;;</span></span>
+<span id="cb5-243"><a href="#cb5-243"></a></span>
+<span id="cb5-244"><a href="#cb5-244"></a></span>
+<span id="cb5-245"><a href="#cb5-245"></a><span class="st">Create Directory(addin_path); // just create the directory in case the script is not installed via addin.</span></span>
+<span id="cb5-246"><a href="#cb5-246"></a><span class="st">Create Directory(addin_path||pptlayoutdir);//will create if missing. This is the directory to hold custom layout scripts. These can be saved manually ot pushed in by developer</span></span>
+<span id="cb5-247"><a href="#cb5-247"></a></span>
+<span id="cb5-248"><a href="#cb5-248"></a><span class="st">try(logreturned=log capture(user_name=get_user_id())); // user id can be collected from environment. </span></span>
+<span id="cb5-249"><a href="#cb5-249"></a><span class="st">if(logreturned!=&quot;&quot;&amp;contains(logreturned,&quot;</span><span class="op">*</span><span class="co">###*&quot;),user_name=&quot;unknown&quot;; print(&quot;Could not resolve the username. Proceeding without it&quot;) );// Print the error if any, and throw.</span></span>
+<span id="cb5-250"><a href="#cb5-250"></a></span>
+<span id="cb5-251"><a href="#cb5-251"></a></span>
+<span id="cb5-252"><a href="#cb5-252"></a><span class="dt">av_templates_keys=</span>av_templates<span class="op">&lt;</span><span class="er">&lt;</span>Get <span class="kw">Keys</span>();</span>
+<span id="cb5-253"><a href="#cb5-253"></a><span class="cf">for</span>(<span class="dt">aa=</span><span class="dv">1</span>,aa<span class="op">&lt;=</span><span class="kw">nitems</span>(av_templates_keys),aa<span class="op">++</span>,<span class="op">/</span><span class="er">/</span><span class="st"> </span>retrieve these files from repo <span class="cf">if</span> they don<span class="st">&#39;t exist. Not refresh is enforced here. Will do this only once.</span></span>
+<span id="cb5-254"><a href="#cb5-254"></a><span class="st">check_for_file(addin_path||pptlayoutdir||av_templates_keys[aa],av_templates[av_templates_keys[aa]],0)</span></span>
+<span id="cb5-255"><a href="#cb5-255"></a><span class="st">);</span></span>
+<span id="cb5-256"><a href="#cb5-256"></a></span>
+<span id="cb5-257"><a href="#cb5-257"></a><span class="st">logreturned=&quot;&quot;;try(data table(&quot;summary_for_ppt&quot;)&lt;&lt;close window()); try(dt_desc=currentdata table(););  // clean up from previous run and take the active table.</span></span>
+<span id="cb5-258"><a href="#cb5-258"></a><span class="st">ppt_temp_folder=addin_path||&quot;ppt_temp_folder</span><span class="ch">\&quot;</span><span class="st">;Delete Directory(ppt_temp_folder);Create Directory(ppt_temp_folder);// a temp folder to hold csv file for PPT input</span></span>
+<span id="cb5-259"><a href="#cb5-259"></a></span>
+<span id="cb5-260"><a href="#cb5-260"></a><span class="st">if(is empty(dt_desc),// if no table, remind the user and quit.</span></span>
+<span id="cb5-261"><a href="#cb5-261"></a><span class="st">    New Window(&quot;Missing Table&quot;,&lt;&lt;Modal,Textbox(&quot;You need to have a table with image paths!&quot;),Spacer Box(Size(80, 15)),H List Box(Spacer Box(Size(80, 15)),ButtonBox(&quot;OK&quot;)));throw()</span></span>
+<span id="cb5-262"><a href="#cb5-262"></a><span class="st">);</span></span>
+<span id="cb5-263"><a href="#cb5-263"></a></span>
+<span id="cb5-264"><a href="#cb5-264"></a></span>
+<span id="cb5-265"><a href="#cb5-265"></a><span class="st">default_setup=Associative Array();// This will create a default selection list if nothing is available</span></span>
+<span id="cb5-266"><a href="#cb5-266"></a></span>
+<span id="cb5-267"><a href="#cb5-267"></a><span class="st">default_setup[&quot;Possible Path Columns&quot;]={IMAGE_URL_1,URL,IMAGE_PATH};</span></span>
+<span id="cb5-268"><a href="#cb5-268"></a><span class="st">default_setup[&quot;Possible Image Label Columns&quot;]={IMAGE_TAG,Geography,Type,ERA};</span></span>
+<span id="cb5-269"><a href="#cb5-269"></a><span class="st">default_setup[&quot;Possible Slide Label Columns&quot;]={Medium};</span></span>
+<span id="cb5-270"><a href="#cb5-270"></a><span class="st">default_setup[&quot;Title Options&quot;]={&quot;Title Page(1);Lay out(1,3);Name; Date; Table Name&quot;};</span></span>
+<span id="cb5-271"><a href="#cb5-271"></a><span class="st">default_setup[&quot;Images Per Row&quot;]={&quot;4&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;};</span></span>
+<span id="cb5-272"><a href="#cb5-272"></a><span class="st">default_setup[&quot;Number of Rows&quot;]={&quot;2&quot;,&quot;1&quot;};</span></span>
+<span id="cb5-273"><a href="#cb5-273"></a><span class="st">default_setup[&quot;ppt layout&quot;]={&quot;grid&quot;,&quot;one_big_two_small.jsl&quot;,&quot;one_big_three_small.jsl&quot;};</span></span>
+<span id="cb5-274"><a href="#cb5-274"></a></span>
+<span id="cb5-275"><a href="#cb5-275"></a><span class="st">default_setup_keys=default_setup&lt;&lt;Get Keys;</span></span>
+<span id="cb5-276"><a href="#cb5-276"></a></span>
+<span id="cb5-277"><a href="#cb5-277"></a></span>
+<span id="cb5-278"><a href="#cb5-278"></a></span>
+<span id="cb5-279"><a href="#cb5-279"></a></span>
+<span id="cb5-280"><a href="#cb5-280"></a><span class="st">try(logreturned=log capture(image_opt=get_image_options(default_setup,tablename,addin_path)));// Get the user settings. If not available, push in the defaults.</span></span>
+<span id="cb5-281"><a href="#cb5-281"></a><span class="st">if(logreturned!=&quot;&quot;&amp;contains(logreturned,&quot;*###*&quot;), logreporter(addin_name,username,addin_path,logreturned, &quot;get_image_options&quot;) );// Report the faliures to the developer.</span></span>
+<span id="cb5-282"><a href="#cb5-282"></a></span>
+<span id="cb5-283"><a href="#cb5-283"></a><span class="st">img_per_row_List =parse(image_opt[&quot;Images Per Row&quot;]);// Dropdown list for images/row. Will be something of this form   {&quot;4&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;};</span></span>
+<span id="cb5-284"><a href="#cb5-284"></a><span class="st">img_num_rows_List=parse(image_opt[&quot;Number of Rows&quot;]); //Dropdown list for number of rows. Will be something of this form     {&quot;2&quot;,&quot;1&quot;};</span></span>
+<span id="cb5-285"><a href="#cb5-285"></a></span>
+<span id="cb5-286"><a href="#cb5-286"></a></span>
+<span id="cb5-287"><a href="#cb5-287"></a><span class="st">try(Eval(Parse(LoadTextFile(addin_path||&quot;utilities.jsl&quot;))));// this loads the actual path to the PPT location and certain server paths</span></span>
+<span id="cb5-288"><a href="#cb5-288"></a><span class="st">                                                            // server paths are saved externally due for security   </span></span>
+<span id="cb5-289"><a href="#cb5-289"></a><span class="st">                                                            // script will still work without it, but won&#39;</span>t have git related features</span>
+<span id="cb5-290"><a href="#cb5-290"></a></span>
+<span id="cb5-291"><a href="#cb5-291"></a></span>
+<span id="cb5-292"><a href="#cb5-292"></a></span>
+<span id="cb5-293"><a href="#cb5-293"></a></span>
+<span id="cb5-294"><a href="#cb5-294"></a></span>
+<span id="cb5-295"><a href="#cb5-295"></a></span>
+<span id="cb5-296"><a href="#cb5-296"></a></span>
+<span id="cb5-297"><a href="#cb5-297"></a></span>
+<span id="cb5-298"><a href="#cb5-298"></a><span class="dt">custom_layouts0 =</span> Files In <span class="kw">Directory</span>( addin_path<span class="op">||</span>pptlayoutdir ); <span class="op">/</span><span class="er">/</span><span class="st"> </span>get the files under the directory. Will keep only the ones with .jsl extension.</span>
+<span id="cb5-299"><a href="#cb5-299"></a></span>
+<span id="cb5-300"><a href="#cb5-300"></a></span>
+<span id="cb5-301"><a href="#cb5-301"></a></span>
+<span id="cb5-302"><a href="#cb5-302"></a></span>
+<span id="cb5-303"><a href="#cb5-303"></a><span class="dt">custom_layouts=</span>{};</span>
+<span id="cb5-304"><a href="#cb5-304"></a><span class="cf">for</span>(<span class="dt">cc=</span><span class="dv">1</span>,cc<span class="op">&lt;=</span><span class="kw">nitems</span>(custom_layouts0),cc<span class="op">++</span>,</span>
+<span id="cb5-305"><a href="#cb5-305"></a> <span class="cf">if</span>(<span class="kw">substr</span>(custom_layouts0[cc],<span class="kw">length</span>(custom_layouts0[cc])<span class="op">-</span><span class="dv">3</span>)<span class="op">==</span><span class="st">&quot;.jsl&quot;</span>,insert <span class="kw">into</span>(custom_layouts,<span class="kw">substr</span>(custom_layouts0[cc],<span class="dv">1</span>,<span class="kw">length</span>(custom_layouts0[cc])<span class="op">-</span><span class="dv">4</span>)))</span>
+<span id="cb5-306"><a href="#cb5-306"></a> );<span class="op">/</span><span class="er">/</span><span class="st"> </span>note that .jsl is dropped from the file name <span class="cf">for</span> simplicity <span class="cf">in</span> the dropdown box. Will paste it back later.</span>
+<span id="cb5-307"><a href="#cb5-307"></a></span>
+<span id="cb5-308"><a href="#cb5-308"></a><span class="dt">user_ppt_layout_list0=</span><span class="kw">parse</span>(image_opt[<span class="st">&quot;ppt layout&quot;</span>]);<span class="op">/</span><span class="er">/</span><span class="st"> </span>this is the list set by the user. It will go into the drop box, after sanity checks</span>
+<span id="cb5-309"><a href="#cb5-309"></a><span class="dt">user_ppt_layout_list=</span>{};<span class="op">/</span><span class="er">/</span><span class="st"> </span>this will hold the final list of available scripts. Need to confirm what user selected is available under pptlayoutdir.</span>
+<span id="cb5-310"><a href="#cb5-310"></a><span class="cf">for</span>(<span class="dt">cc=</span><span class="dv">1</span>,cc<span class="op">&lt;=</span><span class="kw">nitems</span>(user_ppt_layout_list0),cc<span class="op">++</span>,</span>
+<span id="cb5-311"><a href="#cb5-311"></a>    <span class="cf">if</span>(<span class="kw">contains</span>(custom_layouts,user_ppt_layout_list0[cc])</span>
+<span id="cb5-312"><a href="#cb5-312"></a>        <span class="op">|</span><span class="kw">contains</span>(custom_layouts,<span class="kw">substitute</span>(user_ppt_layout_list0[cc],<span class="st">&quot;.jsl&quot;</span>,<span class="st">&quot;&quot;</span>))</span>
+<span id="cb5-313"><a href="#cb5-313"></a>        <span class="op">|</span>user_ppt_layout_list0[cc]<span class="op">==</span><span class="st">&quot;grid&quot;</span></span>
+<span id="cb5-314"><a href="#cb5-314"></a>        <span class="op">&amp;!</span><span class="kw">contains</span>(user_ppt_layout_list,<span class="kw">substitute</span>(user_ppt_layout_list0[cc],<span class="st">&quot;.jsl&quot;</span>,<span class="st">&quot;&quot;</span>)),</span>
+<span id="cb5-315"><a href="#cb5-315"></a>        insert <span class="kw">into</span>(user_ppt_layout_list,<span class="kw">substitute</span>(user_ppt_layout_list0[cc],<span class="st">&quot;.jsl&quot;</span>,<span class="st">&quot;&quot;</span>))   </span>
+<span id="cb5-316"><a href="#cb5-316"></a>        )</span>
+<span id="cb5-317"><a href="#cb5-317"></a>);</span>
+<span id="cb5-318"><a href="#cb5-318"></a><span class="cf">if</span>(<span class="kw">contains</span>(user_ppt_layout_list,<span class="st">&quot;grid&quot;</span>)<span class="op">==</span><span class="dv">0</span>,insert <span class="kw">into</span>(user_ppt_layout_list,<span class="st">&quot;grid&quot;</span>));  <span class="op">/</span><span class="er">/</span>Making <span class="st">&quot;grid&quot;</span> option always available even usere forgot it <span class="cf">in</span> the list</span>
+<span id="cb5-319"><a href="#cb5-319"></a> </span>
+<span id="cb5-320"><a href="#cb5-320"></a>image_opt[<span class="st">&quot;ppt layout&quot;</span>]=user_ppt_layout_list;<span class="op">/</span><span class="er">/</span><span class="st"> </span>pushing the final list into the array. It will shuttle it across functions.</span>
+<span id="cb5-321"><a href="#cb5-321"></a><span class="cf">if</span>(ppt_local_path<span class="op">!=</span><span class="st">&quot;place_holder_path&quot;</span>, <span class="op">/</span><span class="er">/</span><span class="st"> </span><span class="cf">if</span> the proper path to git is not set, skip the update. For a properly set gitpath script will check <span class="cf">if</span> a new version of PPT is available.</span>
+<span id="cb5-322"><a href="#cb5-322"></a>    <span class="kw">try</span>(<span class="dt">logreturned=</span>log <span class="kw">capture</span>(<span class="kw">check_for_file</span>(addin_path<span class="op">||</span><span class="st">&quot;image_importer_local.pptm&quot;</span>,ppt_local_path,newest_ppt_local_date);));</span>
+<span id="cb5-323"><a href="#cb5-323"></a>    <span class="cf">if</span>(logreturned<span class="op">!=</span><span class="st">&quot;&quot;</span><span class="op">&amp;</span><span class="kw">contains</span>(logreturned,<span class="st">&quot;*###*&quot;</span>),   </span>
+<span id="cb5-324"><a href="#cb5-324"></a>        <span class="kw">dialog</span>(<span class="st">&quot;There is a new PPT Macro, but failed to update &quot;</span><span class="op">||</span><span class="st">&quot;image_importer_local.pptm. It may be open. Please close the file and try again.&quot;</span> );</span>
+<span id="cb5-325"><a href="#cb5-325"></a>    );</span>
+<span id="cb5-326"><a href="#cb5-326"></a>);</span>
+<span id="cb5-327"><a href="#cb5-327"></a></span>
+<span id="cb5-328"><a href="#cb5-328"></a></span>
+<span id="cb5-329"><a href="#cb5-329"></a></span>
+<span id="cb5-330"><a href="#cb5-330"></a>current data <span class="kw">table</span>(dt_desc);</span>
+<span id="cb5-331"><a href="#cb5-331"></a><span class="dt">nc=</span><span class="dv">0</span>;<span class="kw">try</span>(<span class="dt">nc=</span><span class="kw">ncol</span>(current data <span class="kw">table</span>());<span class="cf">if</span>(<span class="kw">ncol</span>(dt_desc)<span class="op">==</span><span class="dv">1</span>,<span class="kw">column</span>(<span class="dv">1</span>)<span class="op">&lt;</span><span class="er">&lt;</span>set selected),<span class="dt">nc=</span><span class="dv">0</span>); <span class="op">/</span><span class="er">/</span><span class="st"> </span>number of columns</span>
+<span id="cb5-332"><a href="#cb5-332"></a><span class="op">/</span><span class="er">/</span><span class="cf">if</span> <span class="dt">nc=</span><span class="dv">0</span>, there are no images <span class="cf">in</span> data to push. However, a future version of the script will let user pull images from folder.</span>
+<span id="cb5-333"><a href="#cb5-333"></a></span>
+<span id="cb5-334"><a href="#cb5-334"></a><span class="dt">sel_only_value=</span>{};<span class="dt">sel_rows=</span>dt_desc <span class="op">&lt;</span><span class="er">&lt;</span><span class="st"> </span>get selected rows; </span>
+<span id="cb5-335"><a href="#cb5-335"></a><span class="dt">custom_layouts_selected=</span><span class="st">&quot;grid&quot;</span>;<span class="op">/</span><span class="er">/</span>set this default to begin with. It will get overwritten by user selection</span>
+<span id="cb5-336"><a href="#cb5-336"></a><span class="kw">try</span>(<span class="dt">logreturned=</span>log <span class="kw">capture</span>(<span class="dt">returned_panel=</span><span class="kw">create_dialog_panel</span>(nc,dt_desc,image_opt)));<span class="op">/</span><span class="er">/</span><span class="st"> </span>build the panel expression</span>
+<span id="cb5-337"><a href="#cb5-337"></a><span class="cf">if</span>(logreturned<span class="op">!=</span><span class="st">&quot;&quot;</span><span class="op">&amp;</span><span class="kw">contains</span>(logreturned,<span class="st">&quot;*###*&quot;</span>), <span class="kw">logreporter</span>(addin_name,username,addin_path,logreturned, <span class="st">&quot;create_dialog_panel&quot;</span>) );<span class="op">/</span><span class="er">/</span><span class="st"> </span>report failures to dev.</span>
+<span id="cb5-338"><a href="#cb5-338"></a></span>
+<span id="cb5-339"><a href="#cb5-339"></a><span class="dt">canceled=</span><span class="dv">1</span>;</span>
+<span id="cb5-340"><a href="#cb5-340"></a></span>
+<span id="cb5-341"><a href="#cb5-341"></a><span class="cf">if</span>(testmode<span class="op">==</span><span class="dv">0</span>,<span class="dt">UiTester=</span><span class="kw">expr</span>());</span>
+<span id="cb5-342"><a href="#cb5-342"></a></span>
+<span id="cb5-343"><a href="#cb5-343"></a></span>
+<span id="cb5-344"><a href="#cb5-344"></a></span>
+<span id="cb5-345"><a href="#cb5-345"></a><span class="op">/</span><span class="er">/</span><span class="dt">UiTester=</span><span class="kw">expr</span>( );<span class="op">/</span><span class="er">/</span><span class="st"> </span>disabling the tester <span class="cf">for</span> now</span>
+<span id="cb5-346"><a href="#cb5-346"></a></span>
+<span id="cb5-347"><a href="#cb5-347"></a></span>
+<span id="cb5-348"><a href="#cb5-348"></a><span class="dt">nwine=</span><span class="kw">expr</span>(New <span class="kw">Window</span>( <span class="st">&quot;Query Options&quot;</span>,<span class="op">&lt;</span><span class="er">&lt;</span><span class="st"> </span>Modal,UiTester_,returned_panel_));; </span>
+<span id="cb5-349"><a href="#cb5-349"></a><span class="dt">nwin=</span><span class="kw">Substitute</span>(name <span class="kw">Expr</span>(nwine),<span class="kw">expr</span>(UiTester_),<span class="kw">parse</span>(<span class="kw">char</span>(name <span class="kw">expr</span>(UiTester))),<span class="kw">expr</span>(returned_panel_),returned_panel);</span>
+<span id="cb5-350"><a href="#cb5-350"></a></span>
+<span id="cb5-351"><a href="#cb5-351"></a></span>
+<span id="cb5-352"><a href="#cb5-352"></a><span class="kw">eval</span>(nwin);<span class="cf">if</span>(canceled<span class="op">==</span><span class="dv">1</span>,<span class="kw">throw</span>()); <span class="op">/</span><span class="er">/</span><span class="st"> </span>run the dialog. Throw <span class="cf">if</span> canceled.</span>
+<span id="cb5-353"><a href="#cb5-353"></a></span>
+<span id="cb5-354"><a href="#cb5-354"></a><span class="kw">try</span>(dt_desc<span class="op">&lt;</span><span class="er">&lt;</span>delete <span class="kw">column</span>(<span class="st">&quot;_selected_rows_&quot;</span>););<span class="op">/</span><span class="er">/</span><span class="st"> </span>deleting a column that might be left over from previous run.</span>
+<span id="cb5-355"><a href="#cb5-355"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span>the script has an option to push only the selected rows of images to PPT. Marking such rows and carrying the marker along the computation.</span>
+<span id="cb5-356"><a href="#cb5-356"></a><span class="cf">if</span>(<span class="kw">nitems</span>(sel_only_value)<span class="op">==</span><span class="dv">0</span>,</span>
+<span id="cb5-357"><a href="#cb5-357"></a>    dt_desc<span class="op">&lt;</span><span class="er">&lt;</span>new <span class="kw">column</span>(<span class="st">&quot;_selected_rows_&quot;</span>,<span class="kw">formula</span>(<span class="dv">1</span>));<span class="op">:</span>_selected_rows_<span class="op">&lt;</span><span class="er">&lt;</span>delete <span class="kw">formula</span>();</span>
+<span id="cb5-358"><a href="#cb5-358"></a>    ,</span>
+<span id="cb5-359"><a href="#cb5-359"></a>    dt_desc<span class="op">&lt;</span><span class="er">&lt;</span>new <span class="kw">column</span>(<span class="st">&quot;_selected_rows_&quot;</span>,<span class="kw">formula</span>(<span class="dv">0</span>));<span class="op">:</span>_selected_rows_<span class="op">&lt;</span><span class="er">&lt;</span>delete <span class="kw">formula</span>();</span>
+<span id="cb5-360"><a href="#cb5-360"></a>    <span class="dt">selrows=</span>dt_desc<span class="op">&lt;</span><span class="er">&lt;</span>get selected <span class="kw">rows</span>();<span class="op">:</span>_selected_rows_[selrows]=<span class="dv">1</span>        </span>
+<span id="cb5-361"><a href="#cb5-361"></a>);</span>
+<span id="cb5-362"><a href="#cb5-362"></a></span>
+<span id="cb5-363"><a href="#cb5-363"></a><span class="kw">try</span>(<span class="dt">selected_tcol=</span><span class="kw">concat</span>(selected_slide,selected_tcol));</span>
+<span id="cb5-364"><a href="#cb5-364"></a>insert <span class="kw">into</span>(selected_tcol,<span class="st">&quot;_selected_rows_&quot;</span>);</span>
+<span id="cb5-365"><a href="#cb5-365"></a><span class="cf">if</span>(<span class="kw">nitems</span>(selected_ipath)<span class="op">&gt;</span><span class="dv">1</span>, <span class="op">/</span><span class="er">/</span><span class="st"> </span><span class="cf">if</span> multiple path columns are selected stack them.</span>
+<span id="cb5-366"><a href="#cb5-366"></a>    <span class="dt">dtimages=</span>dt_desc<span class="op">&lt;</span><span class="er">&lt;</span><span class="kw">Stack</span>(<span class="kw">columns</span>(selected_ipath),Source Label <span class="kw">Column</span>(<span class="st">&quot;image_type&quot;</span>),Stacked Data <span class="kw">Column</span>(<span class="st">&quot;image_path_ppt_export&quot;</span>),</span>
+<span id="cb5-367"><a href="#cb5-367"></a>        <span class="kw">Name</span>( <span class="st">&quot;Non-stacked columns&quot;</span> )(<span class="kw">Keep</span>( selected_tcol )));</span>
+<span id="cb5-368"><a href="#cb5-368"></a>    dtimages<span class="op">&lt;</span><span class="er">&lt;</span><span class="st"> </span><span class="kw">Sort</span>(Replace table, <span class="kw">By</span>( <span class="op">:</span>image_type ), <span class="kw">Order</span>(Ascending ) ); </span>
+<span id="cb5-369"><a href="#cb5-369"></a>    ,</span>
+<span id="cb5-370"><a href="#cb5-370"></a>    <span class="dt">dtimages=</span>dt_desc<span class="op">&lt;</span><span class="er">&lt;</span><span class="kw">Subset</span>(Selected <span class="kw">Rows</span>( <span class="dv">0</span> ),<span class="kw">columns</span>( <span class="kw">concat</span>(selected_tcol,selected_ipath) ));   </span>
+<span id="cb5-371"><a href="#cb5-371"></a>    <span class="dt">pcol=</span><span class="kw">expr</span>(dtimages<span class="op">&lt;</span><span class="er">&lt;</span>new <span class="kw">column</span>(<span class="st">&quot;image_path_ppt_export&quot;</span>,<span class="kw">formula</span>(col_)));;<span class="dt">newcol=</span><span class="kw">Substitute</span>(name <span class="kw">Expr</span>(pcol),<span class="kw">expr</span>(col_),<span class="kw">parse</span>(selected_ipath[<span class="dv">1</span>]));<span class="kw">eval</span>(newcol);</span>
+<span id="cb5-372"><a href="#cb5-372"></a>    <span class="op">:</span>image_path_ppt_export<span class="op">&lt;</span><span class="er">&lt;</span>delete <span class="kw">formula</span>();dtimages<span class="op">&lt;</span><span class="er">&lt;</span>delete <span class="kw">column</span>(selected_ipath[<span class="dv">1</span>]);</span>
+<span id="cb5-373"><a href="#cb5-373"></a>    <span class="dt">pcol=</span><span class="kw">expr</span>(dtimages<span class="op">&lt;</span><span class="er">&lt;</span>new <span class="kw">column</span>(<span class="st">&quot;image_type&quot;</span>,<span class="kw">formula</span>(col_)));; <span class="dt">newcol=</span><span class="kw">Substitute</span>(name <span class="kw">Expr</span>(pcol),<span class="kw">expr</span>(col_),selected_ipath[<span class="dv">1</span>]);<span class="kw">eval</span>(newcol);</span>
+<span id="cb5-374"><a href="#cb5-374"></a>);</span>
+<span id="cb5-375"><a href="#cb5-375"></a></span>
+<span id="cb5-376"><a href="#cb5-376"></a>dtimages<span class="op">&lt;</span><span class="er">&lt;</span>select <span class="kw">where</span>(<span class="op">:</span>_selected_rows_<span class="op">==</span><span class="dv">0</span>);dtimages<span class="op">&lt;</span><span class="er">&lt;</span>delete <span class="kw">rows</span>();<span class="op">/</span><span class="er">/</span><span class="st"> </span>remove the unselected rows</span>
+<span id="cb5-377"><a href="#cb5-377"></a>dtimages<span class="op">&lt;</span><span class="er">&lt;</span>delete <span class="kw">column</span>(<span class="st">&quot;_selected_rows_&quot;</span>);dt_desc<span class="op">&lt;</span><span class="er">&lt;</span>delete <span class="kw">column</span>(<span class="st">&quot;_selected_rows_&quot;</span>); <span class="op">/</span><span class="er">/</span>clean up</span>
+<span id="cb5-378"><a href="#cb5-378"></a></span>
+<span id="cb5-379"><a href="#cb5-379"></a><span class="op">/</span><span class="er">///////</span>PPT related computation</span>
+<span id="cb5-380"><a href="#cb5-380"></a>dtimages<span class="op">&lt;</span><span class="er">&lt;</span>set <span class="kw">name</span>(<span class="st">&quot;summary_for_ppt&quot;</span>);</span>
+<span id="cb5-381"><a href="#cb5-381"></a><span class="kw">try</span>(<span class="cf">if</span>(<span class="kw">nitems</span>(selected_slide)<span class="op">&gt;</span><span class="dv">0</span>,dtimages<span class="op">&lt;</span><span class="er">&lt;</span><span class="st"> </span><span class="kw">Sort</span>(Replace table, <span class="kw">By</span>( <span class="kw">column</span>(selected_slide))), <span class="kw">Order</span>(Ascending ) )); </span>
+<span id="cb5-382"><a href="#cb5-382"></a></span>
+<span id="cb5-383"><a href="#cb5-383"></a></span>
+<span id="cb5-384"><a href="#cb5-384"></a></span>
+<span id="cb5-385"><a href="#cb5-385"></a><span class="cf">if</span>(custom_layouts_selected<span class="op">!=</span><span class="st">&quot;grid&quot;</span>, <span class="op">/</span><span class="er">/</span><span class="st"> </span>run the custom layout, report errors</span>
+<span id="cb5-386"><a href="#cb5-386"></a>    <span class="kw">try</span>(<span class="dt">logreturned=</span>log <span class="kw">capture</span>( <span class="kw">Eval</span>(<span class="kw">Parse</span>(<span class="kw">LoadTextFile</span>(addin_path<span class="op">||</span>pptlayoutdir<span class="op">||</span>custom_layouts_selected<span class="op">||</span><span class="st">&quot;.jsl&quot;</span>)))) );<span class="op">/</span><span class="er">/</span><span class="st"> </span>Get the user settings. If not available, push <span class="cf">in</span> the defaults.</span>
+<span id="cb5-387"><a href="#cb5-387"></a>    <span class="cf">if</span>(logreturned<span class="op">!=</span><span class="st">&quot;&quot;</span><span class="op">&amp;</span><span class="kw">contains</span>(logreturned,<span class="st">&quot;*###*&quot;</span>),<span class="kw">logreporter</span>(addin_name,username,addin_path,logreturned, custom_layouts_selected) );<span class="op">/</span><span class="er">/</span><span class="st"> </span>Report the faliures to the developer.    </span>
+<span id="cb5-388"><a href="#cb5-388"></a>);</span>
+<span id="cb5-389"><a href="#cb5-389"></a></span>
+<span id="cb5-390"><a href="#cb5-390"></a><span class="cf">if</span>(custom_layouts_selected<span class="op">==</span><span class="st">&quot;grid&quot;</span>, </span>
+<span id="cb5-391"><a href="#cb5-391"></a>    <span class="kw">try</span>(<span class="dt">logreturned=</span>log <span class="kw">capture</span>(<span class="kw">grid_layout</span>()));<span class="op">/</span><span class="er">/</span><span class="st"> </span>Compute the coordinates with grid layout</span>
+<span id="cb5-392"><a href="#cb5-392"></a>    <span class="cf">if</span>(logreturned<span class="op">!=</span><span class="st">&quot;&quot;</span><span class="op">&amp;</span><span class="kw">contains</span>(logreturned,<span class="st">&quot;*###*&quot;</span>),<span class="kw">logreporter</span>(addin_name,username,addin_path,logreturned, <span class="st">&quot;grid_layout&quot;</span>) );<span class="op">/</span><span class="er">/</span><span class="st"> </span>Report the faliures to the developer.  </span>
+<span id="cb5-393"><a href="#cb5-393"></a>);</span>
+<span id="cb5-394"><a href="#cb5-394"></a></span>
+<span id="cb5-395"><a href="#cb5-395"></a><span class="op">:</span>slide_title<span class="op">&lt;</span><span class="er">&lt;</span>delete <span class="kw">formula</span>(); <span class="cf">if</span>(<span class="kw">nitems</span>(selected_slide)<span class="op">&gt;</span><span class="dv">0</span>,dtimages<span class="op">&lt;</span><span class="er">&lt;</span>delete <span class="kw">column</span>(selected_slide[<span class="dv">1</span>]));</span>
+<span id="cb5-396"><a href="#cb5-396"></a>dtimages <span class="op">&lt;</span><span class="er">&lt;</span><span class="st"> </span>move selected <span class="kw">columns</span>({<span class="op">:</span>slide_number,<span class="op">:</span>slide_title,<span class="op">:</span>image_path_ppt_export,<span class="op">:</span>x_coord,<span class="op">:</span>y_coord,<span class="op">:</span>image_size,<span class="op">:</span>plot_title}, to first); <span class="op">/</span><span class="er">/</span><span class="st"> </span>reorder to comply with PPT VBA macro</span>
+<span id="cb5-397"><a href="#cb5-397"></a><span class="op">/</span><span class="er">/</span>dtimages<span class="op">&lt;</span><span class="er">&lt;</span>select <span class="kw">where</span>(is <span class="kw">missing</span>(<span class="op">:</span>image_path_ppt_export));dtimages<span class="op">&lt;</span><span class="er">&lt;</span>delete <span class="kw">rows</span>();</span>
+<span id="cb5-398"><a href="#cb5-398"></a></span>
+<span id="cb5-399"><a href="#cb5-399"></a><span class="kw">try</span>(<span class="dt">logreturned=</span>log <span class="kw">capture</span>(dtimages<span class="op">&lt;</span><span class="er">&lt;</span><span class="kw">save</span>(ppt_temp_folder<span class="op">||</span><span class="st">&quot;summary_for_ppt_&quot;</span><span class="op">||</span><span class="kw">substitute</span>(<span class="kw">char</span>(as <span class="kw">date</span>(<span class="kw">today</span>())),<span class="st">&quot;:&quot;</span>,<span class="st">&quot;_&quot;</span>)<span class="op">||</span><span class="st">&quot;.csv&quot;</span>);));<span class="op">/</span><span class="er">/</span><span class="st"> </span>save with a time stamp to avoid overwriting </span>
+<span id="cb5-400"><a href="#cb5-400"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span>overwriting will cause issues once <span class="cf">in</span> a <span class="cf">while</span> as OS protects the file as read only.</span>
+<span id="cb5-401"><a href="#cb5-401"></a></span>
+<span id="cb5-402"><a href="#cb5-402"></a></span>
+<span id="cb5-403"><a href="#cb5-403"></a><span class="cf">if</span>(logreturned<span class="op">!=</span><span class="st">&quot;&quot;</span>, <span class="op">/</span><span class="er">/</span><span class="st"> </span>failed to write? Inform the user.</span>
+<span id="cb5-404"><a href="#cb5-404"></a>    <span class="kw">dialog</span>(<span class="st">&quot;Could not save the CSV file. Close PPT and try again. There may be background Excel Task running and holding the file. You can try ending Excel Tasks from the Task Manager&quot;</span> );<span class="kw">throw</span>()</span>
+<span id="cb5-405"><a href="#cb5-405"></a>);</span>
+<span id="cb5-406"><a href="#cb5-406"></a></span>
+<span id="cb5-407"><a href="#cb5-407"></a></span>
+<span id="cb5-408"><a href="#cb5-408"></a></span>
+<span id="cb5-409"><a href="#cb5-409"></a><span class="kw">try</span>(<span class="dt">logreturned=</span>log <span class="kw">capture</span>(<span class="kw">launchPPT</span>(addin_path,<span class="st">&quot;image_importer_local.pptm&quot;</span>, <span class="st">&quot;import_images&quot;</span>);;));<span class="op">/</span><span class="er">/</span><span class="st"> </span>trigger the PPT and let it do its job</span>
+<span id="cb5-410"><a href="#cb5-410"></a>                                                                                                   <span class="op">/</span><span class="er">/</span><span class="st"> </span>note that the PPT needs to be <span class="cf">in</span> the folder addin_path</span>
+<span id="cb5-411"><a href="#cb5-411"></a><span class="cf">if</span>(logreturned<span class="op">!=</span><span class="st">&quot;&quot;</span><span class="op">&amp;</span><span class="kw">contains</span>(logreturned,<span class="st">&quot;*###*&quot;</span>), <span class="kw">logreporter</span>(addin_name,username,addin_path_,logreturned, <span class="st">&quot;launchPPT&quot;</span>));<span class="op">/</span><span class="er">/</span><span class="st"> </span>report failures, <span class="cf">if</span> any.</span>
+<span id="cb5-412"><a href="#cb5-412"></a></span>
+<span id="cb5-413"><a href="#cb5-413"></a><span class="kw">print</span>(<span class="st">&quot;All done&quot;</span>);</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="experience__more" style=";margin-bottom:20px;margin-top:5px">
+<button type="button" class="btn--more js--btn-more is--visible" style="margin-top:-10px;margin-bottom:10px">
+Show the User Code (Static)
+</button>
+<button type="button" class="btn--more js--btn-less" style="margin-top:-10px;margin-bottom:-55px">
+Hide
+</button>
+<div style="margin-top:0px">
+<div class="clippercontainer" style=";margin-top:15px;margin-left:42px;margin-bottom:-55px;">
+<div style="display: inline-block; margin-left:45%">
+<div class="clipperbutton">
+<button  onclick="myFunction('s_jslcode_vba')">Copy to clipboard</button>
+</div>
+</div>
+<div style="display: inline-block;">
+<div id="s_jslcode_vbacopied" class="clippernotification" style="display:none">
+Copied
+</div>
+</div>
+</div>
+<div id="s_jslcode_vba" style="margin-bottom:-5px;width:100%">
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="op">/</span><span class="er">/</span>JMP Discovery Summit, <span class="fl">2020.</span> Calling a script that lives <span class="cf">in</span> GITHUB.</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span>This is a static script distributed to <span class="kw">users</span> (possibly with addins.)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span>Calls a JSL file to push images to PPT. The paths of the images are required to be available <span class="cf">in</span> the active table.</span>
+<span id="cb6-4"><a href="#cb6-4"></a>url=<span class="st">&quot;https://raw.githubusercontent.com/quarktetra/JMP_Discovery_2020_git_demo/master/IMAGETABLE_TO_PPT.jsl&quot;</span><span class="op">||</span><span class="st">&quot;?q=&quot;</span><span class="op">||</span><span class="kw">hex</span>(<span class="kw">Floor</span>(<span class="kw">RandomUniform</span>(<span class="dv">2</span><span class="op">^</span><span class="dv">64</span>)));</span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="kw">Eval</span>(<span class="kw">Parse</span>(<span class="kw">LoadTextFile</span>(url)));</span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="op">/</span><span class="er">/</span>The random number attached to the link enforces reload everytime rather than using cache</span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span>With GitHub public, this can take up to few mins.</span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="op">/</span><span class="er">/</span><span class="st"> </span><span class="cf">if</span> refresh fails, restarting JMP will enforce the refresh.</span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<video class="fragment" width="98%" height="450" controls>
+<source src="launching_ppt.mp4" type="video/mp4">
+<p>Your browser does not support the video tag. </video></p>
+</section><section id="pptdemoslidec" class="slide level2" data-background="sg_bg.png" data-state="regularbg">
+<h2>Revising VBA demo</h2>
+<div class="pbox fragment">
+<p style=";margin-top:-5px;margin-bottom:-5px">
+Below is a screen capture of how PPT VBA macros can be modified and distributed to users. ( see <strong>Nuts and Bolts</strong> slide for details. )
+</p>
+</div>
+<video class="fragment" width="98%" height="450" controls>
+<source src="revising_vba.mp4" type="video/mp4">
+<p>Your browser does not support the video tag. </video></p>
+</section></section>
+<section id="crashslide" class="title-slide slide level1" data-background="sg_bg.png" data-state="regularbg"><h1>Script monitoring</h1><div class="pbox fragment">
+<div class="experience__more" style=";margin-bottom:-20px;margin-top:-5px">
+<button type="button" class="btn--more js--btn-more is--visible tobeclicked" style="margin-top:-10px;margin-bottom:5px">
+Show details of log capturing
+</button>
+<button type="button" class="btn--more js--btn-less" style="margin-top:-10px;margin-bottom:5px">
+Collapse
+</button>
+<ul style="margin-top:30px">
+<li>
+Contain possible crashes: <span style="font-size:18px"><em>try(logreturned=log capture(myfunction(arguments)));</em> </span>
+</li>
+<li class="fragment">
+On crash, record and report the log: <span style="font-size:18px"> <em>if(logreturned!="“&amp;contains(logreturned,”<em>###</em>“),logreporter(scriptname,username,logreturned,”myfunction"));</em> </span>
+</li>
+<li class="fragment">
+<em>logreporter</em> function reports the crash. It pings the HTTP server, and a Common Gateway Interface (CGI)<span class="citation" data-cites="wikicgi">[7]</span> captures the log:
+<ul>
+<li>
+<font color="gray"> <span style="font-size:18px"><em>PathToServer/AppendLog.cgi?USERID=userid;DevID=devid;LogType=type;LogLevel=loglevel;ScriptName=scriptname;LogNote=lognote;</em></span> </font>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="pbox fragment">
+<div class="experience__more" style=";margin-bottom:-20px;margin-top:-5px">
+<button type="button" class="btn--more js--btn-more is--visible tobeclicked" style="margin-top:-10px;margin-bottom:5px">
+Show a sample crash log table
+</button>
+<button type="button" class="btn--more js--btn-less" style="margin-top:-10px;margin-bottom:5px">
+Collapse
+</button>
+<div  class="box" style="margin-top:0px">
+
+<div class="imgcont" style="display:block;display: inline-block;width:18%;margin-top:35px;margin-bottom:-28px;margin-left:5%;">
+<div class="caption" style="margin-top:-0px;;margin-bottom:-35px;font-size:14px;color:#6c757d">
+A list of log files in the server.
+</div>
+<p><img src="crash_log.png" width="327" /></p>
+</div>
+<div style="margin-top:35px;width:75%;margin-left:2%;">
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:130px; ">
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<caption>
+A sample crash-log table collected at the server
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;">
+LogDateTime
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;">
+LogType
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;">
+LogLevel
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;">
+ScriptName
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;position: sticky; top:0; background-color: #FFFFFF;">
+LogNote
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2020/08/10 6:30:52 PM
+</td>
+<td style="text-align:left;">
+JMP_crash_log
+</td>
+<td style="text-align:left;">
+crash
+</td>
+<td style="text-align:left;">
+image_exporter.jsl
+</td>
+<td style="text-align:left;">
+Name Unresolved: dt_desc_names_l{7} in access or evaluation of +dt_desc_names_l+ , dt_desc_names_l/<em>###</em>/__<strong>???</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020/08/11 10:21:19 AM
+</td>
+<td style="text-align:left;">
+JMP_crash_log
+</td>
+<td style="text-align:left;">
+crash
+</td>
+<td style="text-align:left;">
+image_exporter.jsl
+</td>
+<td style="text-align:left;">
+Can insert only into an L-value{6} in access or evaluation of +Insert Into+ , Insert Into/<em>###</em>/({}, “grid”)__<strong>???</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020/08/11 10:27:18 AM
+</td>
+<td style="text-align:left;">
+JMP_crash_log
+</td>
+<td style="text-align:left;">
+crash
+</td>
+<td style="text-align:left;">
+image_exporter.jsl
+</td>
+<td style="text-align:left;">
+NRow or NCol argument must be a Matrix or Data Table{6} in access or evaluation of +N Row+ , Bad Argument( {“one_big_three_small.jsl”} ), N Row/<em>###</em>/(custom_layouts)__<strong>???</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020/08/11 10:40:10 AM
+</td>
+<td style="text-align:left;">
+JMP_crash_log
+</td>
+<td style="text-align:left;">
+crash
+</td>
+<td style="text-align:left;">
+image_exporter.jsl
+</td>
+<td style="text-align:left;">
+too many arguments{6} in access or evaluation of +Expr+ , Expr/<em>###</em>/(Panel Box( “Export Options”,V List Box(If( N Row( sel_rows ) &gt; 0,sel_only = Check Box( “Selected rows only” )),If( N Row( sel_rows ) &gt; 0,sel_only &lt;&lt; set( 1 )),Spacer Box( Size( 1, 10 ) ),If( N Items( custom_layouts ) &gt; 0,V List Box(Panel Box( “PPT Layout”,img_num_row = Combo Box( custom_layouts_amended )))),Spacer Box( Size( 1, 10 ) ),Panel Box( “Grid Settings”,H List Box(V List Box(Text Box( “Columns” ),img_per_row = Combo Box( img_per_row_List )),V List Box(Text Box( “Rows” ),img_num_row = Combo Box( img_num_rows_List )))))), Spacer Box( Size( 1, 10 ) ), H List Box(bbx = (button_Start_Querying = Button Box( “Start Export”,selected_tcol = colList_ilabel &lt;&lt; Get Items;selected_ipath = colList_ipath &lt;&lt; Get Items;selected_slide = colList_slabel &lt;&lt; Get Items;If( N Row( sel_rows ) &gt; 0,sel_only_value = sel_only &lt;&lt; get selected);img_per_row_value = img_per_row &lt;&lt; get selected;img_num_row_value = img_num_row &lt;&lt; get selected;If( 1,canceled = 0;bbx &lt;&lt; close window;);)),Button Box( “Cancel”, canceled = 1 )))__<strong>???</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2020/08/12 9:37:36 AM
+</td>
+<td style="text-align:left;">
+JMP_crash_log
+</td>
+<td style="text-align:left;">
+crash
+</td>
+<td style="text-align:left;">
+image_exporter.jsl
+</td>
+<td style="text-align:left;">
+subscripted key not in map[“custom_layouts”] in access or evaluation of +custom_layouts+ , “custom_layouts” /<em>###</em>/__<strong>???</strong>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<video class="fragment" width="98%" height="450" controls>
+<source src="crash_demo.mp4" type="video/mp4">
+<p>Your browser does not support the video tag. </video></p></section>
+<section id="automated-testing" class="title-slide slide level1"><h1>Automated testing</h1><div class="pbox fragment">
+<div class="experience__more" style=";margin-bottom:20px;margin-top:-5px">
+<button type="button" class="btn--more js--btn-more is--visible tobeclicked" style="margin-top:-10px;margin-bottom:55px">
+Show
+</button>
+<button type="button" class="btn--more js--btn-less" style="margin-top:-10px;margin-bottom:55px">
+Collapse
+</button>
+<ul>
+<li style="margin-top:30px">
+Unit-tests are important to capture failures in individual modules, but not enough to capture interactions.
+<ul>
+<li class="fragment">
+<font color="gray"> NASA lost their Mars Climate orbiter: A software calculated the force the thrusters needed to exert in pounds. A separate piece of software took in the data assuming it was in the metric unit: Newtons<span class="citation" data-cites="nasaorbiter">[8]</span>. </font>
+</li>
+<li class="fragment">
+<font color="gray"> Boeing lost their Starliner. They admitted that they could have uncovered the issue with more rigorous integration tests<span class="citation" data-cites="boeing">[9]</span>. </font>
+</li>
+</ul>
+</li>
+<li class="fragment">
+In the end, what counts is the integration test. And for light-weight scripts, it does not take too long.
+</li>
+</ul>
+<div class="fbox fragment" style="margin-top:-15px;margin-bottom:-15px;text-align:center">
+<p><IMG SRC="unit_integration_test.gif" height="250" style="display: inline-block;"> <IMG SRC="unit_integration_test2.gif" height="250" style="display: inline-block;"> <IMG SRC="unit_integration_test3.gif" height="250" style="display: inline-block;"></p>
+</div>
+</div>
+</div>
+<div class="pbox fragment">
+<p style="margin-top:-5px">
+A method to test integration: As the script is developed, create hooks for tester injection and co-develop the tester.
+</p>
+<p class="fragment" style="margin-top:-5px;text-align:center">
+<strong>Example: Automated test of a modal window</strong>
+</p>
+<p class="fragment" style="margin-top:-5px;margin-bottom:-25px;">
+<em>A snippet from the code to be tested:</em>
+</p>
+<div id="testee" class="fragment" style="margin-bottom:-25px;margin-top:-35px;width:100%">
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">try</span>(testmode,<span class="dt">testmode=</span><span class="dv">0</span>);<span class="op">/</span><span class="er">/</span><span class="st"> </span>an external tester script will drive this parameter. If this is run stand alone, disable it.</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="cf">if</span>(testmode<span class="op">==</span><span class="dv">0</span>,<span class="dt">UiTester=</span><span class="kw">expr</span>());<span class="op">/</span><span class="er">/</span><span class="st"> </span>define a null tester <span class="cf">if</span> the script is runnin itself.</span>
+<span id="cb7-3"><a href="#cb7-3"></a>nwine=<span class="kw">expr</span>(New <span class="kw">Window</span>( <span class="st">&quot;Query Options&quot;</span>,<span class="op">&lt;</span><span class="er">&lt;</span><span class="st"> </span>Modal,UiTester_,returned_panel_));; </span>
+<span id="cb7-4"><a href="#cb7-4"></a>nwin=<span class="kw">Substitute</span>(name <span class="kw">Expr</span>(nwine),<span class="kw">expr</span>(UiTester_),<span class="kw">parse</span>(<span class="kw">char</span>(name <span class="kw">expr</span>(UiTester))),<span class="kw">expr</span>(returned_panel_),returned_panel);</span></code></pre></div>
+</div>
+<p class="fragment" style="margin-top:-25px">
+It has an expression <em>UiTester</em> injected into the modal window. Note that when the code runs by itself, it turns of the testers. So users can run the code as is.
+</p>
+<p class="fragment" style="margin-top:-5px">
+<em>The tester code:</em>
+</p>
+<div id="tester" class="fragment" style="margin-bottom:-25px;margin-top:-45px;;width:100%">
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>testmode=<span class="dv">1</span>;<span class="op">/</span><span class="er">/</span><span class="st"> </span>this will put the loaded script into the test mode. Testers will be pushed down on to the loaded script<span class="op">:</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>UiTester=<span class="kw">expr</span>(<span class="op">&lt;</span><span class="er">&lt;</span>On <span class="kw">Open</span>( </span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="op">:</span>IMAGE_URL_<span class="dv">1</span><span class="op">&lt;</span><span class="er">&lt;</span>set <span class="kw">selected</span>();ipath_button<span class="op">&lt;</span><span class="er">&lt;</span>click;</span>
+<span id="cb8-4"><a href="#cb8-4"></a>button_Start_Querying<span class="op">&lt;</span><span class="er">&lt;</span>click;</span>
+<span id="cb8-5"><a href="#cb8-5"></a>));</span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="kw">try</span>(<span class="dt">logreturned=</span>log <span class="kw">capture</span>( <span class="kw">Eval</span>(<span class="kw">Parse</span>(<span class="kw">LoadTextFile</span>(<span class="st">&quot;IMAGETABLE_TO_PPT.jsl&quot;</span>)))) );<span class="op">/</span><span class="er">/</span><span class="st"> </span>Run the script with testers enabled.</span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="cf">if</span>(logreturned<span class="op">==</span><span class="st">&quot;&quot;</span>,<span class="kw">print</span>(<span class="st">&quot;script did not fail&quot;</span>), <span class="kw">print</span>(<span class="st">&quot;Script failed with this log: &quot;</span><span class="op">||</span>logreturned));</span></code></pre></div>
+</div>
+<p class="fragment" style="margin-top:-5px">
+It sets <em>testmode=1</em>. It defines UiTester: Select a column and put it in a role. Load the code to be tested, runs it, and collects crash logs, if any. In a full blown tester, there will be many hooks to be tested with many different scenarios.
+</p>
+</div></section>
+<section id="jiraslide" class="title-slide slide level1" data-background="sg_bg.png" data-state="regularbg"><h1>Automated bug tickets</h1><div class="pbox fragment">
+<ul>
+<li>
+The user knows the script crashed (DUH!)
+<ul>
+<font color="gray">
+<li>
+It is important to capture the failures and give meaningful crash info to the user.
+</li>
+</font>
+</ul>
+</li>
+<li class="fragment">
+The developer knows the script crashed
+<ul>
+<font color="gray">
+<li>
+Upon crash, a log instance is automatically generated.
+</li>
+</font>
+</ul>
+</li>
+<li class="fragment">
+A bug ticket is created automatically.
+<ul>
+<font color="gray">
+<li>
+The user knows that the developer knows the script crashed, and can ‘watch’ the issue being worked on and resolved.
+</li>
+</font>
+</ul>
+</li>
+</ul>
+</div>
+<div class="pbox fragment">
+<div class="experience__more" style=";margin-bottom:20px;margin-top:-5px">
+<button type="button" class="btn--more js--btn-more is--visible tobeclicked" style="margin-top:-10px;margin-bottom:55px">
+Show details JIRA ticket creation
+</button>
+<button type="button" class="btn--more js--btn-less" style="margin-top:-10px;margin-bottom:55px">
+Collapse
+</button>
+<div  class="box" style="margin-top:40px">
+
+<div class="imgcont" style="display:block;display: inline-block;width:15%;margin-top:-10px;margin-bottom:-28px;margin-left:4%">
+<img src="jira.jpg" width="137" />
+<div class="caption" style="margin-top:-25px;;margin-bottom:-35px;font-size:14px;color:#6c757d">
+Atlassian
+</div>
+</div>
+<ul style="margin-bottom:-28px">
+<li>
+Containing script crashes and capturing the logs enables the ability to report the crash to the developer using various issue tracking software, such JIRA of Atlassian.
+</li>
+<li class="fragment">
+JIRA supports REST API. See <a href="https://developer.atlassian.com/server/jira/platform/rest-apis/">server based JIRA</a> and <a href="https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/">Cloud based JIRA</a>.
+</li>
+<li class="fragment">
+A Basic Jira ticket can be created by the code below:
+<ul>
+<li>
+<font color="gray"> CMD code: <em>curl -D- -u username:pwd -X POST -d “@data.json” -H “Content-Type: application/json” PathToJiraRest</em> </font>
+</li>
+<li>
+<font color="gray"> data.json: <em>{“fields”: {“project”: {“key”: “projectname” },“assignee”:{“name”:“developer_JIRA_ID”},“summary”: “Insert the captured log here”, “description”: “Creating of a JSL bug ticket: Meta data goes here”, “issuetype”: {“name”: “Bug” } }}</em></font>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pbox fragment">
+<div class="imgcont" style="display:block;display: inline-block;width:45%;margin-top:-15px;margin-bottom:-28px;margin-left:28%">
+<img src="jira_ticket.png" width="545" />
+<div class="caption" style="margin-top:-25px;;margin-bottom:-35px;font-size:14px;color:#6c757d">
+E-mail notification from JIRA on auto-generated bug ticket
+</div>
+</div>
+</div></section>
+<section id="closingslide" class="title-slide slide level1" data-background="sg_bg.png" data-state="regularbg"><h1>Closing notes</h1><div class="pbox fragment">
+
+
+<ul>
+<li>
+GIT is the cornerstone of managing scripts:
+<ul>
+<font color="gray">
+<li>
+It enables source control and collaboration.
+</li>
+</font> <font color="gray">
+<li>
+It also enables stacking scripts with ease to build a composite script.
+</li>
+</font>
+</ul>
+</li>
+<li class="fragment">
+PowerPoint is an integral part of the ecosystem:
+<ul>
+<font color="gray">
+<li>
+PPT files and macros are source controlled by GIT and distributed via JSL addins or HTTP requests.
+</li>
+</font>
+</ul>
+</li>
+<li class="fragment">
+Usage and crashes are logged and reported:
+<ul>
+<font color="gray">
+<li>
+Developers have visibility to the performance of their scripts.
+</li>
+</font> <font color="gray">
+<li>
+Users have visibility to bug fix tickets.
+</li>
+</font>
+</ul>
+</li>
+<li class="fragment">
+Few key JSL best practices:
+<ul>
+<font color="gray">
+<li class="fragment">
+Make the script data agnostic. No explicit column names in the script, at all.
+</li>
+</font> <font color="gray">
+<li class="fragment">
+Push such definitions to a simple JMP table. This gives general users the ability to customize.
+</li>
+</font> <font color="gray">
+<li class="fragment">
+Create hooks to import user defined JSL scripts. This gives experienced users the ability to customize via JSL.
+</li>
+</font> <font color="gray">
+<li class="fragment">
+Expressions and associative arrays are your best JSL friends.
+</li>
+</font> <font color="gray">
+<li class="fragment">
+Test, test, and test.
+</li>
+</font> <font color="gray">
+<li class="fragment">
+Commit twice, push once.
+</li>
+<p></font></p>
+</ul>
+</li>
+</ul>
+</div></section>
+<section id="image-exporter-nuts-bolts" class="title-slide slide level1" data-background="nuts.jpg" data-state="regularbg"><h1>Image exporter: Nuts &amp; Bolts</h1><div class="pbox" style="height:650px">
+<iframe  src='manual/export_images.html'  width='98%'></iframe>
+</div></section>
+<section id="references" class="title-slide slide level1" data-background="sg_bg.png"><h1>References</h1><script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.js"></script>
+<p><link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.css" rel="stylesheet" type="text/css" /></p>
+<script type="text/javascript">
+function draw_flow(divid) {
+   var nodes = []; var edges = [];   var network = null; var sizer=150;
+   var colorset={
+      background: "limegreen",  border: '#000000',
+      highlight: {border: '#2B7CE9',background: '#D2E5FF'   }
+      }
+   var colorset2={
+      background: "limegreen",border: 'orange',
+      highlight: {border: '#2B7CE9',background: '#D2E5FF'  }
+      }   
+  var fontset={ color: 'black',  face: 'arial',  size: 24,    background: 'none',strokeWidth: 0, strokeColor: '#ffffff',align: 'center',multi: false,  vadjust: -0 }  
+  var fontset2={color: 'black', face: 'arial',size: 20,   background: 'none',   strokeWidth: 0, strokeColor: '#ffffff',  align: 'center',  multi: false,vadjust: -80 }    
+  var yloc=25
+
+  if(divid=="gitflowdiv"){
+    var stepsize=360;var xoff=0
+    nodes.push({id: 0, shape: 'box',x:xoff,y: yloc,size:sizer, label:"Developers(Local)", color: colorset,font: fontset,title: 'Developers have  local copies of JSLs.'})
+    nodes.push({id: 1, shape: 'box',x:xoff+stepsize,y: yloc,size:sizer, label:"Repo(GIT&SSH server)", color: colorset,font: fontset,
+          title: 'Remote Repo takes in codes from developers. It also passes the codes to an HTTP server.'})
+    nodes.push({id: 2, shape: 'box',x:xoff+stepsize*2,y: yloc,size:sizer, label:"shared-filesys(HTTP server)", color: colorset2,borderWidth:3,font: fontset,
+          title: 'Files in the repo are served to users via HTTP server, like  Apache HTTPd.'})
+    nodes.push({id: 3, shape: 'box',x:xoff+stepsize*3.05,y: yloc,size:sizer, label:"User Loads JSL(Local)", color: colorset,font: fontset,title: 'Users load JSLs via include/load commands.'})
+
+    edges.push( {from: 0, to: 1,arrows:"middle",smooth: {type: "curvedCW", roundness: 0},label:"Git-over-SSH      ",color: {color:'purple'},font: {color: 'blue',size: 16,background: 'none',vadjust:15},width:3,
+          title: 'Developer pushes updates to the remote repo via SSH.'});
+    edges.push( {from: 1, to: 2,arrows:"middle",smooth: {type: "curvedCW", roundness: 0},dashes:true,label:"",color: {color:'purple'},font: {color: 'blue',size: 16,background: 'none',vadjust:15},width:3 ,
+          title: 'Git repo is coupled to an HTTP server.'});
+    edges.push( {from: 2, to: 3,arrows:"middle",smooth: {type: "curvedCW", roundness: 0},label:"  HTTP",color: {color:'purple'},font: {color: 'blue',size: 16,background: 'none',vadjust:15},width:3,
+          title: 'As an addin launches, it retrieves the code from the repository via HTTP.'});
+  }
+  if(divid=="pptflowdiv"){
+  var stepsize=360
+   nodes.push({id: 0, shape: 'box',x:0,y: yloc,size:sizer, label:"Locate POWERPNT.EXE", color: colorset,font: fontset,
+          title: 'POWERPNT.EXE is typically under C:\\Program Files (x86)\\Microsoft Office\\Office.'})
+   nodes.push({id: 1, shape: 'box',x:stepsize,y: yloc,size:sizer, label:"Create a bat file", color: colorset,font: fontset,
+        title: 'Bat file is a text file saved with extension .bat. '})
+   nodes.push({id: 2, shape: 'box',x:stepsize*2,y: yloc,size:sizer, label:"Launch the bat file", color: colorset,font: fontset,title: 'Bat file can be run by using <b><i>open(pathtobatfile)</i></b>.'})
+
+   edges.push( {from: 0, to: 1,arrows:"middle",smooth: {type: "curvedCW", roundness: 0},label:"",color: {color:'purple'},font: {color: 'blue',size: 16,background: 'none',vadjust:15},width:3 });
+   edges.push( {from: 1, to: 2,arrows:"middle",smooth: {type: "curvedCW", roundness: 0},label:"",color: {color:'purple'},font: {color: 'blue',size: 16,background: 'none',vadjust:15},width:3 });
+
+  }
+
+  if(divid=="downloadpptflowdiv"){
+   var stepsize=350
+   nodes.push({id: 0, shape: 'box',x:0,y: yloc,size:sizer, label:"Get the creation date of local PPT.", color: colorset,font: fontset,title: 'Uses <b><i>Creation Date()</i></b> command.'})
+   nodes.push({id: 1, shape: 'diamond',x:stepsize,y: yloc,size:60, label:"New PPT?", color: colorset,font: fontset2,title: 'Is the PPT in repo newer than the local one? If so, download.'})
+   nodes.push({id: 2, shape: 'box',x:stepsize*1.7,y: yloc,size:sizer, label:"Download PPT", color: colorset,font: fontset,
+          title: 'Uses  <b><i>New HTTP Request(URL(pathtorepoppt), Method( “Get” ))</i></b> command.'})
+
+   edges.push( {from: 0, to: 1,arrows:"to",smooth: {type: "curvedCW", roundness: 0},label:"",color: {color:'purple'},font: {color: 'blue',size: 16,background: 'none',vadjust:15},width:3 });
+   edges.push( {from: 1, to: 2,arrows:"to",smooth: {type: "curvedCW", roundness: 0},label:"yes                          ",color: {color:'purple'},font: {color: 'blue',size: 16,background: 'none',vadjust:15},width:3});
+}
+
+
+    var container = document.getElementById(divid);
+    var data = {nodes: nodes, edges: edges};
+    var options = {  
+                  width: '100%', height: '110px' ,physics: false,
+                  interaction: {dragNodes: false, zoomView: false,dragView: false,hover: true,navigationButtons: false}
+    };
+    network = new vis.Network(container, data, options);
+
+}
+
+</script>
+<script type="text/javascript">
+window.onload = function() { // this will be run when the whole page is loaded
+//console.clear()
+
+setTimeout(function() {
+document.getElementsByClassName('slide-menu-toolbar')[0].appendChild( document.getElementById('button_container') ); 
+
+draw_flow("gitflowdiv")
+draw_flow("pptflowdiv")
+draw_flow("downloadpptflowdiv")
+//alert($('#gitflowdiv').is(':visible'))
+
+  var centerc = document.getElementsByClassName("vis-button vis-zoomExtends");
+  //alert(centerc.length)
+  for (i = 0; i < centerc.length; i++) {  
+  centerc[i].click()
+  }
+  
+
+  
+centerc = document.getElementsByClassName("vis-navigation");
+  for (i = 0; i < centerc.length; i++) {  
+ // centerc[i].remove();
+  }
+     
+var all_clicks = document.getElementsByClassName("tobeclicked");
+
+for (var i = 0; i < all_clicks.length; i++) { 
+all_clicks[i].click()
+}   
+
+
+}, 1500);
+
+
+
+
+
+    };
+
+</script>
+<script>
+
+function addClassNameListener(elemId, callback) {
+    var elem = document.getElementById(elemId);
+    var lastClassName = elem.className;
+    window.setInterval( function() {   
+       var className = elem.className;
+        if (className !== lastClassName) {
+            callback();   
+            lastClassName = className;
+        }
+    },10);
+}
+        
+
+
+                        
+addClassNameListener("gitslide", function(){
+if(document.getElementById("gitslide").className.includes("present")){draw_flow("gitflowdiv")}
+
+});
+
+
+
+addClassNameListener("timelineslide", function(){
+if(document.getElementById("timelineslide").className.includes("present")){
+
+document.getElementById('timelineslide').innerHTML+=" <iframe  src='jsl_timeline.html'></iframe> "; 
+
+}
+
+});
+
+addClassNameListener("pptslide", function(){
+draw_flow("pptflowdiv")
+draw_flow("downloadpptflowdiv")
+
+});
+
+addClassNameListener("check_for_pptcode", function(){
+draw_flow("downloadpptflowdiv")
+
+});
+
+
+
+
+</script>
+<li id="button_container">
+<p><span class="slide-menu-toolbar-label" style="font-size:12px">Transitions</span><br></p>
+<div class="custom-switch custom-switch-label-onoff custom-switch-xs pl-0" style="margin-top:-20px;margin-bottom:-10px">
+<p><input  class="custom-switch-input" id="fragment_button" type="checkbox" checked> <label class="custom-switch-btn" for="fragment_button"></label></p>
+</div>
+</li>
+<script>
+const checkbox = document.getElementById('fragment_button')
+
+checkbox.addEventListener('change', (event) => {
+    var allfragments=$(".slides").find('[class*="fragment"]')
+
+  if (event.target.checked) {
+  
+  // console.log("enable frags")
+  for(let i = 0; i < allfragments.length; i++) { allfragments[i].classList.replace('fragmentz','fragment');  }
+   
+  } else {
+ //console.log("disable frags")
+for(let i = 0; i < allfragments.length; i++) { allfragments[i].classList.replace('fragment','fragmentz');  }  }
+})
+
+</script>
+<script>
+
+
+
+$('caption').each(function() {
+    $(this).parent().parent().before(this);
+});
+
+
+
+</script>
+<div id="refs" class="references" role="doc-bibliography">
+<div id="ref-wikiGit">
+<p>[1] Wikipedia, “Git — Wikipedia, the free encyclopedia.” <a href="http://en.wikipedia.org/w/index.php?title=Git&amp;oldid=972807073">http://en.wikipedia.org/w/index.php?title=Git&amp;oldid=972807073</a>, 2020.</p>
+</div>
+<div id="ref-gitlab">
+<p>[2] “GITLAB.” <a href="https://about.gitlab.com/">https://about.gitlab.com/</a>.</p>
+</div>
+<div id="ref-githello">
+<p>[3] S. Ölmez, “Hello.jsl.” <a href="https://github.com/quarktetra/JMP_Discovery_2020_git_demo/blob/master/hello.jsl">https://github.com/quarktetra/JMP_Discovery_2020_git_demo/blob/master/hello.jsl</a>.</p>
+</div>
+<div id="ref-gitcallhello">
+<p>[4] S. Ölmez, “Call_hello.jsl.” <a href="https://github.com/quarktetra/JMP_Discovery_2020_git_demo/blob/master/call_hello.jsl">https://github.com/quarktetra/JMP_Discovery_2020_git_demo/blob/master/call_hello.jsl</a>.</p>
+</div>
+<div id="ref-demoGITHUB">
+<p>[5] S. Ölmez, “IMAGETABLE_TO_PPT.” <a href="https://github.com/quarktetra/JMP_Discovery_2020_git_demo/blob/master/IMAGETABLE_TO_PPT.jsl/">https://github.com/quarktetra/JMP_Discovery_2020_git_demo/blob/master/IMAGETABLE_TO_PPT.jsl/</a>.</p>
+</div>
+<div id="ref-imagetools">
+<p>[6] H. Hardner and S. Ölmez, “Images in data tables and related jsl tools.” <a href="https://discoverysummit.jmp/en/2020/usa/home.html">https://discoverysummit.jmp/en/2020/usa/home.html</a>.</p>
+</div>
+<div id="ref-wikicgi">
+<p>[7] Wikipedia, “Common Gateway Interface — Wikipedia, the free encyclopedia.” <a href="http://en.wikipedia.org/w/index.php?title=Common%20Gateway%20Interface&amp;oldid=969624432">http://en.wikipedia.org/w/index.php?title=Common%20Gateway%20Interface&amp;oldid=969624432</a>, 2020.</p>
+</div>
+<div id="ref-nasaorbiter">
+<p>[8] Wired, “Metric math mistake muffed mars meteorology mission.” <a href="https://www.wired.com/2010/11/1110mars-climate-observer-report/">https://www.wired.com/2010/11/1110mars-climate-observer-report/</a>, 2010.</p>
+</div>
+<div id="ref-boeing">
+<p>[9] spaceflightnow.com,“... testing would have caught starliner software problems.” <a href="https://spaceflightnow.com/2020/02/28/boeing-says-thorough-testing-would-have-caught-starliner-software-problems/">https://spaceflightnow.com/2020/02/28/boeing-says-thorough-testing-would-have-caught-starliner-software-problems/</a>, 2020.</p>
+</div>
+</div></section>
+    </div>
+  </div>
+
+  <script src="jsl_ecosystem_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="jsl_ecosystem_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: true,
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+        // Transition style
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+        menu: {
+          custom: false,
+          themes: false,
+          transitions: false
+        },
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'jsl_ecosystem_files/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+          { src: 'jsl_ecosystem_files/reveal.js-3.3.0.1/plugin/search/search.js', async: true },
+          { src: 'jsl_ecosystem_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
+          { src: 'jsl_ecosystem_files/reveal.js-3.3.0.1/plugin/menu/menu.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "jsl_ecosystem_files/mathjax-local/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
