@@ -599,11 +599,12 @@ Use arrow keys to navigate the slides
 Table of contents button on the left bottom
 </li>
 <li>
-Printable PDF:
-<div class="regulartooltip topline">
-<a href='./presentation.pdf'><i class='far fa-file-pdf' style='color:red;'></i></a> <span class="regulartooltiptext"> This is a static copy of the presentation. </span>
-</div>
-</li>
+  Printable PDF:
+  <div class="regulartooltip topline">
+  <a href='./presentation.pdf'><i class='far fa-file-pdf' style='color:red;'></i></a> <span class="regulartooltiptext"> This is a static copy of the presentation. </span>
+  </div>
+  </li>
+  <li>Recorded session: <div class='regulartooltip topline'> <a href="#" onclick='window.open("https://www.youtube.com/watch?v=gsp4fUP0I30");return false;'><i class='fab fa-youtube' style='color:red;'></i></a> <span class='regulartooltiptext'> Recorded on Jan 7, 2021. </span></div></li>
 <li>
 <div id="specialrefs" class="myclassifier_Highlights_Detailed_Advanced_Presentation">
 Complied with BookDown <span class="citation" data-cites="xie2015">[<a href="#/ref-xie2015" role="doc-biblioref">1</a>]</span> and Revealjs <span class="citation" data-cites="revealjs">[<a href="#/ref-revealjs" role="doc-biblioref">2</a>]</span>
@@ -3280,7 +3281,7 @@ for(let i = 0; i < allcaptions.length; i++) {
   newFirstElement.className="figurenum"
   allcaptions[i].insertBefore(newFirstElement, allcaptions[i].firstChild);
  // try {console.log(allcaptions[i].parentNode.parentNode.id)}catch(err) {}
-try {console.log(fignum+":"+allcaptions[i].parentNode.parentNode.className)}catch(err) {}
+//try {console.log(fignum+":"+allcaptions[i].parentNode.parentNode.className)}catch(err) {}
   
 }
 
@@ -3496,15 +3497,12 @@ document.getElementsByClassName('author')[0].appendChild(document.getElementById
 
  //document.getElementById("bbmodel").getElementsByTagName("h2")[0].appendChild(document.getElementById("bblogo"))
 
-//var mydiv = document.getElementsByClassName('title')[0];
-//var mycontent = document.createElement("span");
-//mycontent.innerHTML = "&nbsp;  <div class='regulartooltip'> <a href='./presentation.pdf'><i class='far fa-file-pdf' style='color:red;'></i></a> <span class='regulartooltiptext'> Printable PDF copy </span></div>  ";
-//mycontent.className = 'prego';
-//mydiv.appendChild(mycontent);
+ var mydiv = document.getElementsByClassName('title')[0];
+var mycontent = document.createElement("span");
+mycontent.innerHTML = "&nbsp;  <div class='regulartooltip topline'> <a href='#' onclick='window.open(\x22https://www.youtube.com/watch?v=gsp4fUP0I30\x22);return false;'><i class='fab fa-youtube' style='color:red;height:60px'></i></a> <span class='regulartooltiptext'> YouTube link to the recorded session. </span></div>  ";
+mycontent.className = 'prego';
+mydiv.appendChild(mycontent);
  
- 
-
-
 
 
  //console.log("click on m_button")
