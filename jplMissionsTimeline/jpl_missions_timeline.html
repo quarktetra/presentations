@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+<link href="css/missions.css" rel="stylesheet" type="text/css">
+<link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+
+ 
+<!-- filters -->
+<div class="contain" style="padding-left: 20px;">
+      <div > <h5> Status</h5> <select name="status" id="Statusfilter" class="mdb-select md-form" multiple="multiple"   onchange="applyfilter(0)">  </select></div>  
+</div>
+<div class="contain">
+          <div > <h5> Type</h5> <select name="types" id="Typefilter" class="mdb-select md-form" multiple="multiple"   onchange="applyfilter(0)">  </select></div>  
+</div>  
+<div class="contain">
+  <div > <h5> Target</h5> <select name="Target" id="Targetfilter" class="mdb-select md-form" multiple="multiple"   onchange="applyfilter(0)">  </select></div>  
+</div>
+
+<div class="contain">
+  <div > <h5> Launch Location</h5> <select name="Location" id="Launch Locationfilter" class="mdb-select md-form" multiple="multiple"   onchange="applyfilter(0)">  </select></div>  
+</div>
+
+
+
+<div class="contain">
+  <div > <h5> Instruments</h5> <select name="instrument" id="instrumentfilter" class="mdb-select md-form" multiple="multiple"   onchange="applyfilter(0)">  </select></div>  
+</div>
+
+<div class="contain">
+  <div > <h5> Mission Name</h5> <select name="mname" id="Mission Namefilter" class="mdb-select md-form" multiple="multiple"   onchange="applyfilter(0)">  </select></div>  
+</div>
+
+<div class="containc">
+  <h5><span id="contentcount" style = "text-align: center;padding-left: 0px;">  </span></h5>
+  <div class="button_cont" style="padding-top: 5px;"><button class="example_a" id="resetbutton">Clear filters</button></div>  
+</div>
+<!-- filters end-->
+<div class="containerxs"> 
+    <div id='timeline-embed' style="width:100%; height: 600px"></div>
+</div>
+
+<!-- load JS -->
+<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-crypto-js@latest/dist/SimpleCrypto.min.js"></script>
+<script src="jsfiles/dist/js/BsMultiSelect.js"></script>
+<script src="jsfiles/rrssb.min.js"></script>
+<script src="jsfiles/jpl_missions_js.js"></script>
+<script>$("select").bsMultiSelect() </script>
+
+
+</body>
+
+</html>
