@@ -56,7 +56,7 @@ function createddown(modein,csel)
                     for (let stepx = 0; stepx < filters.length; stepx++){
                       thisfilterx=filters[stepx]
                       if(thisfilterx!=thisfilter){
-                        //console.log(filters[stepx])
+                       // console.log(filters[stepx])
                         selvalues=getselected(filters[stepx].concat("filter"))
                         if(selvalues.length>0){ redmissions=filterby(redmissions,filters[stepx],selvalues ) }
                       }
@@ -163,6 +163,7 @@ span.innerText =missions.length.toString().concat( " missions");
 
 var rmyjson = {}
 createddown("initialize",[[],[],[],[],[],[]])   
+
 
 
 $(document).ready(function() {
