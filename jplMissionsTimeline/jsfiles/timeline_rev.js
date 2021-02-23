@@ -72,7 +72,7 @@ document.getElementById('timelinecont').style.height=window.innerHeight*0.92+"px
 
  tlslides=document.getElementsByClassName('subDiv1')
   for(var i=0;i<tlslides.length;i++){
-    tlslides[i].style.height = parseInt(window.innerHeight*(scaler-0.06))+"px"
+    tlslides[i].style.height = parseInt(window.innerHeight*(scaler-0.06)-60)+"px"
 }
 
 //document.getElementsByClassName("tl-slidenav-next")[0].click()

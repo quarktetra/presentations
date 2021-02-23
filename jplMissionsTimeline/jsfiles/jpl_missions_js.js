@@ -132,8 +132,8 @@ var titleinfo= {
         "credit": ""
       },
       "text": {
-        "headline": "<h5>Timeline of all JPL Missions</h5>",
-        "text":"<div class='navBarT'> <h5><p>This is an interactive timeline of all Jet Propulsion Laboratory(JPL) missions. The data is based on JPL's  <a href='https://www.jpl.nasa.gov/missions/'> missions page</a>. People with a spirit of curiosity might like the opportunity to explore the timeline  (quadratic pun intended). </p> </h5> <br> <ul> <li> Use the filters on the top to narrow down the items in the list.</li> <ul> <li> Note that the filters are tied and avaliable options will update dynamically!</li></ul> <li>  Use keyboard arrows or mouse to navigate the timeline.</li>   <li> Please enjoy/comment/share: Note the buttons on the right top to share the page! </li> <li> Contact me at quarktetra@gmail.com  or http://twitter.com/quarktetra for questions. </li> </ul>.<br> <br> <strong>Credit for all images and data on this page: Courtesy NASA/JPL-Caltech. </strong> </div>"
+        "headline": "<h5>JPL Missions</h5>",
+        "text":"<div class='navBarT'> <p>This is an interactive timeline of all Jet Propulsion Laboratory(JPL) missions. The data is based on JPL's  <a href='https://www.jpl.nasa.gov/missions/'> missions page</a>. People with a spirit of curiosity might like the opportunity to explore the timeline  (quadratic pun intended). </p>  <br> <ul> <li> Use the filters on the top to narrow down the items in the list.</li> <ul> <li> Note that the filters are tied and avaliable options will update dynamically!</li></ul> <li>  Use keyboard arrows or mouse to navigate the timeline.</li>   <li> Please enjoy/comment/share: Note the buttons on the right top to share the page! </li> <li> Contact me at quarktetra@gmail.com  or http://twitter.com/quarktetra for questions. </li> </ul> <br> <br> <strong>Credit for all images and data on this page: Courtesy NASA/JPL-Caltech. </strong> </div>"
       
       }
       }
