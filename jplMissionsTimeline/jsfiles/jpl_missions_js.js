@@ -114,7 +114,7 @@ if(plotjson["events"].length==1){span.innerText ="1 mission" } else{span.innerTe
 
           plotjson["title"]=titleinfo
   timeline = new TL.Timeline('timeline-embed',plotjson);
-  document.getElementsByClassName("tl-slidenav-next")[0].click()
+  //document.getElementsByClassName("tl-slidenav-next")[0].click()
   
 
   createddown("update",csel)
