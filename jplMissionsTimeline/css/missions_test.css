@@ -2,7 +2,7 @@
 .tl-storyslider {
   height: 65%!important;
 }
-.tl-timeline p{font-size: 28px!important;}
+.tl-timeline p{font-size: 18px!important;}
 h5{font-size:24px!important}
 
 .tl-timeline h2.tl-headline-title {display:none!important}
@@ -58,18 +58,19 @@ div.contain div {  display:inline;  margin: auto;}
     border-style: solid;
     border-radius: 10px;
     border-color: gray;
-    overflow: hidden;
     padding: 20px;
     height:100%;
     box-shadow: 0 0 5px #333;
     padding-top: 5px;
-    font-size: 26px!important;
+    overflow: auto;
+    overflow-x:hidden;
+   
 
 
 
   }
 .subDiv1{
-    width: 70%;
+    width: 65%;
     overflow: auto;
     overflow-x:hidden;
     padding-left: 5px;
@@ -81,10 +82,10 @@ div.contain div {  display:inline;  margin: auto;}
 .subDiv2, #subDiv3, #subDiv4 {
     margin-top:60px;
 
-    width: 30%;
+    width: 35%;
     border-left: 1px solid gray ;
     padding-left: 5px;
-    font-size:20px;font-family: Times, serif, Georgia;
+    font-size:16px;font-family: Times, serif, Georgia;
     overflow: auto;
     overflow-x:hidden;
     float: left;
