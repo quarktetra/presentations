@@ -1,0 +1,1528 @@
+
+
+.slides{ 
+  margin-top:5px;margin-bottom:15px;
+  text-align:center;
+  /* border settings
+  border-radius: 10px;
+  box-shadow: 0 0 75px gray;
+
+
+  height:calc(95.5% + 0px)!important;
+  width:92%!important;
+  margin-left: 6%!important;
+      margin-left: 0.5%!important;
+     margin-right: 0.5%!important;
+   */
+  margin-top:10px!important;
+   width:100%!important;
+
+
+}
+
+/* Set the font style*/
+.reveal {
+  font-family:'Merriweather' ;
+/*   font-family: 'Brush Script MT', cursive; 'Alegreya' 'Quantico'  'Merriweather'*/
+  font-weight: normal;
+  color: #000; 
+  font-size: 22px ;
+    font-size: 1.6vw;
+
+}
+
+
+.pbox{
+  margin-left:0.5%;
+  border-style: solid;border-width: 3px;border-color:gray;
+  border-radius: 10px;
+  box-shadow: 0 0 35px gray;
+  text-align:left;
+  padding-left:15px;padding-right:5px;
+  padding-top:10px;padding-bottom:10px;
+  width:97.0%;
+  margin-bottom:5px!important;
+   z-index: -99!important;
+   position: relative!important;
+}  
+
+.pbox ul{margin-left:-5px!important}  
+.pbox li{margin-left:15px!important}  
+  
+.boxer{
+border-style: solid;border-width: 2px;border-color:lightgray; 
+box-shadow: 0px 0px 15px gray;
+width:99% !important;
+ border-top-left-radius: 10px;border-top-right-radius: 10px;
+  }
+  
+
+.flexbox {
+  display: flex;
+  align-items: stretch;
+}  
+.caption span.plus{cursor:pointer;
+  color:orange;
+}
+.caption span.expanded-caption{display:none}
+
+.caption {
+text-align:left!important;
+position: relative;
+/* opacity: 0;transition: opacity 5s;*/
+color: black;
+/* width:calc(97% + 3px) !important;;*/
+
+font-size:16px!important;
+font-size: 1.1vw!important;
+margin:0 auto!important;
+margin-top:-3px!important;
+margin-left:0px !important;
+height:auto !important;
+text-align:center;
+background-color: WhiteSmoke;
+border-style: solid;border-width: 2px;border-color:lightgray;  border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;  
+/* don't want shadow on the top border;*/
+box-shadow: 0 5px 5px -5px gray,
+              -5px 0 5px -5px gray, 
+              5px 0 5px -5px gray;
+width:98.5%;
+padding-left: 10px!important;
+padding-top:3px!important;
+opacity:1!important;
+
+
+}   
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.venntooltip {
+  position: absolute;
+  text-align: center;
+  width: 128px;
+  height: auto;
+  background: #333;
+  color: #ddd;
+  padding: 2px;
+  border: 0px;
+  border-radius: 8px;
+  opacity: 0;
+}
+
+#venn .label{font-size:10px!important;}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: none;
+  text-shadow: none;
+  word-wrap: break-word; }
+
+
+.reveal h3 {font-size: 1.55em; }
+
+.reveal h4 {  font-size: 1em; }
+
+
+
+
+.reveal h1, h2{
+  font-size: 1.7em!important;
+  margin-top:-5px;
+  margin-bottom:2px!important;
+  text-align:center!important;
+  padding-left:50px!important;
+  color:green;
+  font-weight:bold!important;
+   z-index: -99!important;
+   position: relative!important;
+  }
+
+
+#searchinput{width:60px;height:20px;font-size:12px!important;}
+#searchbutton{width:20px;box-shadow:none;border:none;display:inline-block}
+.slide-number{font-size:16px!important;
+margin-bottom:39px!important;
+margin-right:39px!important;
+width:28px!important;text-align:center!
+important;height:18px!important;
+padding-top:10px!important;
+  padding-bottom:10px!important;
+}
+
+.slide-menu-button{margin-bottom:22px;margin-left:-18px}
+
+#toggle-chalkboard{margin-bottom:16px;margin-left:8px}
+#toggle-notes{margin-bottom:16px;margin-left:0px;}
+
+.compartment .math {font-size:24px!important;  }
+.noUi-tooltip{font-size:18px!important;  }
+.regular-slider{margin-top: 2.1em!important;margin-right: 1em!important}
+
+
+
+.eqref{padding-right:5px!important; float:right!important;} 
+.myeqref{padding-right:1px!important;margin-right:1px!important;} 
+.math .inline{padding-right:15px!important;margin-right:15px!important;font-size: 0.5em} 
+.MathJax_SVG{  font-size: 100%!important}
+
+
+/*labels under noui sliders*/
+.slider_label{
+  text-align:center;
+  font-size:15px;
+  margin-top: 0.7em
+}
+
+
+
+/*Collapsible divs-- mostly for codes*/
+
+
+.experience__more {display: none;}
+.experience__more.border.is--expanded {
+/* border-left: 4px solid #1FC1AD; background: #f1f1f1;*/
+max-height: 400px!important;
+overflow-y:auto!important;
+overflow-x: hidden;
+transition: all 200ms ease-in-out;
+display: inline-block!important;
+width:91.0%!important;
+padding-right: 110px!important;
+padding-left: 10px!important;
+  border-style: solid;border-width: 1px;border-color:#1FC1AD;
+  border-radius: 10px;
+  box-shadow: 0 0 35px gray;
+  text-align: left!important;
+
+}
+
+.experience__more.border.is--expanded h4, .experience__more.is--expanded p {
+transform: scale(1);
+transition: all 200ms ease-in-out;
+}
+
+
+
+.experience__more.noborder.is--expanded {
+/* border-left: 4px solid #1FC1AD; background: #f1f1f1;*/
+max-height: 500px!important;
+overflow-y:auto!important;
+overflow-x: hidden;
+transition: all 200ms ease-in-out;
+display: inline-block!important;
+width:95%!important;
+padding-right: 110px!important;
+padding-left: 10px!important;
+
+
+}
+
+.experience__more.noborder.is--expanded h4, .experience__more.is--expanded p {
+transform: scale(1);
+transition: all 200ms ease-in-out;
+}
+
+.btn--more.is--visible {
+transform: scale(1);
+transition: all 250ms ease-in-out;
+}
+
+.btn--more {
+transform: scale(0);
+width:99% !important;
+margin-left: 0.5%!important;
+display: block!important;
+outline: none;
+border: 1px solid #1FC1AD;
+border-radius: 5px;
+position: relative!important;
+z-index: -1!important;
+
+
+background: #FFF; ;
+color: black;
+border-radius: 5px;
+padding: 6px 12px;
+font-size: 12px;
+transition: all 100ms ease-in-out;
+margin-bottom: 12px;
+}
+.btn--more:hover {
+background: #1FC1AD;
+color: black;
+transition: all 200ms ease-in-out;
+}
+
+
+.sourceCode .r{
+  width:99%!important; 
+  max-height: 320px;
+  font-size:33px;
+  margin-top: -10px!important;
+-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+  line-height: 1.5!important
+}
+  
+
+.reveal section pre code {
+    font-size: 0.5em !important;
+}
+
+.reveal code {
+  font-family: monospace; 
+  width:100%!important;
+}
+
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal; }
+
+.reveal .slides>section {
+    top: 0 !important;
+  margin-top: 0 !important;
+}
+.reveal .slides>section>section {
+      top: 0 !important;
+  margin-top: 0 !important;
+}
+
+
+
+
+/*
+.reveal li
+{
+margin: 0.2em 0;
+font-size:60px !important;
+}
+
+.litextonly li{
+margin: 0.2em 0;
+font-size:25px !important;
+}
+*/
+
+
+
+.imgcont {
+    height:10.8%;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-left:2px;
+    margin-right:2px;
+    border-style: none;
+    opacity:1!important;
+   
+    
+    
+    
+  }
+
+.imgcont::after {
+  top: 0;
+  left: 0;
+
+}
+
+.imgcont:hover {
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+
+
+}
+.slide-background.present {
+      opacity: 0.3;
+       filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+
+
+
+/**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is darkblue.
+ *
+ * This theme is Copyright (C) 2012 Owen Versteeg, https://github.com/StereotypicalApps. It is MIT licensed.
+ * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: #fff;
+  background-color: #fff; }
+
+
+
+::selection {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.99);
+  text-shadow: none; }
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+  line-height: 1.3;
+  font-weight: inherit; }
+
+
+
+/*********************************************
+ * OTHER
+ *********************************************/
+ /*
+.reveal p {
+  margin: 20px 0;
+  line-height: 1.3; }
+*/
+/* Ensure certain elements are never larger than the slide itself */
+.reveal video {
+  max-width: 97%;
+  max-height: 95%;
+  margin-left:1.5% !important;
+  margin-right:1.5% !important;
+
+  
+}
+
+/*********************************************
+.reveal iframe {
+  border: 1px solid #000;
+  border-style: solid;border-width: 3px;border-color:green;  border-top-left-radius: 10px;border-top-right-radius: 10px; 
+  box-shadow: 8px 3px 3px green;
+
+}
+ *********************************************/
+
+
+.reveal strong,
+.reveal b {
+  font-weight: bold; }
+
+.reveal em {
+  font-style: italic; }
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em; 
+
+}
+
+.reveal ol {
+  list-style-type: decimal;
+}
+
+.reveal ul {
+  list-style-type: disc; }
+
+.reveal ul ul {
+  list-style-type: square; }
+
+.reveal ul ul ul {
+  list-style-type: circle; }
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 20px;
+}
+
+.reveal dt {
+  font-weight: bold; }
+
+.reveal dd {
+  margin-left: 40px; }
+
+.reveal q,
+.reveal blockquote {
+  quotes: none; }
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 20px auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block; }
+
+.reveal q {
+  font-style: italic; }
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: monospace;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+
+
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.reveal table th {
+  font-weight: bold; }
+
+.reveal table th,
+.reveal table td {
+  text-align: center;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid; 
+  font-size:20px! important;
+  border-collapse: collapse;
+   border: solid 2px black !important;
+
+}
+
+
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
+  text-align: center; }
+
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
+  text-align: right; }
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none; }
+
+.reveal sup {
+  vertical-align: super; }
+
+.reveal sub {
+  vertical-align: sub; }
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top; }
+
+.reveal small * {
+  vertical-align: top; }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: #00008B;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  transition: color .15s ease; }
+
+.reveal a:hover {
+  color: #0000f1;
+  text-shadow: none;
+  border: none; }
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #00003f; }
+
+/*********************************************
+ * IMAGES
+
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  border-style: solid;border-width: 3px;border-color:gray;  border-top-left-radius: 10px;border-top-right-radius: 10px;  box-shadow: 8px 3px 3px gray;
+  margin-top:-5px!important; 
+
+}
+
+
+
+.reveal section img.plain {
+  border: 0!important;
+  box-shadow: none!important; }
+
+ *********************************************/
+ 
+
+
+.reveal a img {
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear; }
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #00008B;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #00008B; }
+
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #00008B; }
+
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #00008B; }
+
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #00008B; }
+
+.reveal .controls .navigate-left.enabled:hover {
+  border-right-color: #0000f1; }
+
+.reveal .controls .navigate-right.enabled:hover {
+  border-left-color: #0000f1; }
+
+.reveal .controls .navigate-up.enabled:hover {
+  border-bottom-color: #0000f1; }
+
+.reveal .controls .navigate-down.enabled:hover {
+  border-top-color: #0000f1; }
+
+
+.introbg div.slide-background.present {
+      opacity: 0.1;
+       filter: alpha(opacity=5); /* For IE8 and earlier */
+}
+
+.genericbg div.slide-background.present {
+      opacity: 0.8;
+       filter: alpha(opacity=5); /* For IE8 and earlier */
+}
+
+
+
+/*Collapsible divs-- mostly for codes*/
+/*Expandable captions*/
+ 
+
+img .caption {
+text-align:left!important;
+position: relative;
+/* opacity: 0;transition: opacity 5s;*/
+color: black;
+/* width:calc(97% + 3px) !important;;*/
+
+font-size:20px!important;
+margin:0 auto!important;
+margin-top:-18px!important;
+margin-left:0px !important;
+height:auto !important;
+text-align:center;
+background-color: skyblue;
+border-style: solid;border-width: 3px;border-color:gray;  border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;  
+box-shadow: 0 5px 5px -5px gray,
+              -5px 0 5px -5px gray, 
+              5px 0 5px -5px gray;
+width:calc(99.5% - 1px);
+padding-left: 10px!important;
+
+}
+  
+  
+
+
+.svg-container{ 
+ margin:auto !important;
+
+}
+
+
+
+
+
+
+
+.show {
+      -o-transition: opacity 3s;
+      -moz-transition: opacity 3s;
+      -webkit-transition: opacity 3s;
+      transition: opacity 3s;
+      opacity:1;
+  }
+.hide {
+      opacity:0 ;
+  }
+.toggle-slider {
+	height: 50px;
+}
+.toggle-slider .off .noUi-handle {
+	border-color: red;
+}
+
+
+
+
+
+
+div img {
+display: block;
+height: auto;
+margin: 0 auto;
+
+}
+
+img {
+border-style: solid;border-width: 2px;border-color:lightgray; 
+box-shadow: 0px 0px 15px gray;
+width:100.5%;
+border-top-left-radius: 10px;border-top-right-radius: 10px;
+background-color:white!important;
+
+
+}
+
+
+
+
+/* cannot click on the links in the caption. 
+div img:hover + p {
+opacity: 1;
+}
+*/
+
+
+
+
+
+.my_vspacer { width:100%; height:20px; }
+.my_vspacersmall { width:100%; height:10px; }
+.my_vspacerb { width:100%; height:80px; }
+blockquote{width:100% !important;font-style: italic!important;padding:2px!important;}
+#gquote{margin-top:-35px!important;}
+
+
+/* cannot click on the links in the caption. 
+.figure:hover {
+  transform: scale(1.3); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) 
+}
+*/
+
+
+
+#extrazoomneeded:hover {
+  transform: scale(1.53) translate(258px,45px)!important; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+
+}
+
+
+
+
+
+.mathtoshrink .math { display : inline-block; font-size:18px!important }
+
+/* CSS by id, project specific */  
+#desolvernn{  width:36%;margin-right:32%;margin-left:32%;margin-top:-5px}
+#nlsimage{width:50%; margin-left:25%; margin-top:20px}
+
+.foot_container ol{
+ margin-bottom: 10px; margin-top: 10px!important; margin-left: 40px; 
+}
+.foot_container {
+    position : absolute;
+    bottom : 0!important;
+    height : 40px!important;
+    margin-top : 50px!important;
+    margin-bottom : 0px!important;
+    font-size:15px!important;
+    width:90%!important;
+    margin-left: 5%!important;
+}
+sup{ vertical-align: super !important;
+  font-size: smaller!important;}
+  
+.fade_rule {
+  font-family: Arial, sans-serif; /* choose the font you like */
+  text-align: center; /* horizontal centering */
+  line-height: 1px!important; /* vertical centering */
+
+  margin-bottom: 20px; margin-top: 20px; margin-left: 40px;
+  height: 3px; /* gap between the lines */
+  background-image: linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+  background-image: -o-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+  background-image: -moz-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+  background-image: -webkit-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+  background-image: -ms-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+  background-image: -webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, white), color-stop(0.5, gray), color-stop(0.98, white) );
+		
+			   
+		}
+		
+		.fade_rule:after {
+		  content: "§"; /* section sign */
+		  color: #999;
+		  display: inline; /* for vertical centering and background knockout */
+		  background-color:white; /* same as background color */
+		  padding: 0 0.5em; /* size of background color knockout */
+		}  
+		
+.flexbox {
+  display: flex;
+  align-items: stretch;
+}	
+caption{position: relative;
+/* opacity: 0;transition: opacity 5s;*/
+color: black;
+width: auto;
+font-size:20px!important;
+margin:0 auto!important;
+height:25px !important;
+text-align:center;
+  margin-left:1.5% !important;
+  margin-right:1.5% !important;}
+  
+
+
+/* Title Page  CSS*/
+
+.title{
+  margin-top: 2%!important;
+  color:green !important;
+  font-size:50px !important;
+  font-weight:bolder!important;
+  margin-bottom: 2px!important;
+
+}
+.author{
+    margin-top: 2px!important;
+  color:blue !important;
+    font-size:25px !important;
+
+}
+
+.date{    font-size:20px !important;
+
+}
+
+#emailtext{font-size: 12px!important;margin-bottom:20px;}
+
+#infotext{
+width: 30%;
+margin-left: 35%;
+  padding-left:10px!important;
+  border:none;
+  border-width: 1px;border-color:gray;
+    border-radius: 10px;
+  box-shadow: 0 0 35px grey;
+  margin-top:5px;
+  text-align:center;
+  padding-left:50px;padding-right:20px;padding-top:10px;padding-bottom:10px;
+
+  margin-bottom:-0px; 
+  opacity: 0;
+  transition: opacity 1s; 
+
+}
+
+#acknowledgementtext{
+margin-top: 5px!important;
+  font-size:18px!important;
+}
+
+.reveal #infotext.fade {
+  opacity: 1;
+}
+
+ #seagategif{
+   margin-top:-75px!important;
+  margin-bottom:-60px!important;
+  margin-left: 35%!important;
+  width:30%!important;
+    border: 0!important;
+  box-shadow: none!important; 
+
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 0%, transparent 60%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 0%, transparent 60%);
+   
+ }
+ 
+ 
+#mach2gif{
+   margin-top:5px!important;
+  margin-left: 25%!important;
+  width:42%!important;
+}
+
+.m_button{
+  margin-top: 5px!important;
+  opacity: 0.5;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  cursor:pointer;
+  background-color:#eeeeee;
+  width:4%;
+  margin-left:47%!important;
+  height:40px;
+  border-radius:10px;
+  box-shadow: -7px -7px 20px 0px #fff9,
+              -4px -4px 5px 0px #fff9,
+              7px 7px 20px 0px #0002,
+              4px 4px 5px 0px #0001,
+              inset 0px 0px 0px 0px #fff9,
+              inset 0px 0px 0px 0px #0001,
+              inset 0px 0px 0px 0px #fff9,
+              inset 0px 0px 0px 0px #0001;
+  transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+  
+
+}
+.m_button span{
+  opacity: 1!important;
+    background-color:rgb(0, 0, 139);
+    box-shadow: 0px 0px 10px 0px rgba(240,128,128,0.3);
+    width:30px;
+    height:4px;
+    border-radius:4px;
+    margin:3px 0px 3px 0px!important;
+    transition:margin 0.4s cubic-bezier(.79,.21,.06,.81),transform 0.4s cubic-bezier(.79,.21,.06,.81);
+  }
+    
+  .m_button span:nth-child(2){
+    transform-origin:50% 50%;
+  }
+.m_active .m_button{
+  box-shadow: 0px 0px 0px 0px #fff9,
+              0px 0px 0px 0px #fff9,
+              0px 0px 0px 0px #0001,
+              0px 0px 0px 0px #0001,
+              inset -7px -7px 20px 0px #fff9,
+              inset -4px -4px 5px 0px #fff9,
+              inset 7px 7px 20px 0px #0003,
+              inset 4px 4px 5px 0px #0001;
+  
+}
+.m_active .m_button span{
+  opacity: 1!important;
+  background-color:rgb(236, 108, 135);
+
+    margin:-2px!important;
+  }
+  .m_active .m_button span:nth-child(1){
+    transform:rotate(-45deg);
+    
+  }
+  .m_active .m_button span:nth-child(2){
+    transform:scale(0)
+  }
+  .m_active .m_button  span:nth-child(3){
+    transform:rotate(45deg)
+}
+
+.mylist ::marker {
+  content: "»";
+
+  color:blue;
+  /* color: hsl(var(--hue) 50% 50%); */  
+}
+
+.mylist li {
+  padding-inline-start: 1ch;
+    padding-bottom: 5px;
+    margin-left: -40px;
+}
+
+/* .mylist li::marker { --hue: 200}*/  
+
+
+
+ .mylist ul, ol {
+  max-width: 90ch;
+  font-size: 16px;
+
+}
+ 
+ .legend{height:200px!important;}
+ 
+ /* mjtooltip container */
+.mjtooltip {
+  position: relative;
+  display: inline-block;
+  border-top: 2px solid transparent; /* If you want dots under the hoverable text */
+  border-image: linear-gradient(to right, rgba(255, 165, 0, 0) 0%, rgba(255, 165, 0, 1) 30%, rgba(255, 165, 0, 1) 70%, rgba(255, 165, 0, 0) 100%);
+  border-image-slice: 1;
+}
+
+.mjtooltip:hover { border-image-slice:0!important; }
+
+
+/* mjtooltip text */
+.mjtooltiptext {
+  visibility: hidden;
+  width: 500px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the mjtooltip text */
+  position: absolute;
+  z-index: 3;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -255px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  /* Fade in mjtooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.mjtooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+
+/* Show the mjtooltip text when you mouse over the mjtooltip container */
+.mjtooltip:hover .mjtooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+ /* citationtooltip container */
+.citationtooltip {
+  position: relative;
+  display: inline-block;
+  border-top: 2px solid transparent; /* If you want dots under the hoverable text */
+  border-image: linear-gradient(to right, rgba(255, 165, 0, 0) 0%, rgba(255, 165, 0, 1) 30%, rgba(255, 165, 0, 1) 70%, rgba(255, 165, 0, 0) 100%);
+  border-image-slice: 1;
+  z-index: 99!important;
+}
+
+.citationtooltip:hover { border-image-slice:0!important; }
+
+
+/* citationtooltip text */
+.citationtooltiptext {
+  visibility: hidden;
+  width: 800px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 16px!important;
+
+  /* Position the citationtooltip text */
+  position: absolute;
+  z-index: 999!important;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -405px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  /* Fade in citationtooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+ .citationtooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the citationtooltip text when you mouse over the citationtooltip container */
+.citationtooltip:hover .citationtooltiptext {
+  visibility: visible;
+  opacity: 1;
+
+}
+
+
+
+/* Show the citationtooltip text when you mouse over the citationtooltip container */
+.citationtooltip:hover .citationtooltiptext {
+  visibility: visible;
+  opacity: 1;
+
+}
+
+
+
+
+ /* regulartooltip container */
+.regulartooltip {
+  position: relative;
+  display: inline-block;
+      border-top: 2px solid transparent; /* If you want dots under the hoverable text */
+      border-image: linear-gradient(to right, rgba(255, 165, 0, 0) 0%, rgba(255, 165, 0, 1) 30%, rgba(255, 165, 0, 1) 70%, rgba(255, 165, 0, 0) 100%);
+    border-image-slice: 1;
+}
+.regulartooltip:hover { border-image-slice:0!important; }
+
+/* regulartooltip text */
+.regulartooltip .regulartooltiptext {
+  visibility: hidden;
+  width: 450px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 16px!important;
+
+  /* Position the regulartooltip text */
+  position: absolute;
+  z-index: 99;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -230px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  /* Fade in regulartooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.regulartooltip .regulartooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+
+/* Show the regulartooltip text when you mouse over the regulartooltip container */
+.regulartooltip:hover .regulartooltiptext {
+  visibility: visible!important;
+  opacity: 1!important;
+}
+
+
+
+
+
+
+ /* regulartooltip container */
+.regulartooltipb {
+  position: relative;
+  display: inline-block;
+  opacity:1!important;
+}
+
+
+
+.regulartooltipb .regulartooltiptextb {
+  visibility: hidden;
+  width: 300px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 16px!important;
+  /* Position the regulartooltip text */
+  position: absolute;
+  z-index: 1;
+  top: 140%;
+  left: 50%;
+  margin-left: -155px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  /* Fade in regulartooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.regulartooltipb .regulartooltiptextb::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  transparent transparent #555 transparent;
+}
+
+
+/* Show the regulartooltip text when you mouse over the regulartooltip container */
+.regulartooltipb:hover .regulartooltiptextb {
+  visibility: visible!important;
+  opacity: 1!important;
+}
+
+
+
+#minmath #appendix{
+margin-top:250px!important;
+}
+.myinputclass{
+  display: inline-block;
+border-color:orange ;
+font-size:18px;
+vertical-align: baseline;
+
+}
+
+[class^="bb_"]{
+  background: #eefbfb ;
+}
+[class^="w_"]{
+  background: #eefbfb ;
+}
+
+.frac {
+    display: inline-block!important;
+    position: relative!important;
+    vertical-align: middle!important;
+    letter-spacing: 0.001em;
+    text-align: center!important;
+}
+.frac > span {
+    display: block!important;
+    padding: 0.1em!important;
+}
+.frac span.bottom {
+    border-top: thin solid black!important;
+}
+.frac span.symbol {
+    display: none!important;
+} 
+.filecoinlogo{
+  display: inline-block!important;
+  margin-bottom: -5px!important;
+    width: 40px;
+    border: 0px!important;
+    border-radius: 0!important;
+    -webkit-box-shadow: none!important;
+  -moz-box-shadow: none!important;
+  box-shadow: none!important;
+}
+
+
+ 
+
+
+.insidetitle{
+  color:green!important;
+  text-align:left;
+  font-size:1.3em!important
+}
+.plot-container{
+  margin-left: 20%;
+}
+.collapsible_container{  position: relative!important;
+z-index: -2!important;
+}
+.maction mtext{
+background-color:red!important;
+}
+.figurenum{
+  font-weight: bold!important;
+}
+
+/* dymanic content tabs*/
+
+.sheader {
+  position: fixed!important;
+  width: 38%;
+  margin-top:5px;
+
+ z-index: 2;
+
+}
+.my-bar{
+font-size: .95em;
+font-weight:bold;
+}
+
+#p_stickyheader{
+     pointer-events: none;
+}
+
+.outer {
+  position: fixed;
+  width: 3px;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  vertical-align: center;
+}
+.inner {
+  position: absolute;
+  width:100%;
+  height: 70%;
+  background: gray;
+  vertical-align: center;
+  box-shadow: 0px 0px 30px 20px grey;
+  opacity: 0.1;
+}
+
+
+.tabouter {
+  position: fixed;
+  width: 3px;
+  height: 70px;
+  margin-top: 5px;
+  overflow: hidden;
+  color:red;
+}
+.tabinner {
+  position: absolute;
+  width:100%;
+  height: 100%;
+  background: white;
+  box-shadow: 0px 0px 30px 30px grey;
+  opacity: 0.1;
+  vertical-align: center;
+}
+.internaltab{
+margin-top:5px;
+margin-bottom:5px;
+font-size:16px;
+width:100%!important;
+}
+
+.tablink{width:12.5%!important}
+
+/* dymanic content tabs*/
+
+  nav {
+    position: relative!important;
+    padding-bottom: 3px!important;
+  }
+  nav .line {
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    margin-top: -10px;
+    background: linear-gradient(to right, rgba(255, 165, 0, 0) 0%, rgba(255, 165, 0, 1) 30%, rgba(255, 165, 0, 1) 70%, rgba(255, 165, 0, 0) 100%);
+
+
+  }
+  #nav_cont ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    content: none;
+    display: flex;
+    
+  }
+  nav ul li {
+    margin: 0 5px 0 0;
+    opacity: 0.75;
+    transition: all 0.4s ease;
+   
+
+  }
+  nav ul li:hover {
+    opacity: 0.85;
+     cursor: pointer; 
+  }
+  nav ul li.active {
+    opacity: 1;
+  }
+
+  #nav_cont {
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    font-size: 14px;
+    margin-left: 75%;
+    width:25%;
+    margin-bottom:-25px; 
+    z-index: 999;
+    
+ }
+ 
+.blink {
+	-webkit-animation: blink 2.1s linear infinite;
+	-moz-animation: blink 2.1s linear infinite;
+	-ms-animation: blink 2.1s linear infinite;
+	-o-animation: blink 2.1s linear infinite;
+	 animation: blink 2.1s linear infinite;
+}
+@-webkit-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	80.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	80.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+
+
+
+ /* imgtooltip container */
+.imgtooltip {
+  position: relative;
+  display: inline-block;
+  border-top: 2px solid orange; /* If you want dots under the hoverable text */
+  z-index: 99!important;
+
+}
+
+/* imgtooltip text */
+.imgtooltiptext {
+  background-color: white;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 16px!important;
+
+  /* Position the imgtooltip text */
+  position: absolute;
+  z-index: 999!important;
+  bottom: 125%;
+  left: 50%;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  /* Fade in imgtooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+
+
+
+
+
+
+.fade-in {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+
+      width:600px;
+    height:auto;
+  
+    
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1!important;
+    }
+}
+
+.fade-out {
+    width:0!important;
+    height:0!important;
+}
+
+.shinyapp{
+width:100%;height: 1000px; border: none
+}
+
+.jsapp{
+width:100%;height: 1000px; border: none
+}
+
+.slider32.top{
+  display: inline-block;
+  width:27%;
+  margin-left:2%;
+  margin-right:2%;
+  margin-top:25px !important;
+  font-size:12px !important;
+}
+
+.slidertoggle3{
+  display: inline-block;
+  width:6%;
+  margin-left:2% !important;
+  margin-right:2% !important;
+  margin-top:5px !important;
+  font-size:12px !important;
+}
+
+.slider32.bottom{
+    display: inline-block;
+   width:27%;
+     margin-left:2%;
+  margin-right:2%;
+ margin-bottom:5px !important;
+ margin-top:5px !important;
+  font-size:12px !important;
+}
+
+#refs{
+  font-size: 16px !important;
+  margin-left:10px!important;
+  padding-left:10px!important;
+  border-style: solid;border-width: 3px;border-color:gray;
+  margin-top:5px;
+  text-align:left;padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:10px;
+  border-radius: 10px;
+  box-shadow: 10px 5px 5px gray;
+  width:96.5%;
+}

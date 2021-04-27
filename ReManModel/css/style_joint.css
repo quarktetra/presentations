@@ -1,0 +1,26 @@
+.bblogo{
+  display: inline-block!important;
+  margin-bottom: -15px!important;
+    width: 150px;
+    border: 0px!important;
+    border-radius: 0!important;
+    -webkit-box-shadow: none!important;
+  -moz-box-shadow: none!important;
+  box-shadow: none!important;
+}
+
+#duckimg{
+  display: inline-block!important;
+  margin-left: -15px!important;
+    width: 450px;
+    border: 0px!important;
+    border-radius: 0!important;
+    -webkit-box-shadow: none!important;
+  -moz-box-shadow: none!important;
+  box-shadow: none!important;
+}
+
+#refs{text-align:left}
+
+
+.csl-entry{padding-bottom:5px}

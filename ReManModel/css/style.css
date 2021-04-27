@@ -1,0 +1,821 @@
+ /* tooltip cut off */
+
+
+.book .book-body .page-wrapper .page-inner {
+  max-width: 1500px !important;
+  width:95%!important;
+  margin-left: -25px!important;
+  overflow-x: hidden;
+}
+
+section.normal {padding-left:220px!important};
+
+
+
+.sliderlabel{
+  text-align:center;
+  font-size:15px;
+  margin-top: 0.7em;
+}
+
+
+
+/*Expandable captions*/
+.caption span.plus{cursor:pointer;  color:orange;}
+.caption span.expanded-caption{display:none}
+
+/*Collapsible divs-- mostly for codes*/
+.collapsible_container{overflow: visible;}
+.experience__more {display: none;}
+.experience__more.is--expanded {
+/* border-left: 4px solid #1FC1AD;*/
+overflow: visible;
+transition: all 200ms ease-in-out;
+display: inline-block!important;
+width:100%!important;
+text-align: left;
+
+}
+.experience__more.is--expanded h4, .experience__more.is--expanded p {
+transform: scale(1);
+transition: all 200ms ease-in-out;
+}
+
+.btn--more.is--visible {
+transform: scale(1);
+transition: all 250ms ease-in-out;
+}
+
+.btn--more {
+transform: scale(0);
+width:100% !important;
+display: block!important;
+outline: none;
+border: 1px solid #1FC1AD;
+background: #FFF; ;
+color: black;
+border-radius: 1px;
+padding: 6px 12px;
+font-size: 12px;
+transition: all 100ms ease-in-out;
+margin-bottom: 12px;
+}
+.btn--more:hover {
+background: #1FC1AD;
+color: black;
+transition: all 200ms ease-in-out;
+}
+
+
+
+.caption{text-align:left!important}
+
+
+
+
+body {
+  font-family:Verdana,sans-serif;
+}
+
+p {
+  font-size: 1em;
+  line-height: 150%;
+}
+
+/*hide titles*/
+.posts-list-caption {
+  display: none;
+} 
+
+/* HEADER */
+.distill-site-header {
+  background-color: white;
+  border-bottom: 1px #e7e7e7 solid;
+}
+
+/* FOOTER */
+.distill-site-footer {
+  background-color: white;
+  border-top: 1px #e7e7e7 solid;
+  text-align: right;
+}
+.distill-site-footer p{
+  margin-right: 10%;
+  color: #777;
+}
+
+.nav-left {
+  color: #777;
+  /*margin-left: 10% !important;*/
+}
+.nav-left a.title {
+  font-weight: 100;
+}
+
+.nav-right {
+  color: #777;
+  /*margin-right: 10% !important;*/
+}
+.nav-right a:hover,
+.distill-site-footer a:hover{
+  color: #5e5e5e;
+}
+
+.nav-left .title {
+  font-size: 2.75em;
+  text-transform: uppercase;
+}
+.nav-left .title:hover {
+  color: #5e5e5e;
+}
+
+
+.posts-with-sidebar {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-right: 0 !important;
+  padding-left: 18px !important;
+}
+
+d-appendix {
+  padding-top: 24px !important;
+  padding-bottom: 0px !important;
+}
+
+/* make code sections scroll rather than overflow, and give them a grey background */
+/* UL: 19 Nov 2018, this should've been fixed in source code now - https://github.com/rstudio/radix/commit/abbfd67146e44eb873c561cbb1fc11065788f7f8 */
+d-code {
+  overflow-x: auto !important;
+  background: #f8f8f8;
+}
+html {
+box-sizing: border-box;
+}
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+
+body {
+background: #E6E4E7;
+font-family: 'Arimo', sans-serif;
+color: #444;
+}
+
+li {
+margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+font-family: "Raleway", sans-serif;
+font-weight: 400;
+text-transform: uppercase;
+}
+
+h2, h3, h4, h5, h6 {
+margin: 0;
+margin-bottom: 12px;
+}
+
+h1 {
+font-size: 32px;
+}
+
+h2 {
+font-size: 28px;
+}
+
+h3 {
+font-size: 24px;
+}
+
+h4 {
+font-size: 22px;
+}
+@media screen and (max-width: 600px) {
+h4 {
+  font-size: 16px;
+}
+}
+
+h5 {
+font-size: 18px;
+}
+
+h6 {
+font-size: 16px;
+}
+
+a {
+text-decoration: none;
+font-family: inherit;
+}
+
+.link--white {
+color: #1FC1AD;
+}
+
+.main {
+border-radius: 8px;
+background: white;
+margin: 48px auto;
+/* height:800px; */
+width: 96%;
+box-shadow: -2px 2px 2px 0px rgba(0, 0, 0, 0.1);
+transition: all 250ms ease-in-out;
+transform: translate(0, 0) scale(0.5);
+opacity: 0;
+}
+@media screen and (min-width: 600px) {
+.main {
+  width: 88%;
+}
+}
+@media screen and (min-width: 1024px) {
+.main {
+  width: 70%;
+}
+}
+
+.main.in-focus {
+border-radius: 8px;
+box-shadow: -48px 48px 48px 0px rgba(0, 0, 0, 0.1);
+transition: all 250ms ease-in-out;
+transform: translate(0, 0) scale(1);
+opacity: 1;
+
+}
+.tocify{
+border-radius: 8px;
+box-shadow: -48px 48px 48px 0px rgba(0, 0, 0, 0.1);
+transition: all 250ms ease-in-out;
+transform: translate(0, 0) scale(1);
+opacity: 1;
+}
+
+
+
+body {
+transition: all 250ms ease-in-out;
+}
+
+
+.sheader {
+  position: fixed!important;
+  width: 50%;
+  margin-left:205px;
+  margin-top:-40px;
+
+ z-index: 2;
+
+}
+.my-bar{
+font-size: .95em;
+font-weight:bold;
+background-color: rgb(255, 255, 255)!important;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+width:270px;
+}
+
+#stickyheader * {
+     pointer-events: none;
+}
+
+.outer {
+  position: fixed;
+  width: 3px;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+  vertical-align: center;
+}
+.inner {
+  position: absolute;
+  width:100%;
+  height: 70%;
+  background: gray;
+  vertical-align: center;
+  box-shadow: 0px 0px 30px 20px grey;
+  opacity: 0.1;
+}
+
+
+.tabouter {
+  position: fixed;
+  width: 3px;
+  height: 70px;
+  margin-top: 5px;
+  overflow: hidden;
+  color:red;
+}
+.tabinner {
+  position: absolute;
+  width:100%;
+  height: 100%;
+  background: gray;
+  box-shadow: 0px 0px 30px 30px grey;
+  opacity: 0.1;
+  vertical-align: center;
+}
+.internaltab{
+margin-top:5px;
+margin-bottom:5px;
+font-size:16px;
+}
+
+#contact, #resumepdf, #morec {padding-top:50px}
+/*#mycontent {background: green;margin-top:220px}*/
+
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.venntooltip {
+  position: absolute;
+  text-align: center;
+  width: 128px;
+  height: auto;
+  background: #333;
+  color: #ddd;
+  padding: 2px;
+  border: 0px;
+  border-radius: 8px;
+  opacity: 0;
+}
+
+#venn .label{font-size:10px!important;}
+
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  /*stroke: steelblue;
+  stroke-width: 1.5px;*/
+}
+
+.node:not(:hover) .nodetext {
+        display: none;
+      }
+      
+.node text {
+  font: 14px sans-serif;
+  font-weight:bold;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 4px;
+}
+
+
+
+#tabs {
+  display: block;
+  -webkit-transition: height 1s; 
+  transition: height 1s;
+  transition: width 1s;
+}
+
+/*
+.sheader:hover #tabs {
+  display: block;
+}
+*/
+
+.fade_rule {
+        
+        height: 1px;
+        background-color: #E6E6E6;
+        width: 66.0em;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:10px;
+        margin-bottom:15px;
+        background-image: linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+        background-image: -o-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+        background-image: -moz-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+        background-image: -webkit-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+        background-image: -ms-linear-gradient(left , white 2%, #E6E6E6 50%, white 98%);
+        background-image: -webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, white), color-stop(0.5, gray), color-stop(0.98, white) );
+}
+
+
+#header{text-align:center}
+.author, .date, .title
+{
+  text-align:center;
+}
+
+#modestoc {
+    -moz-animation: cssAnimation 0s ease-in 10s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 10s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 10s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 10s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
+table {
+ border-collapse: collapse;
+ font-size:14px;
+}
+th,td { border: solid 2px black !important;}
+.show {
+      -o-transition: opacity 3s;
+      -moz-transition: opacity 3s;
+      -webkit-transition: opacity 3s;
+      transition: opacity 3s;
+      opacity:1;
+  }
+.hide {
+      opacity:0;
+  }
+.toggle-slider {
+	height: 50px;
+}
+.toggle-slider .off .noUi-handle {
+	border-color: red;
+}
+
+
+.slider32.top{
+  display: inline-block;
+  width:31%;
+  margin-left:1%;
+  margin-right:2%;
+  margin-top:-4px !important;
+  font-size:12px !important;
+}
+
+
+.slider32s.top{
+  display: inline-block;
+  margin-left:1%;
+  margin-right:1%;
+  margin-top:-4px !important;
+  font-size:12px !important;
+}
+
+.slidertoggle3{
+  display: inline-block;
+  width:18%;
+  margin-left:1% !important;
+  margin-right:1% !important;
+  margin-top:-20px !important;
+  font-size:12px !important;
+}
+
+.slidertoggle2{
+  display: inline-block;
+  width:8%;
+  margin-left:1% !important;
+  margin-right:1% !important;
+  margin-top:-20px !important;
+  font-size:12px !important;
+}
+
+.slider32.bottom{
+    display: inline-block;
+   width:27%;
+     margin-left:2%;
+  margin-right:2%;
+ margin-bottom:5px !important;
+ margin-top:-20px !important;
+  font-size:12px !important;
+}
+.show {
+      -o-transition: opacity 3s;
+      -moz-transition: opacity 3s;
+      -webkit-transition: opacity 3s;
+      transition: opacity 3s;
+      opacity:1;
+  }
+.hide {
+      opacity:0;
+  }
+
+/* remove line breaks after </div> 
+.fragment div{
+display: inline!important;  
+
+}
+*/
+#infotext{display:none}
+#button_container{display:none}
+.center {
+  text-align: center;;
+  padding: 10px!important;
+}
+#appendednote{
+  margin-top: 30px;
+  padding-left:25px;
+  color:steelblue;
+  font-size: 14px;
+}
+ 
+#seagategif{
+  margin-top: 10px!important;
+  margin-left: 10%!important;
+  width:80%!important;
+    border: 0!important;
+  box-shadow: none!important; 
+
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 0%, transparent 50%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, black 0%, transparent 50%);
+   
+ }
+
+ /* mjtooltip container */
+.toplined{
+  position: relative;
+  display: inline-block;
+  border-top: 2px solid transparent; /* If you want dots under the hoverable text */
+  border-image: linear-gradient(to right, rgba(255, 165, 0, 0) 0%, rgba(255, 165, 0, 1) 30%, rgba(255, 165, 0, 1) 70%, rgba(255, 165, 0, 0) 100%);
+  border-image-slice: 1;
+}
+
+.toplined:hover { border-image-slice:0!important; } 
+ 
+ 
+.mjtooltip {
+  position: relative;
+  display: inline-block;
+  border-top: 2px solid transparent; /* If you want dots under the hoverable text */
+  border-image: linear-gradient(to right, rgba(255, 165, 0, 0) 0%, rgba(255, 165, 0, 1) 30%, rgba(255, 165, 0, 1) 70%, rgba(255, 165, 0, 0) 100%);
+  border-image-slice: 1;
+}
+
+.mjtooltip:hover { border-image-slice:0!important; }
+
+/* mjtooltip text */
+.mjtooltip .mjtooltiptext {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the mjtooltip text */
+  position: absolute;
+z-index: 99!important;
+  bottom: 125%;
+  left: 50%;
+  margin-left: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  /* Fade in mjtooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.nominalbox{
+  width: 400px;
+  margin-left: -200px!important;
+}
+
+.widebox{
+  width: 460px!important;
+  margin-left: -240px!important;
+}
+
+.mjtooltip .mjtooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+   border-color: #555 transparent transparent transparent;
+}
+
+/* Show the mjtooltip text when you mouse over the mjtooltip container */
+.mjtooltip:hover .mjtooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+ /* citationtooltip container */
+.citationtooltip {
+  position: relative;
+  display: inline-block;
+  border-top: 2px solid transparent; /* If you want dots under the hoverable text */
+  border-image: linear-gradient(to right, rgba(255, 165, 0, 0) 0%, rgba(255, 165, 0, 1) 30%, rgba(255, 165, 0, 1) 70%, rgba(255, 165, 0, 0) 100%);
+  border-image-slice: 1;
+  z-index: 99!important;
+}
+
+.citationtooltip:hover { border-image-slice:0!important; }
+
+
+/* citationtooltip text */
+.citationtooltiptext {
+  visibility: hidden;
+  width: 800px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 16px!important;
+
+  /* Position the citationtooltip text */
+  position: absolute;
+  z-index: 999!important;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -405px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  /* Fade in citationtooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+ .citationtooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the citationtooltip text when you mouse over the citationtooltip container */
+.citationtooltip:hover .citationtooltiptext {
+  visibility: visible;
+  opacity: 1;
+
+}
+
+
+
+/* Show the citationtooltip text when you mouse over the citationtooltip container */
+.citationtooltip:hover .citationtooltiptext {
+  visibility: visible;
+  opacity: 1;
+
+}
+
+
+
+
+ /* regulartooltip container */
+.regulartooltip {
+  position: relative;
+  display: inline-block;
+      border-top: 2px solid transparent; /* If you want dots under the hoverable text */
+      border-image: linear-gradient(to right, rgba(255, 165, 0, 0) 0%, rgba(255, 165, 0, 1) 30%, rgba(255, 165, 0, 1) 70%, rgba(255, 165, 0, 0) 100%);
+    border-image-slice: 1;
+}
+.regulartooltip:hover { border-image-slice:0!important; }
+
+/* regulartooltip text */
+.regulartooltip .regulartooltiptext {
+  visibility: hidden;
+  width: 1000px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 16px!important;
+
+  /* Position the regulartooltip text */
+  position: absolute;
+  z-index: 99;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -500px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  /* Fade in regulartooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.regulartooltip .regulartooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+
+/* Show the regulartooltip text when you mouse over the regulartooltip container */
+.regulartooltip:hover .regulartooltiptext {
+  visibility: visible!important;
+  opacity: 1!important;
+}
+
+
+
+
+
+
+ /* regulartooltip container */
+.regulartooltipb {
+  position: relative;
+  display: inline-block;
+  opacity:1!important;
+}
+
+.regulartooltipb:hover { border-image-slice:0!important; }
+
+
+.regulartooltipb .regulartooltiptextb {
+  visibility: hidden;
+  width: 300px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 16px!important;
+  /* Position the regulartooltip text */
+  position: absolute;
+  z-index: 1;
+  top: 140%;
+  left: 50%;
+  margin-left: -155px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  /* Fade in regulartooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.regulartooltipb .regulartooltiptextb::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color:  transparent transparent #555 transparent;
+}
+
+
+/* Show the regulartooltip text when you mouse over the regulartooltip container */
+.regulartooltipb:hover .regulartooltiptextb {
+  visibility: visible!important;
+  opacity: 1!important;
+}
+
+
+
+.csl-entry{display:inline-block}
+.csl-left-margin{display:inline-block}
+
+ table th {    padding: 2px!important;}
+ 
+ /* tooltip settings */
+ #tooltipster-1881{min-height: 60px;  vertical-align: middle;}
+ 
+.tooltipster-content .mjx-chtml{margin-top:-6px}
+.tooltipster-content{overflow:hidden!important}
+
+.fa.fa-info{display:none}
+
+.buttontoberemoved{
+  display:none;
+  height:0;
+}
+
+#seagategif{display:none}
+.flexbox {
+  display: flex;
+  align-items: stretch;
+}  
